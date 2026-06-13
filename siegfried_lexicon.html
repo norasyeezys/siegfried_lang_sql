@@ -82,12 +82,36 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   color: var(--muted);
   font-size: 1.02rem;
 }
+.header-meta {
+  display: flex;
+  gap: 0.9rem;
+  align-items: baseline;
+  margin-top: 0.15rem;
+  flex-wrap: wrap;
+}
 .pos {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.68rem;
   color: var(--muted);
-  margin-top: 0.15rem;
+}
+.gender-class {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+.gc-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+}
+.gc-val {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .case-col-header {
@@ -119,6 +143,30 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 .part-label {
   text-transform: uppercase; letter-spacing: 0.06em;
   font-size: 0.7rem; color: var(--muted); align-self: center;
+}
+.adj-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding-top: 0.2rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 0.5rem;
+}
+.adj-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+.adj-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.6rem;
+  color: var(--muted);
+}
+.adj-val {
+  font-family: inherit;
+  font-size: 0.95rem;
 }
 .english {
   padding: 0.5rem 0 0.3rem;
@@ -186,14 +234,55 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   </header>
   <div class="search-row">
     <input type="text" id="search" class="search" placeholder="filter by headword, meaning, part of speech, or cognate...">
-    <span class="count" id="visible-count">53 entries</span>
+    <span class="count" id="visible-count">66 entries</span>
   </div>
   <div class="grid" id="grid">
-<article class="word-card" data-search="aiþ oath, solemn promise, sworn binding noun eid āþ eiðr aiþs">
+<article class="word-card" data-search="ain one number cardinal ein ān einn ains">
+  <header>
+    <h2 class="headword">ain</h2>
+    <div class="ipa">/&#x27;ain/</div>
+    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span></div>
+  </header>
+<div class="adj-grid">
+  <div class="adj-col">
+    <div class="adj-label">masc</div>
+    <div class="adj-val">ain</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">fem</div>
+    <div class="adj-val">aina</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">neut</div>
+    <div class="adj-val">ain</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">pl</div>
+    <div class="adj-val">ain</div>
+  </div>
+</div>
+  <div class="english">one</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ein</span><span class="cognate"><span class="cog-label">OE</span>ān</span><span class="cognate"><span class="cog-label">ON</span>einn</span><span class="cognate"><span class="cog-label">Gothic</span>ains</span></div>
+  <div class="notes">Pwgc ain
+
+Daughter forms by century-ish:
+Gothic ains (Wulfila, 4th c.) — diphthong intact
+Old Norse einn (n-assimilation later)
+Old English ān — monophthongized
+Old Saxon ēn — monophthongized
+Old Frisian ēn / ān — monophthongized
+Old High German ein — diphthong preserved
+Wachtendonck ēin (9th–10th c. Ripuarian Frankish) — mixed/transitional spelling, the long ē showing the monophthongization wave reaching Ripuarian from the Ingvaeonic side, the residual -i- preserving the older diphthongal coloring. Exactly what you&#x27;d expect from Central Franconian sitting on the Low/High German hinge.
+
+Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. The monophthongization that produced ēin hadn&#x27;t happened yet, or was barely beginning. The strongest contemporary anchor is Gothic ains — Wulfila&#x27;s translation is mid-4th c., one generation before Siegfried, and a different branch of Germanic preserving the diphthong tells you the diphthong was the live form across the whole family in that window. OHG ein on the adjacent dialect continuum confirms it from the other side: High German never monophthongized this vowel at all, so its preservation there is the strongest signal that the diphthong was the original Frankish form before regional drift split things.
+</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="aiþ oath, solemn promise, sworn binding noun masc eid āþ eiðr aiþs">
   <header>
     <h2 class="headword">aiþ</h2>
     <div class="ipa">/&#x27;aiθ/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -210,6 +299,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">aiþō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">aiþum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">aiþā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">aiþum</span></div>
   </div>
 </div>
   <div class="english">oath, solemn promise, sworn binding</div>
@@ -217,11 +307,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">PGmc *aiþaz. Diphthong *ai retained in 5th c. Ripuarian; monophthongization to ē happens later in coastal West Germanic dialects but not yet in Siegfried&#x27;s speech.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="aiþbrōþer oath-brother (sworn ritual brotherhood) noun eidbruoder āþbrōðor eiðbróðir">
+<article class="word-card" data-search="aiþbrōþer oath-brother (sworn ritual brotherhood) noun masc eidbruoder āþbrōðor eiðbróðir">
   <header>
     <h2 class="headword">aiþbrōþer</h2>
     <div class="ipa">/&#x27;aiθbrōθer/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -238,6 +328,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">aiþbrōþrō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">aiþbrōþrum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">aiþbrōþre</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">aiþbrōþrum</span></div>
   </div>
 </div>
   <div class="english">oath-brother (sworn ritual brotherhood)</div>
@@ -256,89 +347,148 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">Compound of aiþ + brōþer. Refers to sworn ritual brotherhood, a real Germanic institution (Eidbruderschaft). Most strongly attested in ON eiðbróðir; OE āþbrōðor and OHG eidbruoder also occur. Declines on the second element following the brōþer r-stem paradigm.</div>
   <div class="source">Comparative + Compound</div>
 </article>
-<article class="word-card" data-search="alina forearm, ell, ulna, elbow noun elina eln ǫln, alin, eln">
+<article class="word-card" data-search="alina forearm, ell, ulna, elbow noun fem elina eln ǫln, alin, eln">
   <header>
     <h2 class="headword">alina</h2>
     <div class="ipa">/&#x27;alina/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
   <div class="english">forearm, ell, ulna, elbow</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>elina</span><span class="cognate"><span class="cog-label">OE</span>eln</span><span class="cognate"><span class="cog-label">ON</span>ǫln, alin, eln</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="alôd freehold land, property noun ōt ēad">
+<article class="word-card" data-search="alôd freehold land, property noun neut ōt ēad">
   <header>
     <h2 class="headword">alôd</h2>
-    <div class="ipa">/&#x27;aloːd/</div>
-    <div class="pos">noun</div>
+    <div class="ipa">/&#x27;alɔːd/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
   </header>
   <div class="english">freehold land, property</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ōt</span><span class="cognate"><span class="cog-label">OE</span>ēad</span></div>
+  <div class="notes">Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="anattjan to provoke, drive verb">
+<article class="word-card" data-search="anattjan to provoke, drive verb class 1 weak">
   <header>
     <h2 class="headword">anattjan</h2>
     <div class="ipa">/&#x27;anatːjan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
   </header>
   <div class="english">to provoke, drive</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="ankja joint, limb (particularly leg or shin) noun ancha, anka ekkja">
+<article class="word-card" data-search="ankja joint, limb (particularly leg or shin) noun fem ancha, anka ekkja">
   <header>
     <h2 class="headword">ankja</h2>
     <div class="ipa">/&#x27;aŋkja/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
   <div class="english">joint, limb (particularly leg or shin)</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ancha, anka</span><span class="cognate"><span class="cog-label">ON</span>ekkja</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="ađalaro eagle noun">
+<article class="word-card" data-search="arm arm noun masc arm earm armr arms">
+  <header>
+    <h2 class="headword">arm</h2>
+    <div class="ipa">/&#x27;arm/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">arm</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">armas</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">arme</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">arm</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">armu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">armōs</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">armō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">armum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">armā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">armum</span></div>
+  </div>
+</div>
+  <div class="english">arm</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>arm</span><span class="cognate"><span class="cog-label">OE</span>earm</span><span class="cognate"><span class="cog-label">ON</span>armr</span><span class="cognate"><span class="cog-label">Gothic</span>arms</span></div>
+  <div class="notes">Matches OHG, OD, and Pwgc.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="ađalaro eagle noun masc">
   <header>
     <h2 class="headword">ađalaro</h2>
     <div class="ipa">/&#x27;aðalaro/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">eagle</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bakko ham, slice of bacon noun bahho">
+<article class="word-card" data-search="bain bone noun neut bein bān bein">
+  <header>
+    <h2 class="headword">bain</h2>
+    <div class="ipa">/&#x27;bain/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">bain</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">bainas</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">baine</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">bain</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">bainu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">bainōs</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">bainō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">bainum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">bainā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">bainum</span></div>
+  </div>
+</div>
+  <div class="english">bone</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bein</span><span class="cognate"><span class="cog-label">OE</span>bān</span><span class="cognate"><span class="cog-label">ON</span>bein</span></div>
+  <div class="notes">See &quot;ain&quot;. ai not yet monothongized</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="bakko ham, slice of bacon noun masc bahho">
   <header>
     <h2 class="headword">bakko</h2>
     <div class="ipa">/&#x27;bakːo/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">ham, slice of bacon</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bahho</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bald bold, audacious adjective bald beald, bald ballr balþs">
+<article class="word-card" data-search="bald bold, audacious adjective strong bald beald, bald ballr balþs">
   <header>
     <h2 class="headword">bald</h2>
     <div class="ipa">/&#x27;bald/</div>
-    <div class="pos">adjective</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
   </header>
   <div class="english">bold, audacious</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bald</span><span class="cognate"><span class="cog-label">OE</span>beald, bald</span><span class="cognate"><span class="cog-label">ON</span>ballr</span><span class="cognate"><span class="cog-label">Gothic</span>balþs</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="balko balk noun balko balca, bælca bjalki">
+<article class="word-card" data-search="balko balk noun masc balko balca, bælca bjalki">
   <header>
     <h2 class="headword">balko</h2>
     <div class="ipa">/&#x27;balko/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">balk</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>balko</span><span class="cognate"><span class="cog-label">OE</span>balca, bælca</span><span class="cognate"><span class="cog-label">ON</span>bjalki</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bank bench noun bank benċ bekkr">
+<article class="word-card" data-search="bank bench noun fem bank benċ bekkr">
   <header>
     <h2 class="headword">bank</h2>
     <div class="ipa">/&#x27;baŋk/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -350,11 +500,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bank</span><span class="cognate"><span class="cog-label">OE</span>benċ</span><span class="cognate"><span class="cog-label">ON</span>bekkr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blank white, shining adjective blank blanc blakkr">
+<article class="word-card" data-search="blank white, shining adjective strong blank blanc blakkr">
   <header>
     <h2 class="headword">blank</h2>
     <div class="ipa">/&#x27;blaŋk/</div>
-    <div class="pos">adjective</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
   </header>
   <div class="english">white, shining</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>blank</span><span class="cognate"><span class="cog-label">OE</span>blanc</span><span class="cognate"><span class="cog-label">ON</span>blakkr</span></div>
@@ -367,11 +517,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 </div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blād field produce noun">
+<article class="word-card" data-search="blād field produce noun neut">
   <header>
     <h2 class="headword">blād</h2>
     <div class="ipa">/&#x27;blaːd/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -383,21 +533,50 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">False friends with the word for blade</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blāo blue adjective blāo blāw blár">
+<article class="word-card" data-search="blāo blue adjective strong blāo blāw blár">
   <header>
     <h2 class="headword">blāo</h2>
     <div class="ipa">/&#x27;blaːo/</div>
-    <div class="pos">adjective</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
   </header>
   <div class="english">blue</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>blāo</span><span class="cognate"><span class="cog-label">OE</span>blāw</span><span class="cognate"><span class="cog-label">ON</span>blár</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bolla bowl, bun, ball noun bolla bolla bolli">
+<article class="word-card" data-search="blōd blood noun neut bluot blōd blóð blōþ">
+  <header>
+    <h2 class="headword">blōd</h2>
+    <div class="ipa">/&#x27;bloːd/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">blōd</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">blōdas</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">blōde</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">blōd</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">blōdu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">blōdōs</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">blōdō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">blōdum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">blōdā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">blōdum</span></div>
+  </div>
+</div>
+  <div class="english">blood</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bluot</span><span class="cognate"><span class="cog-label">OE</span>blōd</span><span class="cognate"><span class="cog-label">ON</span>blóð</span><span class="cognate"><span class="cog-label">Gothic</span>blōþ</span></div>
+  <div class="notes">Primary ō still [oː] that later develops into [uo]</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="bolla bowl, bun, ball noun fem bolla bolla bolli">
   <header>
     <h2 class="headword">bolla</h2>
     <div class="ipa">/&#x27;bolːa/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -409,11 +588,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bolla</span><span class="cognate"><span class="cog-label">OE</span>bolla</span><span class="cognate"><span class="cog-label">ON</span>bolli</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bord board noun bort bord borð baurd">
+<article class="word-card" data-search="bord board noun neut bort bord borð baurd">
   <header>
     <h2 class="headword">bord</h2>
     <div class="ipa">/&#x27;bord/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -425,21 +604,21 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bort</span><span class="cognate"><span class="cog-label">OE</span>bord</span><span class="cognate"><span class="cog-label">ON</span>borð</span><span class="cognate"><span class="cog-label">Gothic</span>baurd</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="borganjan bargain, negotiate verb borgōn, borgēn borgian borga">
+<article class="word-card" data-search="borganjan bargain, negotiate verb class 1 weak borgōn, borgēn borgian borga">
   <header>
     <h2 class="headword">borganjan</h2>
     <div class="ipa">/&#x27;borgaɲjan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
   </header>
   <div class="english">bargain, negotiate</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>borgōn, borgēn</span><span class="cognate"><span class="cog-label">OE</span>borgian</span><span class="cognate"><span class="cog-label">ON</span>borga</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bosk bush, forest noun busk busc buskr">
+<article class="word-card" data-search="bosk bush, forest noun masc busk busc buskr">
   <header>
     <h2 class="headword">bosk</h2>
     <div class="ipa">/&#x27;bosk/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -456,6 +635,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">boskō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">boskum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">boskā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">boskum</span></div>
   </div>
 </div>
   <div class="english">bush, forest</div>
@@ -463,72 +643,72 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">Alternative spelling: busk</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brahsima bream noun brahsma brosma">
+<article class="word-card" data-search="brahsima bream noun fem brahsma brosma">
   <header>
     <h2 class="headword">brahsima</h2>
     <div class="ipa">/&#x27;brahsima/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
   <div class="english">bream</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brahsma</span><span class="cognate"><span class="cog-label">ON</span>brosma</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brambazi blackberry noun brāmberi brēmber">
+<article class="word-card" data-search="brambazi blackberry noun neut brāmberi brēmber">
   <header>
     <h2 class="headword">brambazi</h2>
     <div class="ipa">/&#x27;brambaʐi/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
   </header>
   <div class="english">blackberry</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brāmberi</span><span class="cognate"><span class="cog-label">OE</span>brēmber</span></div>
   <div class="notes">Written as brambasi. Dialectal pronounciation. /&#x27;brambazi/ is the specific accent spread to France. /&#x27;brambaʐi/ is likely what was said in 5th century Rhineland.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brekan to break verb brëhhan brecan brikan">
+<article class="word-card" data-search="brekan to break verb class iv strong brëhhan brecan brikan">
   <header>
     <h2 class="headword">brekan</h2>
     <div class="ipa">/&#x27;brekan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class IV Strong</span></span></div>
   </header>
   <div class="english">to break</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brëhhan</span><span class="cognate"><span class="cog-label">OE</span>brecan</span><span class="cognate"><span class="cog-label">Gothic</span>brikan</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brimman to growl, grumble verb brummōn">
+<article class="word-card" data-search="brimman to growl, grumble verb class iii strong brummōn">
   <header>
     <h2 class="headword">brimman</h2>
     <div class="ipa">/&#x27;brimːan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span></div>
   </header>
   <div class="english">to growl, grumble</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brummōn</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brunnia chainmail, suit of armor, breastplate noun brunna byrne">
+<article class="word-card" data-search="brunnia chainmail, suit of armor, breastplate noun fem brunna byrne">
   <header>
     <h2 class="headword">brunnia</h2>
     <div class="ipa">/&#x27;brunːia/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
   <div class="english">chainmail, suit of armor, breastplate</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brunna</span><span class="cognate"><span class="cog-label">OE</span>byrne</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brādo piece of meat noun brātan brǣdan bræða">
+<article class="word-card" data-search="brādo piece of meat noun masc brātan brǣdan bræða">
   <header>
     <h2 class="headword">brādo</h2>
     <div class="ipa">/&#x27;braːdo/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">piece of meat</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brātan</span><span class="cognate"><span class="cog-label">OE</span>brǣdan</span><span class="cognate"><span class="cog-label">ON</span>bræða</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brōþer brother noun bruoder brōþor bróðir brōþar">
+<article class="word-card" data-search="brōþer brother noun masc bruoder brōþor bróðir brōþar">
   <header>
     <h2 class="headword">brōþer</h2>
     <div class="ipa">/&#x27;brōθer/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -545,38 +725,45 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">brōþrō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">brōþrum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">brōþre</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">brōþrum</span></div>
   </div>
 </div>
   <div class="english">brother</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bruoder</span><span class="cognate"><span class="cog-label">OE</span>brōþor</span><span class="cognate"><span class="cog-label">ON</span>bróðir</span><span class="cognate"><span class="cog-label">Gothic</span>brōþar</span></div>
-  <div class="notes">PGmc *brōþēr (kinship r-stem). One of the most stable Germanic words across all branches. /θ/ retained in 5th c. Ripuarian (OHG bruoder shows the later θ → d shift, post-Siegfried). R-stem oblique forms syncopate the medial vowel: brōþer → brōþres, brōþre.</div>
+  <div class="notes">PGmc *brōþēr (kinship r-stem). One of the most stable Germanic words across all branches. /θ/ retained in 5th c. Ripuarian (OHG bruoder shows the later θ → d shift, post-Siegfried). R-stem oblique forms syncopate the medial vowel: brōþer → brōþres, brōþre. Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="brūn brown adjective brūn brūn brúnn">
+<article class="word-card" data-search="brūn brown adjective strong brūn brūn brúnn">
   <header>
     <h2 class="headword">brūn</h2>
     <div class="ipa">/&#x27;bruːn/</div>
-    <div class="pos">adjective</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
   </header>
   <div class="english">brown</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brūn</span><span class="cognate"><span class="cog-label">OE</span>brūn</span><span class="cognate"><span class="cog-label">ON</span>brúnn</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="burg fortification, fortified city noun burg burg borg baurgs">
+<article class="word-card" data-search="burg fortification, fortified city noun fem burg burg borg baurgs">
   <header>
     <h2 class="headword">burg</h2>
     <div class="ipa">/&#x27;burg/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">burg</span></div>
+  </div>
+</div>
   <div class="english">fortification, fortified city</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>burg</span><span class="cognate"><span class="cog-label">OE</span>burg</span><span class="cognate"><span class="cog-label">ON</span>borg</span><span class="cognate"><span class="cog-label">Gothic</span>baurgs</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bëra funeral bier noun bāra bēr bára">
+<article class="word-card" data-search="bëra funeral bier noun fem bāra bēr bára">
   <header>
     <h2 class="headword">bëra</h2>
     <div class="ipa">/&#x27;beːra/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -588,42 +775,43 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bāra</span><span class="cognate"><span class="cog-label">OE</span>bēr</span><span class="cognate"><span class="cog-label">ON</span>bára</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
+<article class="word-card" data-search="bôtan to beat verb class vii strong bōzan, bōzzan bēatan bauta bautan">
+  <header>
+    <h2 class="headword">bôtan</h2>
+    <div class="ipa">/&#x27;bɔːtan/</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class VII Strong</span></span></div>
+  </header>
+  <div class="english">to beat</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bōzan, bōzzan</span><span class="cognate"><span class="cog-label">OE</span>bēatan</span><span class="cognate"><span class="cog-label">ON</span>bauta</span><span class="cognate"><span class="cog-label">Gothic</span>bautan</span></div>
+  <div class="notes">Primary ō still [oː] that later develops into [uo]</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
 <article class="word-card" data-search="bī by, at, near, around preposition bī bi bi">
   <header>
     <h2 class="headword">bī</h2>
     <div class="ipa">/biː/</div>
-    <div class="pos">preposition</div>
+    <div class="header-meta"><span class="pos">preposition</span></div>
   </header>
   <div class="english">by, at, near, around</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bī</span><span class="cognate"><span class="cog-label">OE</span>bi</span><span class="cognate"><span class="cog-label">Gothic</span>bi</span></div>
   <div class="notes">Identical to OD and OHG. Also Identical to Pwgc.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="bōtan to beat verb bōzan, bōzzan bēatan bauta bautan">
-  <header>
-    <h2 class="headword">bōtan</h2>
-    <div class="ipa">/&#x27;boːtan/</div>
-    <div class="pos">verb</div>
-  </header>
-  <div class="english">to beat</div>
-<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bōzan, bōzzan</span><span class="cognate"><span class="cog-label">OE</span>bēatan</span><span class="cognate"><span class="cog-label">ON</span>bauta</span><span class="cognate"><span class="cog-label">Gothic</span>bautan</span></div>
-  <div class="source">Wartburg + Reconstructed</div>
-</article>
-<article class="word-card" data-search="būk belly noun būh būc, būcc búkr">
+<article class="word-card" data-search="būk belly noun masc būh būc, būcc búkr">
   <header>
     <h2 class="headword">būk</h2>
     <div class="ipa">/&#x27;buːk/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">belly</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>būh</span><span class="cognate"><span class="cog-label">OE</span>būc, būcc</span><span class="cognate"><span class="cog-label">ON</span>búkr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dag day noun tag dæġ dagr dags">
+<article class="word-card" data-search="dag day noun masc tag dæġ dagr dags">
   <header>
     <h2 class="headword">dag</h2>
     <div class="ipa">/&#x27;dag/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -641,6 +829,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">dagō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">dagum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">dagā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">dagum</span></div>
   </div>
 </div>
   <div class="english">day</div>
@@ -648,62 +837,60 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">Wachtendonck Psalms has dag. Unchanged since Pwgc.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="danni flat surface, floor noun tenni denn, denu">
+<article class="word-card" data-search="danni flat surface, floor noun neut tenni denn, denu">
   <header>
     <h2 class="headword">danni</h2>
     <div class="ipa">/&#x27;danːi/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
   </header>
   <div class="english">flat surface, floor</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tenni</span><span class="cognate"><span class="cog-label">OE</span>denn, denu</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="daroþ javelin, dart noun tart daroþ darraðr">
+<article class="word-card" data-search="daroþ javelin, dart noun masc tart daroþ darraðr">
   <header>
     <h2 class="headword">daroþ</h2>
     <div class="ipa">/&#x27;daroθ/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">javelin, dart</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tart</span><span class="cognate"><span class="cog-label">OE</span>daroþ</span><span class="cognate"><span class="cog-label">ON</span>darraðr</span></div>
   <div class="notes">Spelled as daroth in Wartburg.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dintjan
- to move back and forth verb">
+<article class="word-card" data-search="dintjan to move back and forth verb class 1 weak">
   <header>
-    <h2 class="headword">dintjan
-</h2>
+    <h2 class="headword">dintjan</h2>
     <div class="ipa">/&#x27;dintjan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
   </header>
   <div class="english">to move back and forth</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="draiƀjo sprout, sucker, offshoot noun">
+<article class="word-card" data-search="draiƀjo sprout, sucker, offshoot noun masc">
   <header>
     <h2 class="headword">draiƀjo</h2>
     <div class="ipa">/&#x27;draiβjo/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">sprout, sucker, offshoot</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dubban to dub, to strike with honor verb dubbian">
+<article class="word-card" data-search="dubban to dub, to strike with honor verb class 1 weak dubbian">
   <header>
     <h2 class="headword">dubban</h2>
     <div class="ipa">/&#x27;dubːan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
   </header>
   <div class="english">to dub, to strike with honor</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OE</span>dubbian</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="ediling prince, nobleman, noble vassal noun adaling æþeling, æðeling, eþeling ǫðlingr">
+<article class="word-card" data-search="ediling prince, nobleman, noble vassal noun masc adaling æþeling, æðeling, eþeling ǫðlingr">
   <header>
     <h2 class="headword">ediling</h2>
     <div class="ipa">/&#x27;ediliŋ/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -720,6 +907,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">edilingō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">edilingum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">edilingā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">edilingum</span></div>
   </div>
 </div>
   <div class="english">prince, nobleman, noble vassal</div>
@@ -727,11 +915,74 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">Also spelled eþiling and pronounced /&#x27;eθiliŋ/</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="helm helmet noun hëlm helm hjalmr hilms">
+<article class="word-card" data-search="faihiđa feud noun fem faihida fǣhþ">
+  <header>
+    <h2 class="headword">faihiđa</h2>
+    <div class="ipa">/&#x27;faihiða/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+  </header>
+  <div class="english">feud</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>faihida</span><span class="cognate"><span class="cog-label">OE</span>fǣhþ</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="flōd flood noun fluot flōd flóð, flœðr flōdus">
+  <header>
+    <h2 class="headword">flōd</h2>
+    <div class="ipa">/&#x27;floːd/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">flood</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fluot</span><span class="cognate"><span class="cog-label">OE</span>flōd</span><span class="cognate"><span class="cog-label">ON</span>flóð, flœðr</span><span class="cognate"><span class="cog-label">Gothic</span>flōdus</span></div>
+  <div class="notes">Post uo shift from Wartburg is fluod but before final d=&gt;t shift. Siegfried would have said flōd, as the ō=&gt;uo shift occured in the 8th century per Clovis&#x27; latin name. Primary ō still [oː] that later develops into [uo]</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fodar fodder, feed for animals noun neut fuotar fōdor fóðr">
+  <header>
+    <h2 class="headword">fodar</h2>
+    <div class="ipa">/&#x27;fodar/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+  <div class="english">fodder, feed for animals</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fuotar</span><span class="cognate"><span class="cog-label">OE</span>fōdor</span><span class="cognate"><span class="cog-label">ON</span>fóðr</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="frank frank, free, spear noun masc franco franca frakki">
+  <header>
+    <h2 class="headword">frank</h2>
+    <div class="ipa">/&#x27;fraŋk/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">Frank, free, spear</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>franco</span><span class="cognate"><span class="cog-label">OE</span>franca</span><span class="cognate"><span class="cog-label">ON</span>frakki</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fōt foot noun masc fuoȥ fōt fótr fōtus">
+  <header>
+    <h2 class="headword">fōt</h2>
+    <div class="ipa">/&#x27;foːt/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">foot</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fuoȥ</span><span class="cognate"><span class="cog-label">OE</span>fōt</span><span class="cognate"><span class="cog-label">ON</span>fótr</span><span class="cognate"><span class="cog-label">Gothic</span>fōtus</span></div>
+  <div class="notes">Not yet diphongized to fuot</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="hand hand noun fem hant hand hǫnd handus">
+  <header>
+    <h2 class="headword">hand</h2>
+    <div class="ipa">/&#x27;hand/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+  </header>
+  <div class="english">hand</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hant</span><span class="cognate"><span class="cog-label">OE</span>hand</span><span class="cognate"><span class="cog-label">ON</span>hǫnd</span><span class="cognate"><span class="cog-label">Gothic</span>handus</span></div>
+  <div class="notes">Pwgc handu, OHG and OD hant, 5th century final d has not yet shifted to t.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="helm helmet noun masc hëlm helm hjalmr hilms">
   <header>
     <h2 class="headword">helm</h2>
     <div class="ipa">/&#x27;helm/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -748,6 +999,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">helmō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">helmum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">helmā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">helmum</span></div>
   </div>
 </div>
   <div class="english">helmet</div>
@@ -765,11 +1017,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 </div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="hring ring, circle noun ring, hring hring hringr hriggs">
+<article class="word-card" data-search="hring ring, circle noun masc ring, hring hring hringr hriggs">
   <header>
     <h2 class="headword">hring</h2>
     <div class="ipa">/&#x27;hriŋ/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -786,6 +1038,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">hringō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">hringum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">hringā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">hringum</span></div>
   </div>
 </div>
   <div class="english">ring, circle</div>
@@ -799,21 +1052,21 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 </div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="hwīt white adjective wīȥ, hwīȥ hwīt hvítr ƕeits">
+<article class="word-card" data-search="hwīt white adjective strong wīȥ, hwīȥ hwīt hvítr ƕeits">
   <header>
     <h2 class="headword">hwīt</h2>
     <div class="ipa">/&#x27;ʍiːt/</div>
-    <div class="pos">adjective</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
   </header>
   <div class="english">white</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wīȥ, hwīȥ</span><span class="cognate"><span class="cog-label">OE</span>hwīt</span><span class="cognate"><span class="cog-label">ON</span>hvítr</span><span class="cognate"><span class="cog-label">Gothic</span>ƕeits</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="ik i (1st person singular) pronoun ih ic ek ik">
+<article class="word-card" data-search="ik i (1st person singular) pronoun personal ih ic ek ik">
   <header>
     <h2 class="headword">ik</h2>
     <div class="ipa">/ik/</div>
-    <div class="pos">pronoun</div>
+    <div class="header-meta"><span class="pos">pronoun</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">personal</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -848,7 +1101,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <header>
     <h2 class="headword">in</h2>
     <div class="ipa">/in/</div>
-    <div class="pos">preposition</div>
+    <div class="header-meta"><span class="pos">preposition</span></div>
   </header>
   <div class="english">in</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>in</span><span class="cognate"><span class="cog-label">OE</span>in</span><span class="cognate"><span class="cog-label">ON</span>í</span><span class="cognate"><span class="cog-label">Gothic</span>in</span></div>
@@ -862,11 +1115,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">Matches Pwgc, OE, OHG, OD</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="kuning king noun kuning cyning konungr">
+<article class="word-card" data-search="kuning king noun masc kuning cyning konungr">
   <header>
     <h2 class="headword">kuning</h2>
-    <div class="ipa">/ˈkuniŋ/</div>
-    <div class="pos">noun</div>
+    <div class="ipa">/&#x27;kuniŋ/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -883,6 +1136,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">kuningō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">kuningum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">kuningā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">kuningum</span></div>
   </div>
 </div>
   <div class="english">king</div>
@@ -912,11 +1166,28 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="rīn rhine name rīn rīn rín">
+<article class="word-card" data-search="naht night noun fem naht niht nátt, nǫ́tt nahts">
+  <header>
+    <h2 class="headword">naht</h2>
+    <div class="ipa">/&#x27;naht/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">naht</span></div>
+  </div>
+</div>
+  <div class="english">night</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>naht</span><span class="cognate"><span class="cog-label">OE</span>niht</span><span class="cognate"><span class="cog-label">ON</span>nátt, nǫ́tt</span><span class="cognate"><span class="cog-label">Gothic</span>nahts</span></div>
+  <div class="notes">Matches OHG, OD, and Pwgc.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="rīn rhine name masc rīn rīn rín">
   <header>
     <h2 class="headword">rīn</h2>
     <div class="ipa">/&#x27;riːn/</div>
-    <div class="pos">name</div>
+    <div class="header-meta"><span class="pos">name</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -938,11 +1209,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="sigifriþ victory-peace (personal name) name sigifrid sigefrið sigfriðr">
+<article class="word-card" data-search="sigifriþ victory-peace (personal name) name masc sigifrid sigefrið sigfriðr">
   <header>
     <h2 class="headword">sigifriþ</h2>
-    <div class="ipa">/ˈsiɣifriθ/</div>
-    <div class="pos">name</div>
+    <div class="ipa">/&#x27;siɣifriθ/</div>
+    <div class="header-meta"><span class="pos">name</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -985,11 +1256,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">Voiced velar fricative reverse engineered from MHG Sivrit and ON Sigifrið.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="sunu son noun sunu sunu sonr sunus">
+<article class="word-card" data-search="sunu son noun masc sunu sunu sonr sunus">
   <header>
     <h2 class="headword">sunu</h2>
-    <div class="ipa">/ˈsunu/</div>
-    <div class="pos">noun</div>
+    <div class="ipa">/&#x27;sunu/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -1026,11 +1297,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="swimman to swim verb swimman swimman svimja">
+<article class="word-card" data-search="swimman to swim verb class iii strong swimman swimman svimja">
   <header>
     <h2 class="headword">swimman</h2>
     <div class="ipa">/&#x27;swim:an/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span></div>
   </header>
 <div class="verb-parts">
   <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">swimman</span></div>
@@ -1053,11 +1324,36 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">PGmc *swimmaną. Strong verb class III, nasal+consonant subtype. Infinitive identical across OE, OD, OHG (all swimman). Ablaut series i-a-u-o: present stem i (swimmit), past sg a-grade (swam), past pl u-grade (swummun), past participle o-grade (swommen). The past 2sg uses the plural u-grade stem (swummi) — class III peculiarity. Present plural endings use -amēs/-at/-ant rather than later OHG -emēs/-et/-ent.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="wesan to be verb wesan wesan, bēon">
+<article class="word-card" data-search="twaine two number cardinal zwēne twēġen tveir twai">
+  <header>
+    <h2 class="headword">twaine</h2>
+    <div class="ipa">/&#x27;twaine/</div>
+    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span></div>
+  </header>
+<div class="adj-grid">
+  <div class="adj-col">
+    <div class="adj-label">masc</div>
+    <div class="adj-val">twaine</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">fem</div>
+    <div class="adj-val">twā</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">neut</div>
+    <div class="adj-val">twai</div>
+  </div>
+</div>
+  <div class="english">two</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>zwēne</span><span class="cognate"><span class="cog-label">OE</span>twēġen</span><span class="cognate"><span class="cog-label">ON</span>tveir</span><span class="cognate"><span class="cog-label">Gothic</span>twai</span></div>
+  <div class="notes">Reconstructed from comparative WGmc evidence; not attested in Wachtendonck. Cf. Goth. twai/twōs/twa, OS twēne/twā/twē, OHG zwēne/zwā/zwei. Note unshifted /tw-/ confirmed by Frankish loans into Old French.</div>
+  <div class="source">Comparative</div>
+</article>
+<article class="word-card" data-search="wesan to be verb irregular wesan wesan, bēon">
   <header>
     <h2 class="headword">wesan</h2>
     <div class="ipa">/&#x27;wesan/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Irregular</span></span></div>
   </header>
 <div class="verb-parts">
   <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">wesan</span></div>
@@ -1105,11 +1401,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">OE, OHG, and OD wesan. bin/bim, bist/bis, ist from Wachtendonck Psalms</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="winnan to strive, struggle, toil for, fight for verb winnan winnan vinna winnan">
+<article class="word-card" data-search="winnan to strive, struggle, toil for, fight for verb class iii strong winnan winnan vinna winnan">
   <header>
     <h2 class="headword">winnan</h2>
     <div class="ipa">/&#x27;win:an/</div>
-    <div class="pos">verb</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span></div>
   </header>
 <div class="verb-parts">
   <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">winnan</span></div>
@@ -1132,20 +1428,45 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">PGmc *winnaną. Strong verb class III, nasal+consonant subtype. Infinitive identical across OE, OD, OHG (all winnan). Ablaut series i-a-u-u: present stem i (winnit), past sg a-grade (wann), past pl u-grade (wunnun), past participle u-grade (wunnen — geminate nn blocks lowering to o, unlike swommen). Original meaning is strive/struggle/toil/labor-for; the English semantic shift to &quot;win&quot; (achieve victory) is a late Old English development. Gothic winnan attests the related sense of &quot;suffer&quot; (cf. Gothic wunns &quot;passion&quot;).</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="âlgêr spear for fishing eel noun">
+<article class="word-card" data-search="âlgêr spear for fishing eel noun masc">
   <header>
     <h2 class="headword">âlgêr</h2>
     <div class="ipa">/&#x27;aːlgeːr/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
   <div class="english">spear for fishing eel</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="þū you (2nd person singular) pronoun dū þū þú þu">
+<article class="word-card" data-search="þrī three number cardinal drī þrīe, þrī þrír þreis">
+  <header>
+    <h2 class="headword">þrī</h2>
+    <div class="ipa">/&#x27;θriː/</div>
+    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span></div>
+  </header>
+<div class="adj-grid">
+  <div class="adj-col">
+    <div class="adj-label">masc</div>
+    <div class="adj-val">þrī</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">fem</div>
+    <div class="adj-val">þrīo</div>
+  </div>
+  <div class="adj-col">
+    <div class="adj-label">neut</div>
+    <div class="adj-val">þriu</div>
+  </div>
+</div>
+  <div class="english">three</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>drī</span><span class="cognate"><span class="cog-label">OE</span>þrīe, þrī</span><span class="cognate"><span class="cog-label">ON</span>þrír</span><span class="cognate"><span class="cog-label">Gothic</span>þreis</span></div>
+  <div class="notes">Reconstructed from comparative WGmc + Gothic evidence; not attested in Wachtendonck. Cf. Goth. þreis/þrijōs/þrija, OS thrie/thriā/thriu, OHG drī/drīo/driu. Initial /θ-/ confirmed by 5th-6th c. Latin renderings of Frankish names (Theod- not Deod-).</div>
+  <div class="source">Comparative</div>
+</article>
+<article class="word-card" data-search="þū you (2nd person singular) pronoun personal dū þū þú þu">
   <header>
     <h2 class="headword">þū</h2>
     <div class="ipa">/θū/</div>
-    <div class="pos">pronoun</div>
+    <div class="header-meta"><span class="pos">pronoun</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">personal</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -1172,11 +1493,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="notes">PGmc *þū (2sg). Pre-High German consonant shift form: thorn /θ/ retained (OHG dū shows the later þ → d shift, post-Siegfried). Cognates: Gothic þu, OS thū, OE þū, ON þú.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="āl eel noun āl ǣl, ēl áll">
+<article class="word-card" data-search="āl eel noun masc āl ǣl, ēl áll">
   <header>
     <h2 class="headword">āl</h2>
     <div class="ipa">/&#x27;aːl/</div>
-    <div class="pos">noun</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
   </header>
 <div class="cases">
   <div>
@@ -1193,6 +1514,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">ālō</span></div>
     <div class="case-row"><span class="case-label">dat</span><span class="case-val">ālum</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">ālā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">ālum</span></div>
   </div>
 </div>
   <div class="english">eel</div>
@@ -1207,7 +1529,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   <div class="source">reconstructed</div>
 </article>
   </div>
-  <div class="meta">generated from siegfried_lang.sqlite at 2026-06-07 19:40</div>
+  <div class="meta">generated from siegfried_lang.sqlite at 2026-06-10 21:36</div>
 </div>
 <script>
 const search = document.getElementById('search');
