@@ -12,6 +12,7 @@
   --accent: #5c2c10;
   --border: #d8c8a8;
   --hover: #efe5cd;
+  --pill-bg: #e8dcb8;
 }
 * { box-sizing: border-box; }
 body {
@@ -32,9 +33,11 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 .subtitle { color: var(--muted); font-style: italic; font-size: 1rem; }
 .search-row {
   display: flex; gap: 0.75rem; margin-bottom: 1.5rem; align-items: center;
+  flex-wrap: wrap;
 }
 .search {
   flex: 1;
+  min-width: 240px;
   padding: 0.7rem 1rem;
   font-size: 1rem;
   border: 1px solid var(--border);
@@ -44,6 +47,18 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   font-family: inherit;
 }
 .search:focus { outline: none; border-color: var(--accent); }
+.cat-filter {
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 180px;
+}
+.cat-filter:focus { outline: none; border-color: var(--accent); }
 .count {
   color: var(--muted);
   font-size: 0.85rem;
@@ -112,6 +127,16 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 .gc-val {
   text-transform: uppercase;
   letter-spacing: 0.12em;
+}
+.category-pill {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  background: var(--pill-bg);
+  color: var(--accent);
+  font-size: 0.7rem;
+  border-radius: 10px;
+  font-style: italic;
+  letter-spacing: 0.02em;
 }
 .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .case-col-header {
@@ -234,14 +259,26 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   </header>
   <div class="search-row">
     <input type="text" id="search" class="search" placeholder="filter by headword, meaning, part of speech, or cognate...">
-    <span class="count" id="visible-count">66 entries</span>
+    <select id="cat-filter" class="cat-filter"><option value="">all categories</option><option value="animal">animal</option><option value="body part">body part</option><option value="color">color</option><option value="compound/kenning">compound/kenning</option><option value="heroic">heroic</option><option value="kinship">kinship</option><option value="metal">metal</option><option value="nature">nature</option><option value="number">number</option><option value="time">time</option><option value="weapon">weapon</option></select>
+    <span class="count" id="visible-count">132 entries</span>
   </div>
   <div class="grid" id="grid">
-<article class="word-card" data-search="ain one number cardinal ein ān einn ains">
+<article class="word-card" data-search="ahsla shoulder noun fem body part ahsala eaxl ǫxl" data-category="body part">
+  <header>
+    <h2 class="headword">ahsla</h2>
+    <div class="ipa">/&#x27;ahsla/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">body part</span></div>
+  </header>
+  <div class="english">shoulder</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ahsala</span><span class="cognate"><span class="cog-label">OE</span>eaxl</span><span class="cognate"><span class="cog-label">ON</span>ǫxl</span></div>
+  <div class="notes">OHG ahsala. Pwgc ahslu.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="ain one number cardinal number ein ān einn ains" data-category="number">
   <header>
     <h2 class="headword">ain</h2>
     <div class="ipa">/&#x27;ain/</div>
-    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span></div>
+    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span><span class="category-pill">number</span></div>
   </header>
 <div class="adj-grid">
   <div class="adj-col">
@@ -278,11 +315,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="aiþ oath, solemn promise, sworn binding noun masc eid āþ eiðr aiþs">
+<article class="word-card" data-search="aiþ oath, solemn promise, sworn binding noun masc heroic eid āþ eiðr aiþs" data-category="heroic">
   <header>
     <h2 class="headword">aiþ</h2>
     <div class="ipa">/&#x27;aiθ/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">heroic</span></div>
   </header>
 <div class="cases">
   <div>
@@ -307,11 +344,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *aiþaz. Diphthong *ai retained in 5th c. Ripuarian; monophthongization to ē happens later in coastal West Germanic dialects but not yet in Siegfried&#x27;s speech.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="aiþbrōþer oath-brother (sworn ritual brotherhood) noun masc eidbruoder āþbrōðor eiðbróðir">
+<article class="word-card" data-search="aiþbrōþer oath-brother (sworn ritual brotherhood) noun masc compound/kenning eidbruoder āþbrōðor eiðbróðir" data-category="compound/kenning">
   <header>
     <h2 class="headword">aiþbrōþer</h2>
     <div class="ipa">/&#x27;aiθbrōθer/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">compound/kenning</span></div>
   </header>
 <div class="cases">
   <div>
@@ -347,17 +384,28 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Compound of aiþ + brōþer. Refers to sworn ritual brotherhood, a real Germanic institution (Eidbruderschaft). Most strongly attested in ON eiðbróðir; OE āþbrōðor and OHG eidbruoder also occur. Declines on the second element following the brōþer r-stem paradigm.</div>
   <div class="source">Comparative + Compound</div>
 </article>
-<article class="word-card" data-search="alina forearm, ell, ulna, elbow noun fem elina eln ǫln, alin, eln">
+<article class="word-card" data-search="al all determiner al, all eall, all allr alls" data-category="">
+  <header>
+    <h2 class="headword">al</h2>
+    <div class="ipa">/al/</div>
+    <div class="header-meta"><span class="pos">determiner</span></div>
+  </header>
+  <div class="english">all</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>al, all</span><span class="cognate"><span class="cog-label">OE</span>eall, all</span><span class="cognate"><span class="cog-label">ON</span>allr</span><span class="cognate"><span class="cog-label">Gothic</span>alls</span></div>
+  <div class="notes">OHG and OD al</div>
+  <div class="source">Comparative</div>
+</article>
+<article class="word-card" data-search="alina forearm, ell, ulna, elbow noun fem body part elina eln ǫln, alin, eln" data-category="body part">
   <header>
     <h2 class="headword">alina</h2>
     <div class="ipa">/&#x27;alina/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">body part</span></div>
   </header>
   <div class="english">forearm, ell, ulna, elbow</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>elina</span><span class="cognate"><span class="cog-label">OE</span>eln</span><span class="cognate"><span class="cog-label">ON</span>ǫln, alin, eln</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="alôd freehold land, property noun neut ōt ēad">
+<article class="word-card" data-search="alôd freehold land, property noun neut ōt ēad" data-category="">
   <header>
     <h2 class="headword">alôd</h2>
     <div class="ipa">/&#x27;alɔːd/</div>
@@ -368,7 +416,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="anattjan to provoke, drive verb class 1 weak">
+<article class="word-card" data-search="anattjan to provoke, drive verb class 1 weak" data-category="">
   <header>
     <h2 class="headword">anattjan</h2>
     <div class="ipa">/&#x27;anatːjan/</div>
@@ -377,21 +425,21 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="english">to provoke, drive</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="ankja joint, limb (particularly leg or shin) noun fem ancha, anka ekkja">
+<article class="word-card" data-search="ankja joint, limb (particularly leg or shin) noun fem body part ancha, anka ekkja" data-category="body part">
   <header>
     <h2 class="headword">ankja</h2>
     <div class="ipa">/&#x27;aŋkja/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">body part</span></div>
   </header>
   <div class="english">joint, limb (particularly leg or shin)</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ancha, anka</span><span class="cognate"><span class="cog-label">ON</span>ekkja</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="arm arm noun masc arm earm armr arms">
+<article class="word-card" data-search="arm arm noun masc body part arm earm armr arms" data-category="body part">
   <header>
     <h2 class="headword">arm</h2>
     <div class="ipa">/&#x27;arm/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">body part</span></div>
   </header>
 <div class="cases">
   <div>
@@ -416,20 +464,31 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Matches OHG, OD, and Pwgc.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="ađalaro eagle noun masc">
+<article class="word-card" data-search="auga eye noun neut body part auga, ouga ēage auga augō" data-category="body part">
+  <header>
+    <h2 class="headword">auga</h2>
+    <div class="ipa">/&#x27;auɣa/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pill">body part</span></div>
+  </header>
+  <div class="english">eye</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>auga, ouga</span><span class="cognate"><span class="cog-label">OE</span>ēage</span><span class="cognate"><span class="cog-label">ON</span>auga</span><span class="cognate"><span class="cog-label">Gothic</span>augō</span></div>
+  <div class="notes">PGmc *augō- &quot;eye.&quot; Retains diphthong /au/ in 5th-c. Ripuarian because the following /g/ is velar, outside the dental-conditioned monophthongization environment. Parallels OHG auga (preserved diphthong). The later non-dental northern monophthongization (Old Saxon ōga, Old Low Franconian/Wachtendonck ōuga 9th-10th c., Middle Dutch oog) is post-Siegfried by 4+ centuries. Modern Kölsch Aug (sg.) / Ooge (pl.) preserves both reflexes within a single inflectional paradigm.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="ađalaro eagle noun masc animal" data-category="animal">
   <header>
     <h2 class="headword">ađalaro</h2>
     <div class="ipa">/&#x27;aðalaro/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
   </header>
   <div class="english">eagle</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bain bone noun neut bein bān bein">
+<article class="word-card" data-search="bain bone noun neut body part bein bān bein" data-category="body part">
   <header>
     <h2 class="headword">bain</h2>
     <div class="ipa">/&#x27;bain/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pill">body part</span></div>
   </header>
 <div class="cases">
   <div>
@@ -454,7 +513,36 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">See &quot;ain&quot;. ai not yet monothongized</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bakko ham, slice of bacon noun masc bahho">
+<article class="word-card" data-search="bair boar noun masc animal bēr bār bassi" data-category="animal">
+  <header>
+    <h2 class="headword">bair</h2>
+    <div class="ipa">/&#x27;bair/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">bair</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">bairas</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">baire</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">bair</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">bairu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">bairōs</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">bairō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">bairum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">bairā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">bairum</span></div>
+  </div>
+</div>
+  <div class="english">boar</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bēr</span><span class="cognate"><span class="cog-label">OE</span>bār</span><span class="cognate"><span class="cog-label">ON</span>bassi</span></div>
+  <div class="notes">still ai</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="bakko ham, slice of bacon noun masc bahho" data-category="">
   <header>
     <h2 class="headword">bakko</h2>
     <div class="ipa">/&#x27;bakːo/</div>
@@ -464,7 +552,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bahho</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bald bold, audacious adjective strong bald beald, bald ballr balþs">
+<article class="word-card" data-search="bald bold, audacious adjective strong bald beald, bald ballr balþs" data-category="">
   <header>
     <h2 class="headword">bald</h2>
     <div class="ipa">/&#x27;bald/</div>
@@ -474,7 +562,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bald</span><span class="cognate"><span class="cog-label">OE</span>beald, bald</span><span class="cognate"><span class="cog-label">ON</span>ballr</span><span class="cognate"><span class="cog-label">Gothic</span>balþs</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="balko balk noun masc balko balca, bælca bjalki">
+<article class="word-card" data-search="balko balk noun masc balko balca, bælca bjalki" data-category="">
   <header>
     <h2 class="headword">balko</h2>
     <div class="ipa">/&#x27;balko/</div>
@@ -484,7 +572,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>balko</span><span class="cognate"><span class="cog-label">OE</span>balca, bælca</span><span class="cognate"><span class="cog-label">ON</span>bjalki</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bank bench noun fem bank benċ bekkr">
+<article class="word-card" data-search="bank bench noun fem bank benċ bekkr" data-category="">
   <header>
     <h2 class="headword">bank</h2>
     <div class="ipa">/&#x27;baŋk/</div>
@@ -500,13 +588,57 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bank</span><span class="cognate"><span class="cog-label">OE</span>benċ</span><span class="cognate"><span class="cog-label">ON</span>bekkr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blank white, shining adjective strong blank blanc blakkr">
+<article class="word-card" data-search="baum tree noun masc nature bēam boum baðmr bagms" data-category="nature">
+  <header>
+    <h2 class="headword">baum</h2>
+    <div class="ipa">/&#x27;baum/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">nature</span></div>
+  </header>
+  <div class="english">tree</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bēam</span><span class="cognate"><span class="cog-label">OE</span>boum</span><span class="cognate"><span class="cog-label">ON</span>baðmr</span><span class="cognate"><span class="cog-label">Gothic</span>bagms</span></div>
+  <div class="notes">Pre au shift</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="bazi berry noun beri berġe ber" data-category="">
+  <header>
+    <h2 class="headword">bazi</h2>
+    <div class="ipa">/&#x27;baʐi/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">berry</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>beri</span><span class="cognate"><span class="cog-label">OE</span>berġe</span><span class="cognate"><span class="cog-label">ON</span>ber</span></div>
+  <div class="notes">from brambazi</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="bero bear noun masc animal bëro bera beri baira" data-category="animal">
+  <header>
+    <h2 class="headword">bero</h2>
+    <div class="ipa">/&#x27;bear/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">bear</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bëro</span><span class="cognate"><span class="cog-label">OE</span>bera</span><span class="cognate"><span class="cog-label">ON</span>beri</span><span class="cognate"><span class="cog-label">Gothic</span>baira</span></div>
+  <div class="notes">Same word OD and OS.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="blak black, charred adjective color blah blæc" data-category="color">
+  <header>
+    <h2 class="headword">blak</h2>
+    <div class="ipa">/&#x27;blak/</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="category-pill">color</span></div>
+  </header>
+  <div class="english">black, charred</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>blah</span><span class="cognate"><span class="cog-label">OE</span>blæc</span></div>
+  <div class="notes">Same word Pwgc, OD, OS. OHG shifted to blah.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="blank white, shining, bright adjective strong color blank blanc blakkr" data-category="color">
   <header>
     <h2 class="headword">blank</h2>
     <div class="ipa">/&#x27;blaŋk/</div>
-    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span><span class="category-pill">color</span></div>
   </header>
-  <div class="english">white, shining</div>
+  <div class="english">white, shining, bright</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>blank</span><span class="cognate"><span class="cog-label">OE</span>blanc</span><span class="cognate"><span class="cog-label">ON</span>blakkr</span></div>
 <div class="examples">
   <div class="examples-label">used in</div>
@@ -517,7 +649,17 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blād field produce noun neut">
+<article class="word-card" data-search="blund blond adjective color" data-category="color">
+  <header>
+    <h2 class="headword">blund</h2>
+    <div class="ipa">/&#x27;blund/</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="category-pill">color</span></div>
+  </header>
+  <div class="english">blond</div>
+  <div class="notes">blunđa in Wartburg. blund is the frankish reconstruction.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="blād field produce noun neut" data-category="">
   <header>
     <h2 class="headword">blād</h2>
     <div class="ipa">/&#x27;blaːd/</div>
@@ -533,21 +675,21 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">False friends with the word for blade</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blāo blue adjective strong blāo blāw blár">
+<article class="word-card" data-search="blāo blue adjective strong color blāo blāw blár" data-category="color">
   <header>
     <h2 class="headword">blāo</h2>
     <div class="ipa">/&#x27;blaːo/</div>
-    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span><span class="category-pill">color</span></div>
   </header>
   <div class="english">blue</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>blāo</span><span class="cognate"><span class="cog-label">OE</span>blāw</span><span class="cognate"><span class="cog-label">ON</span>blár</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blōd blood noun neut bluot blōd blóð blōþ">
+<article class="word-card" data-search="blōd blood noun neut body part bluot blōd blóð blōþ" data-category="body part">
   <header>
     <h2 class="headword">blōd</h2>
     <div class="ipa">/&#x27;bloːd/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pill">body part</span></div>
   </header>
 <div class="cases">
   <div>
@@ -572,7 +714,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bolla bowl, bun, ball noun fem bolla bolla bolli">
+<article class="word-card" data-search="bolla bowl, bun, ball noun fem bolla bolla bolli" data-category="">
   <header>
     <h2 class="headword">bolla</h2>
     <div class="ipa">/&#x27;bolːa/</div>
@@ -588,7 +730,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bolla</span><span class="cognate"><span class="cog-label">OE</span>bolla</span><span class="cognate"><span class="cog-label">ON</span>bolli</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bord board noun neut bort bord borð baurd">
+<article class="word-card" data-search="bord board noun neut bort bord borð baurd" data-category="">
   <header>
     <h2 class="headword">bord</h2>
     <div class="ipa">/&#x27;bord/</div>
@@ -604,21 +746,21 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bort</span><span class="cognate"><span class="cog-label">OE</span>bord</span><span class="cognate"><span class="cog-label">ON</span>borð</span><span class="cognate"><span class="cog-label">Gothic</span>baurd</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="borganjan bargain, negotiate verb class 1 weak borgōn, borgēn borgian borga">
+<article class="word-card" data-search="borganjan bargain, negotiate verb class 1 weak borgōn, borgēn borgian borga" data-category="">
   <header>
     <h2 class="headword">borganjan</h2>
-    <div class="ipa">/&#x27;borgaɲjan/</div>
+    <div class="ipa">/&#x27;borganjan/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
   </header>
   <div class="english">bargain, negotiate</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>borgōn, borgēn</span><span class="cognate"><span class="cog-label">OE</span>borgian</span><span class="cognate"><span class="cog-label">ON</span>borga</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bosk bush, forest noun masc busk busc buskr">
+<article class="word-card" data-search="bosk bush, forest noun masc nature busk busc buskr" data-category="nature">
   <header>
     <h2 class="headword">bosk</h2>
     <div class="ipa">/&#x27;bosk/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">nature</span></div>
   </header>
 <div class="cases">
   <div>
@@ -643,17 +785,17 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Alternative spelling: busk</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brahsima bream noun fem brahsma brosma">
+<article class="word-card" data-search="brahsima bream noun fem animal brahsma brosma" data-category="animal">
   <header>
     <h2 class="headword">brahsima</h2>
     <div class="ipa">/&#x27;brahsima/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">animal</span></div>
   </header>
   <div class="english">bream</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brahsma</span><span class="cognate"><span class="cog-label">ON</span>brosma</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brambazi blackberry noun neut brāmberi brēmber">
+<article class="word-card" data-search="brambazi blackberry noun neut brāmberi brēmber" data-category="">
   <header>
     <h2 class="headword">brambazi</h2>
     <div class="ipa">/&#x27;brambaʐi/</div>
@@ -664,7 +806,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Written as brambasi. Dialectal pronounciation. /&#x27;brambazi/ is the specific accent spread to France. /&#x27;brambaʐi/ is likely what was said in 5th century Rhineland.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brekan to break verb class iv strong brëhhan brecan brikan">
+<article class="word-card" data-search="brekan to break verb class iv strong brëhhan brecan brikan" data-category="">
   <header>
     <h2 class="headword">brekan</h2>
     <div class="ipa">/&#x27;brekan/</div>
@@ -674,7 +816,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brëhhan</span><span class="cognate"><span class="cog-label">OE</span>brecan</span><span class="cognate"><span class="cog-label">Gothic</span>brikan</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brimman to growl, grumble verb class iii strong brummōn">
+<article class="word-card" data-search="brimman to growl, grumble verb class iii strong brummōn" data-category="">
   <header>
     <h2 class="headword">brimman</h2>
     <div class="ipa">/&#x27;brimːan/</div>
@@ -684,17 +826,17 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brummōn</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brunnia chainmail, suit of armor, breastplate noun fem brunna byrne">
+<article class="word-card" data-search="brunnia chainmail, suit of armor, breastplate noun fem weapon brunna byrne" data-category="weapon">
   <header>
     <h2 class="headword">brunnia</h2>
     <div class="ipa">/&#x27;brunːia/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">weapon</span></div>
   </header>
   <div class="english">chainmail, suit of armor, breastplate</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brunna</span><span class="cognate"><span class="cog-label">OE</span>byrne</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brādo piece of meat noun masc brātan brǣdan bræða">
+<article class="word-card" data-search="brādo piece of meat noun masc brātan brǣdan bræða" data-category="">
   <header>
     <h2 class="headword">brādo</h2>
     <div class="ipa">/&#x27;braːdo/</div>
@@ -704,11 +846,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brātan</span><span class="cognate"><span class="cog-label">OE</span>brǣdan</span><span class="cognate"><span class="cog-label">ON</span>bræða</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brōþer brother noun masc bruoder brōþor bróðir brōþar">
+<article class="word-card" data-search="brōþer brother noun masc kinship bruoder brōþor bróðir brōþar" data-category="kinship">
   <header>
     <h2 class="headword">brōþer</h2>
     <div class="ipa">/&#x27;brōθer/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">kinship</span></div>
   </header>
 <div class="cases">
   <div>
@@ -733,17 +875,17 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *brōþēr (kinship r-stem). One of the most stable Germanic words across all branches. /θ/ retained in 5th c. Ripuarian (OHG bruoder shows the later θ → d shift, post-Siegfried). R-stem oblique forms syncopate the medial vowel: brōþer → brōþres, brōþre. Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="brūn brown adjective strong brūn brūn brúnn">
+<article class="word-card" data-search="brūn brown adjective strong color brūn brūn brúnn" data-category="color">
   <header>
     <h2 class="headword">brūn</h2>
     <div class="ipa">/&#x27;bruːn/</div>
-    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span><span class="category-pill">color</span></div>
   </header>
   <div class="english">brown</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brūn</span><span class="cognate"><span class="cog-label">OE</span>brūn</span><span class="cognate"><span class="cog-label">ON</span>brúnn</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="burg fortification, fortified city noun fem burg burg borg baurgs">
+<article class="word-card" data-search="burg fortification, fortified city noun fem burg burg borg baurgs" data-category="">
   <header>
     <h2 class="headword">burg</h2>
     <div class="ipa">/&#x27;burg/</div>
@@ -759,7 +901,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>burg</span><span class="cognate"><span class="cog-label">OE</span>burg</span><span class="cognate"><span class="cog-label">ON</span>borg</span><span class="cognate"><span class="cog-label">Gothic</span>baurgs</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bëra funeral bier noun fem bāra bēr bára">
+<article class="word-card" data-search="bëra funeral bier noun fem bāra bēr bára" data-category="">
   <header>
     <h2 class="headword">bëra</h2>
     <div class="ipa">/&#x27;beːra/</div>
@@ -775,7 +917,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bāra</span><span class="cognate"><span class="cog-label">OE</span>bēr</span><span class="cognate"><span class="cog-label">ON</span>bára</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bôtan to beat verb class vii strong bōzan, bōzzan bēatan bauta bautan">
+<article class="word-card" data-search="bôtan to beat verb class vii strong bōzan, bōzzan bēatan bauta bautan" data-category="">
   <header>
     <h2 class="headword">bôtan</h2>
     <div class="ipa">/&#x27;bɔːtan/</div>
@@ -786,7 +928,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bī by, at, near, around preposition bī bi bi">
+<article class="word-card" data-search="bī by, at, near, around preposition bī bi bi" data-category="">
   <header>
     <h2 class="headword">bī</h2>
     <div class="ipa">/biː/</div>
@@ -797,7 +939,18 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Identical to OD and OHG. Also Identical to Pwgc.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="būk belly noun masc būh būc, būcc búkr">
+<article class="word-card" data-search="bīa bee noun fem animal bīa bēo bý" data-category="animal">
+  <header>
+    <h2 class="headword">bīa</h2>
+    <div class="ipa">/&#x27;biːa/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">bee</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bīa</span><span class="cognate"><span class="cog-label">OE</span>bēo</span><span class="cognate"><span class="cog-label">ON</span>bý</span></div>
+  <div class="notes">same word OHG and OD.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="būk belly noun masc būh būc, būcc búkr" data-category="">
   <header>
     <h2 class="headword">būk</h2>
     <div class="ipa">/&#x27;buːk/</div>
@@ -807,11 +960,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>būh</span><span class="cognate"><span class="cog-label">OE</span>būc, būcc</span><span class="cognate"><span class="cog-label">ON</span>búkr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dag day noun masc tag dæġ dagr dags">
+<article class="word-card" data-search="dag day noun masc time tag dæġ dagr dags" data-category="time">
   <header>
     <h2 class="headword">dag</h2>
     <div class="ipa">/&#x27;dag/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">time</span></div>
   </header>
 <div class="cases">
   <div>
@@ -834,10 +987,10 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="english">day</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tag</span><span class="cognate"><span class="cog-label">OE</span>dæġ</span><span class="cognate"><span class="cog-label">ON</span>dagr</span><span class="cognate"><span class="cog-label">Gothic</span>dags</span></div>
-  <div class="notes">Wachtendonck Psalms has dag. Unchanged since Pwgc.</div>
+  <div class="notes">Wachtendonck Psalms has dag. Unchanged since Pwgc. /&#x27;daɣ/ in some dialects.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="danni flat surface, floor noun neut tenni denn, denu">
+<article class="word-card" data-search="danni flat surface, floor noun neut tenni denn, denu" data-category="">
   <header>
     <h2 class="headword">danni</h2>
     <div class="ipa">/&#x27;danːi/</div>
@@ -847,18 +1000,18 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tenni</span><span class="cognate"><span class="cog-label">OE</span>denn, denu</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="daroþ javelin, dart noun masc tart daroþ darraðr">
+<article class="word-card" data-search="daroþ javelin, dart noun masc weapon tart daroþ darraðr" data-category="weapon">
   <header>
     <h2 class="headword">daroþ</h2>
     <div class="ipa">/&#x27;daroθ/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">weapon</span></div>
   </header>
   <div class="english">javelin, dart</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tart</span><span class="cognate"><span class="cog-label">OE</span>daroþ</span><span class="cognate"><span class="cog-label">ON</span>darraðr</span></div>
   <div class="notes">Spelled as daroth in Wartburg.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dintjan to move back and forth verb class 1 weak">
+<article class="word-card" data-search="dintjan to move back and forth verb class 1 weak" data-category="">
   <header>
     <h2 class="headword">dintjan</h2>
     <div class="ipa">/&#x27;dintjan/</div>
@@ -867,7 +1020,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="english">to move back and forth</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="draiƀjo sprout, sucker, offshoot noun masc">
+<article class="word-card" data-search="draiƀjo sprout, sucker, offshoot noun masc" data-category="">
   <header>
     <h2 class="headword">draiƀjo</h2>
     <div class="ipa">/&#x27;draiβjo/</div>
@@ -876,7 +1029,18 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="english">sprout, sucker, offshoot</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dubban to dub, to strike with honor verb class 1 weak dubbian">
+<article class="word-card" data-search="drako dragon noun masc animal drahho, trahho draca draki, dreki" data-category="animal">
+  <header>
+    <h2 class="headword">drako</h2>
+    <div class="ipa">/&#x27;drako/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">dragon</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>drahho, trahho</span><span class="cognate"><span class="cog-label">OE</span>draca</span><span class="cognate"><span class="cog-label">ON</span>draki, dreki</span></div>
+  <div class="notes">Latin loan. Same word OD and OS.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="dubban to dub, to strike with honor verb class 1 weak dubbian" data-category="">
   <header>
     <h2 class="headword">dubban</h2>
     <div class="ipa">/&#x27;dubːan/</div>
@@ -886,11 +1050,22 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OE</span>dubbian</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="ediling prince, nobleman, noble vassal noun masc adaling æþeling, æðeling, eþeling ǫðlingr">
+<article class="word-card" data-search="ebur wild boar noun masc animal ebur eofur jǫfurr" data-category="animal">
+  <header>
+    <h2 class="headword">ebur</h2>
+    <div class="ipa">/&#x27;ebur/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">wild boar</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ebur</span><span class="cognate"><span class="cog-label">OE</span>eofur</span><span class="cognate"><span class="cog-label">ON</span>jǫfurr</span></div>
+  <div class="notes">same word Pwgc and OHG. Might be eƀur with /&#x27;eβur/ given OD evur.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="ediling prince, nobleman, noble vassal noun masc kinship adaling æþeling, æðeling, eþeling ǫðlingr" data-category="kinship">
   <header>
     <h2 class="headword">ediling</h2>
     <div class="ipa">/&#x27;ediliŋ/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">kinship</span></div>
   </header>
 <div class="cases">
   <div>
@@ -915,7 +1090,29 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Also spelled eþiling and pronounced /&#x27;eθiliŋ/</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="faihiđa feud noun fem faihida fǣhþ">
+<article class="word-card" data-search="erþa earth noun fem nature ërda eorþe jǫrð airþa" data-category="nature">
+  <header>
+    <h2 class="headword">erþa</h2>
+    <div class="ipa">/&#x27;erθa/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">nature</span></div>
+  </header>
+  <div class="english">earth</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ërda</span><span class="cognate"><span class="cog-label">OE</span>eorþe</span><span class="cognate"><span class="cog-label">ON</span>jǫrð</span><span class="cognate"><span class="cog-label">Gothic</span>airþa</span></div>
+  <div class="notes">Same word OD and OS.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="fader father noun masc kinship fater fæder faðir fadar" data-category="kinship">
+  <header>
+    <h2 class="headword">fader</h2>
+    <div class="ipa">/&#x27;fader/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">kinship</span></div>
+  </header>
+  <div class="english">father</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fater</span><span class="cognate"><span class="cog-label">OE</span>fæder</span><span class="cognate"><span class="cog-label">ON</span>faðir</span><span class="cognate"><span class="cog-label">Gothic</span>fadar</span></div>
+  <div class="notes">From Wachtendonck Psalms fader. Same as Pwgc.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="faihiđa feud noun fem faihida fǣhþ" data-category="">
   <header>
     <h2 class="headword">faihiđa</h2>
     <div class="ipa">/&#x27;faihiða/</div>
@@ -925,18 +1122,229 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>faihida</span><span class="cognate"><span class="cog-label">OE</span>fǣhþ</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="flōd flood noun fluot flōd flóð, flœðr flōdus">
+<article class="word-card" data-search="faldan to fold verb faldan, faltan fealdan falda falþan" data-category="">
+  <header>
+    <h2 class="headword">faldan</h2>
+    <div class="ipa">/&#x27;faldan/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to fold</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>faldan, faltan</span><span class="cognate"><span class="cog-label">OE</span>fealdan</span><span class="cognate"><span class="cog-label">ON</span>falda</span><span class="cognate"><span class="cog-label">Gothic</span>falþan</span></div>
+  <div class="notes">same word OS OD OHG</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="faldi fold, crease noun fald, falt field" data-category="">
+  <header>
+    <h2 class="headword">faldi</h2>
+    <div class="ipa">/&#x27;faldi/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">fold, crease</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fald, falt</span><span class="cognate"><span class="cog-label">OE</span>field</span></div>
+  <div class="notes">from faldistol</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="faldistōl folding stool, folding chair noun masc compound/kenning faltistuol fieldstōl" data-category="compound/kenning">
+  <header>
+    <h2 class="headword">faldistōl</h2>
+    <div class="ipa">/&#x27;faldistoːl/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">compound/kenning</span></div>
+  </header>
+  <div class="english">folding stool, folding chair</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>faltistuol</span><span class="cognate"><span class="cog-label">OE</span>fieldstōl</span></div>
+  <div class="notes">faldistôl in Wartburg</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="falis rock, cliff fell noun masc felis" data-category="">
+  <header>
+    <h2 class="headword">falis</h2>
+    <div class="ipa">/&#x27;falis/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">rock, cliff fell</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>felis</span></div>
+  <div class="notes">falisa as Germanic in Wartburg.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="falkō falcon noun masc animal falko fealca falkr" data-category="animal">
+  <header>
+    <h2 class="headword">falkō</h2>
+    <div class="ipa">/&#x27;falkoː/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">falcon</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>falko</span><span class="cognate"><span class="cog-label">OE</span>fealca</span><span class="cognate"><span class="cog-label">ON</span>falkr</span></div>
+  <div class="notes">Frankish native word</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="falu fallow adjective falo fealu fǫlr" data-category="">
+  <header>
+    <h2 class="headword">falu</h2>
+    <div class="ipa">/&#x27;falu/</div>
+    <div class="header-meta"><span class="pos">adjective</span></div>
+  </header>
+  <div class="english">fallow</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>falo</span><span class="cognate"><span class="cog-label">OE</span>fealu</span><span class="cognate"><span class="cog-label">ON</span>fǫlr</span></div>
+  <div class="notes">falwa Germanic entry in Wartburg,</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fano cloth, flag noun masc fano fana fani fana" data-category="">
+  <header>
+    <h2 class="headword">fano</h2>
+    <div class="ipa">/&#x27;fano/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">cloth, flag</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fano</span><span class="cognate"><span class="cog-label">OE</span>fana</span><span class="cognate"><span class="cog-label">ON</span>fani</span><span class="cognate"><span class="cog-label">Gothic</span>fana</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fara kin-group, clan, companions you travel with noun fēra" data-category="">
+  <header>
+    <h2 class="headword">fara</h2>
+    <div class="ipa">/&#x27;fara/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">kin-group, clan, companions you travel with</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OE</span>fēra</span></div>
+  <div class="notes">mentioned as a frankish word not just germanic</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="farwiđôn to dye, color verb farawen" data-category="">
+  <header>
+    <h2 class="headword">farwiđôn</h2>
+    <div class="ipa">/&#x27;farwiðoːn/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to dye, color</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>farawen</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fehu livestock, cattle noun neut fihu feoh fé faihu" data-category="">
+  <header>
+    <h2 class="headword">fehu</h2>
+    <div class="ipa">/&#x27;fehu/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+  <div class="english">livestock, cattle</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fihu</span><span class="cognate"><span class="cog-label">OE</span>feoh</span><span class="cognate"><span class="cog-label">ON</span>fé</span><span class="cognate"><span class="cog-label">Gothic</span>faihu</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="feld field noun feld feld fjalðr" data-category="">
+  <header>
+    <h2 class="headword">feld</h2>
+    <div class="ipa">/&#x27;feld/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">field</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>feld</span><span class="cognate"><span class="cog-label">OE</span>feld</span><span class="cognate"><span class="cog-label">ON</span>fjalðr</span></div>
+  <div class="notes">Same word as OD, OS, OHG, OE.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fetur fetter noun fezzera, fezzil feter fjǫturr" data-category="">
+  <header>
+    <h2 class="headword">fetur</h2>
+    <div class="ipa">/&#x27;fetur/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">fetter</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fezzera, fezzil</span><span class="cognate"><span class="cog-label">OE</span>feter</span><span class="cognate"><span class="cog-label">ON</span>fjǫturr</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fillo evildoer noun masc" data-category="">
+  <header>
+    <h2 class="headword">fillo</h2>
+    <div class="ipa">/&#x27;filːo/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">evildoer</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="filtir felt noun filz felt" data-category="">
+  <header>
+    <h2 class="headword">filtir</h2>
+    <div class="ipa">/&#x27;filtir/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">felt</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>filz</span><span class="cognate"><span class="cog-label">OE</span>felt</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fingar finger noun masc body part fingar finger fingr figgrs" data-category="body part">
+  <header>
+    <h2 class="headword">fingar</h2>
+    <div class="ipa">/&#x27;fiŋgar/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">body part</span></div>
+  </header>
+  <div class="english">finger</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fingar</span><span class="cognate"><span class="cog-label">OE</span>finger</span><span class="cognate"><span class="cog-label">ON</span>fingr</span><span class="cognate"><span class="cog-label">Gothic</span>figgrs</span></div>
+  <div class="notes">Same word OD and OHG</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="first roof ridge noun first" data-category="">
+  <header>
+    <h2 class="headword">first</h2>
+    <div class="ipa">/&#x27;first/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">roof ridge</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>first</span></div>
+  <div class="notes">Not a number.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fisk fish noun masc animal fisk fisċ fiskr fisks" data-category="animal">
+  <header>
+    <h2 class="headword">fisk</h2>
+    <div class="ipa">/&#x27;fisk/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">fish</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fisk</span><span class="cognate"><span class="cog-label">OE</span>fisċ</span><span class="cognate"><span class="cog-label">ON</span>fiskr</span><span class="cognate"><span class="cog-label">Gothic</span>fisks</span></div>
+  <div class="notes">Same word OD OS OHG.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="flaska flask, bottle noun fem flaska flasce flaska" data-category="">
+  <header>
+    <h2 class="headword">flaska</h2>
+    <div class="ipa">/&#x27;flaska/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+  </header>
+  <div class="english">flask, bottle</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>flaska</span><span class="cognate"><span class="cog-label">OE</span>flasce</span><span class="cognate"><span class="cog-label">ON</span>flaska</span></div>
+  <div class="notes">Written in germ. as flaska. Same in OHG and OD</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="flat flat adjective flaz flatr" data-category="">
+  <header>
+    <h2 class="headword">flat</h2>
+    <div class="ipa">/&#x27;flat/</div>
+    <div class="header-meta"><span class="pos">adjective</span></div>
+  </header>
+  <div class="english">flat</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>flaz</span><span class="cognate"><span class="cog-label">ON</span>flatr</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fliukka arrow noun flugga" data-category="">
+  <header>
+    <h2 class="headword">fliukka</h2>
+    <div class="ipa">/&#x27;fliukːa/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">arrow</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>flugga</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="flōd flood noun nature fluot flōd flóð, flœðr flōdus" data-category="nature">
   <header>
     <h2 class="headword">flōd</h2>
     <div class="ipa">/&#x27;floːd/</div>
-    <div class="header-meta"><span class="pos">noun</span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="category-pill">nature</span></div>
   </header>
   <div class="english">flood</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fluot</span><span class="cognate"><span class="cog-label">OE</span>flōd</span><span class="cognate"><span class="cog-label">ON</span>flóð, flœðr</span><span class="cognate"><span class="cog-label">Gothic</span>flōdus</span></div>
   <div class="notes">Post uo shift from Wartburg is fluod but before final d=&gt;t shift. Siegfried would have said flōd, as the ō=&gt;uo shift occured in the 8th century per Clovis&#x27; latin name. Primary ō still [oː] that later develops into [uo]</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="fodar fodder, feed for animals noun neut fuotar fōdor fóðr">
+<article class="word-card" data-search="fodar fodder, feed for animals noun neut fuotar fōdor fóðr" data-category="">
   <header>
     <h2 class="headword">fodar</h2>
     <div class="ipa">/&#x27;fodar/</div>
@@ -946,7 +1354,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fuotar</span><span class="cognate"><span class="cog-label">OE</span>fōdor</span><span class="cognate"><span class="cog-label">ON</span>fóðr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="frank frank, free, spear noun masc franco franca frakki">
+<article class="word-card" data-search="frank frank, free, spear noun masc franco franca frakki" data-category="">
   <header>
     <h2 class="headword">frank</h2>
     <div class="ipa">/&#x27;fraŋk/</div>
@@ -954,35 +1362,341 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   </header>
   <div class="english">Frank, free, spear</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>franco</span><span class="cognate"><span class="cog-label">OE</span>franca</span><span class="cognate"><span class="cog-label">ON</span>frakki</span></div>
+  <div class="notes">Multiple possible meanings.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="fōt foot noun masc fuoȥ fōt fótr fōtus">
+<article class="word-card" data-search="frisk fresh adjective frisc fersċ ferskr" data-category="">
+  <header>
+    <h2 class="headword">frisk</h2>
+    <div class="ipa">/&#x27;frisk/</div>
+    <div class="header-meta"><span class="pos">adjective</span></div>
+  </header>
+  <div class="english">fresh</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>frisc</span><span class="cognate"><span class="cog-label">OE</span>fersċ</span><span class="cognate"><span class="cog-label">ON</span>ferskr</span></div>
+  <div class="notes">Found in Wartburg as &quot;germanic&quot;. Form /frisk/ is the inherited Ripuarian reflex of PG friska- &quot;fresh, new, unspoiled, vigorous, cool.&quot; Distinct evidentiary status: the Romance loan stratum (It. fresco, Sard. friscu, Cat. fresc, Sp./Pg. fresco, Friul. fresk, OFr. freis &gt; Mod.Fr. frais) descends from a West Germanic borrowing into Vulgar Latin, NOT from Frankish specifically. Donor cannot be identified as Frankish vs. Old Saxon vs. general continental West Germanic because all dialects had /frisk/ with /sk/ preserved at the contact date and no diagnostic features distinguish them. Dating: 3rd-5th c. AD. Sardinian friscu may date the loan before Sardinian&#x27;s split from continental VL (3rd-4th c.), possibly predating Frankish individuation as a distinct dialect (Franks first attested ~257 AD as Lower Rhine federation). OFr. freis shows /sk/ palatalization, dating loan into Gaulish VL before 5th-7th c. palatalization wave. Geographic distribution (present in Italian/Iberian/Gallo-Romance/Sardinian, absent in Romanian and Dalmatian) confirms western diffusion in late Imperial / post-Imperial period. Therefore: Romance reflexes are SIBLINGS of the Ripuarian form, not descendants, and confirm /sk/ preservation in West Germanic at the contact period without making Ripuarian the donor. PIE etymology uncertain; cf. Lith. prėskas &quot;tasteless, unleavened,&quot; OCS prěsnъ &quot;fresh, unleavened,&quot; possibly from PIE *preisk-, but vowel and -sk- suffix correspondences are not clean (Kroonen 2013 acknowledges Balto-Slavic comparanda without committing to a reconstruction).</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="frosk frog noun masc frosk frosc froskr" data-category="">
+  <header>
+    <h2 class="headword">frosk</h2>
+    <div class="ipa">/&#x27;frosk/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">frog</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>frosk</span><span class="cognate"><span class="cog-label">OE</span>frosc</span><span class="cognate"><span class="cog-label">ON</span>froskr</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="frumjan to move forward, produce, complete, execute verb frummen frumjan" data-category="">
+  <header>
+    <h2 class="headword">frumjan</h2>
+    <div class="ipa">/&#x27;frumjan/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to move forward, produce, complete, execute</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>frummen</span><span class="cognate"><span class="cog-label">Gothic</span>frumjan</span></div>
+  <div class="notes">Listed as &quot;urgermanic&quot;</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fuhs fox noun masc animal fuhs fox" data-category="animal">
+  <header>
+    <h2 class="headword">fuhs</h2>
+    <div class="ipa">/&#x27;fuhs/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">fox</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fuhs</span><span class="cognate"><span class="cog-label">OE</span>fox</span></div>
+  <div class="notes">same word Pwgc and OHG.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="fulk crowd, troup, people, multitude (of people) noun folk folc folk fulk" data-category="">
+  <header>
+    <h2 class="headword">fulk</h2>
+    <div class="ipa">/&#x27;fulk/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">crowd, troup, people, multitude (of people)</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>folk</span><span class="cognate"><span class="cog-label">OE</span>folc</span><span class="cognate"><span class="cog-label">ON</span>folk</span><span class="cognate"><span class="cog-label">Gothic</span>fulk</span></div>
+  <div class="notes">Cognate with volk</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="furbjan to clean verb furbēn feormian" data-category="">
+  <header>
+    <h2 class="headword">furbjan</h2>
+    <div class="ipa">/&#x27;furbjan/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to clean</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>furbēn</span><span class="cognate"><span class="cog-label">OE</span>feormian</span></div>
+  <div class="notes">Listed as &quot;germanic&quot;</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="fōt foot noun masc body part fuoȥ fōt fótr fōtus" data-category="body part">
   <header>
     <h2 class="headword">fōt</h2>
     <div class="ipa">/&#x27;foːt/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">body part</span></div>
   </header>
   <div class="english">foot</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fuoȥ</span><span class="cognate"><span class="cog-label">OE</span>fōt</span><span class="cognate"><span class="cog-label">ON</span>fótr</span><span class="cognate"><span class="cog-label">Gothic</span>fōtus</span></div>
   <div class="notes">Not yet diphongized to fuot</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="hand hand noun fem hant hand hǫnd handus">
+<article class="word-card" data-search="fūir fire noun nature fiur fȳr funi fōn" data-category="nature">
+  <header>
+    <h2 class="headword">fūir</h2>
+    <div class="ipa">/&#x27;fuːir/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="category-pill">nature</span></div>
+  </header>
+  <div class="english">fire</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>fiur</span><span class="cognate"><span class="cog-label">OE</span>fȳr</span><span class="cognate"><span class="cog-label">ON</span>funi</span><span class="cognate"><span class="cog-label">Gothic</span>fōn</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gabaiti to hunt with falcons verb" data-category="">
+  <header>
+    <h2 class="headword">gabaiti</h2>
+    <div class="ipa">/&#x27;gabaiti/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to hunt with falcons</div>
+  <div class="notes">no standard -n ending.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gadailo comrade, partner noun gateilo gadaila" data-category="">
+  <header>
+    <h2 class="headword">gadailo</h2>
+    <div class="ipa">/&#x27;gadailo/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">comrade, partner</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gateilo</span><span class="cognate"><span class="cog-label">Gothic</span>gadaila</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gafōri convenience, comfort noun gifuori" data-category="">
+  <header>
+    <h2 class="headword">gafōri</h2>
+    <div class="ipa">/&#x27;gafoːri/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">convenience, comfort</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gifuori</span></div>
+  <div class="notes">Wartburg has it as gafori. Added long o because of cognate gifuori.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gair spear noun masc weapon gēr gār geirr gais" data-category="weapon">
+  <header>
+    <h2 class="headword">gair</h2>
+    <div class="ipa">/&#x27;gair/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">weapon</span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">gair</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">gairas</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">gaire</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">gair</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">gairu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">gairōs</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">gairō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">gairum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">gairā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">gairum</span></div>
+  </div>
+</div>
+  <div class="english">spear</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gēr</span><span class="cognate"><span class="cog-label">OE</span>gār</span><span class="cognate"><span class="cog-label">ON</span>geirr</span><span class="cognate"><span class="cog-label">Gothic</span>gais</span></div>
+  <div class="notes">r at the end finally a r and not a transitional form. transition finishes first for final sounds.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="galga measuring rod noun galgo ġealga galgi, gelgja galga" data-category="">
+  <header>
+    <h2 class="headword">galga</h2>
+    <div class="ipa">/&#x27;galga/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">measuring rod</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>galgo</span><span class="cognate"><span class="cog-label">OE</span>ġealga</span><span class="cognate"><span class="cog-label">ON</span>galgi, gelgja</span><span class="cognate"><span class="cog-label">Gothic</span>galga</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="galpōn to boast, brag, bark verb galpfōn gealpian galpa" data-category="">
+  <header>
+    <h2 class="headword">galpōn</h2>
+    <div class="ipa">/&#x27;galpoːn/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to boast, brag, bark</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>galpfōn</span><span class="cognate"><span class="cog-label">OE</span>gealpian</span><span class="cognate"><span class="cog-label">ON</span>galpa</span></div>
+  <div class="notes">listed as galp</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gangan to go, walk verb class vii strong gangan gangan ganga gaggan" data-category="">
+  <header>
+    <h2 class="headword">gangan</h2>
+    <div class="ipa">/&#x27;gaŋgan/</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class VII Strong</span></span></div>
+  </header>
+  <div class="english">to go, walk</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gangan</span><span class="cognate"><span class="cog-label">OE</span>gangan</span><span class="cognate"><span class="cog-label">ON</span>ganga</span><span class="cognate"><span class="cog-label">Gothic</span>gaggan</span></div>
+  <div class="notes">Same as Pwgc, OE, OS, OD, and OHG</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="gardō enclosure, yard, garden noun masc garto ġeard garði garda" data-category="">
+  <header>
+    <h2 class="headword">gardō</h2>
+    <div class="ipa">/&#x27;gardoː/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">enclosure, yard, garden</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>garto</span><span class="cognate"><span class="cog-label">OE</span>ġeard</span><span class="cognate"><span class="cog-label">ON</span>garði</span><span class="cognate"><span class="cog-label">Gothic</span>garda</span></div>
+  <div class="notes">Written as gard in Wartburg</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="garƀa sheaf noun garba" data-category="">
+  <header>
+    <h2 class="headword">garƀa</h2>
+    <div class="ipa">/&#x27;garβa/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">sheaf</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>garba</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gaspia buckle, loop noun gēap" data-category="">
+  <header>
+    <h2 class="headword">gaspia</h2>
+    <div class="ipa">/&#x27;gaspia/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">buckle, loop</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OE</span>gēap</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gaumjan to observe, perceive, notice verb goumen ġīeman geyma gaumjan" data-category="">
+  <header>
+    <h2 class="headword">gaumjan</h2>
+    <div class="ipa">/&#x27;gaumjan/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to observe, perceive, notice</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>goumen</span><span class="cognate"><span class="cog-label">OE</span>ġīeman</span><span class="cognate"><span class="cog-label">ON</span>geyma</span><span class="cognate"><span class="cog-label">Gothic</span>gaumjan</span></div>
+  <div class="notes">Did not sound shift to monophong in OHG. it is au in Frankish.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gaʀd spike, stick, staff, goad noun gart ġeard gaddr gazds" data-category="">
+  <header>
+    <h2 class="headword">gaʀd</h2>
+    <div class="ipa">/&#x27;gar̝d/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">spike, stick, staff, goad</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gart</span><span class="cognate"><span class="cog-label">OE</span>ġeard</span><span class="cognate"><span class="cog-label">ON</span>gaddr</span><span class="cognate"><span class="cog-label">Gothic</span>gazds</span></div>
+  <div class="notes">Wartburg has it as gard. Reconstruction page shows ʀ. Likely a transition letter from z to r. Given how Old French is gart/gars, the letter here is probably closer to r than z. May be dialectal. Sound may be like Czech ř.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="geld payment, tribute noun neut gelt ġield gjald gild" data-category="">
+  <header>
+    <h2 class="headword">geld</h2>
+    <div class="ipa">/&#x27;geld/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+  <div class="english">payment, tribute</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gelt</span><span class="cognate"><span class="cog-label">OE</span>ġield</span><span class="cognate"><span class="cog-label">ON</span>gjald</span><span class="cognate"><span class="cog-label">Gothic</span>gild</span></div>
+  <div class="notes">Form /gilda/ &quot;guild, sacrificial association&quot; reconstructed for Ripuarian is uncertain. FEW gives the headword as anfrk. gilda but the geographic distribution of attested cognates (MDu ghilde, MLG gilde, OFris jelde, ON gildi) restricts the word&#x27;s older usage to the North Sea Germanic region. OHG borrows the term from Low German only in the 17th century, suggesting it was not native to continental West Germanic. Old French gelde &quot;band of foot soldiers&quot; (Wace, Chrétien, 12th c.) likely traces to a Saxon, Frisian, or Low German donor rather than to Ripuarian specifically. Word retained in lexicon as POSSIBLE but not SECURELY reconstructible for 5th-century Ripuarian; the underlying verb /geldan/ &quot;to pay&quot; and noun /geld/ &quot;payment&quot; are secure, but the derived institutional feminine is not.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="geldan to pay verb geltan ġieldan gjalda gildan" data-category="">
+  <header>
+    <h2 class="headword">geldan</h2>
+    <div class="ipa">/&#x27;geldan/</div>
+    <div class="header-meta"><span class="pos">verb</span></div>
+  </header>
+  <div class="english">to pay</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>geltan</span><span class="cognate"><span class="cog-label">OE</span>ġieldan</span><span class="cognate"><span class="cog-label">ON</span>gjalda</span><span class="cognate"><span class="cog-label">Gothic</span>gildan</span></div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="geldo one who pays, debtor noun masc gelto ġielda" data-category="">
+  <header>
+    <h2 class="headword">geldo</h2>
+    <div class="ipa">/&#x27;geldo/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">one who pays, debtor</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gelto</span><span class="cognate"><span class="cog-label">OE</span>ġielda</span></div>
+  <div class="notes">same as OS. similar to OHG gelto</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="germja young ewe, lamb noun animal" data-category="animal">
+  <header>
+    <h2 class="headword">germja</h2>
+    <div class="ipa">/&#x27;germia/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="category-pill">animal</span></div>
+  </header>
+  <div class="english">young ewe, lamb</div>
+  <div class="notes">Spelled as germia in Wartburg.
+
+
+Surface form: */germja/, feminine ja-stem (West Germanic productive feminine class with the -ja- thematic suffix). Gloss: &quot;young ewe, ewe-lamb, female sheep not yet having borne offspring.&quot; Phonology against your locked frame: the /r/ here is the inherited PG */r/ (alveolar, not from rhotacism of */z/), so this is regular /r/ NOT your transitional ʐ/ʀ. The /m/ is stable. The /j/ is the West Germanic palatal glide forming the feminine ja-stem suffix. No phonological surprises.
+Cognates: directly attested only through the Romance loan stratum and the 9th-century medieval Latin orthography of the Polyptychon. No clear Germanic cognates in other branches with the same semantics — OHG, OE, ON, OS, OFris don&#x27;t have a clear */germja-/ &quot;ewe&quot; word that you can point to. Proposed ON garmr &quot;dog&quot; is semantically distant and should be flagged as uncertain. This makes the word a &quot;Frankish-isolate&quot; or near-isolate within Germanic — defensible because the Polyptychon attestation is direct primary evidence of the word&#x27;s existence in West Frankish territory in the 9th century, with the Old French reflexes confirming continuous Frankish use into the medieval period, but you can&#x27;t triangulate cognates from sister Germanic languages because they didn&#x27;t preserve the word.</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gibb forked stick noun" data-category="">
+  <header>
+    <h2 class="headword">gibb</h2>
+    <div class="ipa">/&#x27;gibː/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">forked stick</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="gold gold noun neut metal gold gold gull gulþ" data-category="metal">
+  <header>
+    <h2 class="headword">gold</h2>
+    <div class="ipa">/&#x27;gold/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pill">metal</span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">gold</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">goldes</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">golde</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">gold</span></div>
+  </div>
+</div>
+  <div class="english">gold</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gold</span><span class="cognate"><span class="cog-label">OE</span>gold</span><span class="cognate"><span class="cog-label">ON</span>gull</span><span class="cognate"><span class="cog-label">Gothic</span>gulþ</span></div>
+  <div class="notes">Same as Pwgc, OE, OS, OD, and OHG. Goldes reconstructed from OD and OE.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="gêro wedge shaped piece of cloth noun gēro" data-category="">
+  <header>
+    <h2 class="headword">gêro</h2>
+    <div class="ipa">/&#x27;geːro/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">wedge shaped piece of cloth</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gēro</span></div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="hand hand noun fem body part hant hand hǫnd handus" data-category="body part">
   <header>
     <h2 class="headword">hand</h2>
     <div class="ipa">/&#x27;hand/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">body part</span></div>
   </header>
   <div class="english">hand</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hant</span><span class="cognate"><span class="cog-label">OE</span>hand</span><span class="cognate"><span class="cog-label">ON</span>hǫnd</span><span class="cognate"><span class="cog-label">Gothic</span>handus</span></div>
   <div class="notes">Pwgc handu, OHG and OD hant, 5th century final d has not yet shifted to t.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="helm helmet noun masc hëlm helm hjalmr hilms">
+<article class="word-card" data-search="helm helmet noun masc weapon hëlm helm hjalmr hilms" data-category="weapon">
   <header>
     <h2 class="headword">helm</h2>
     <div class="ipa">/&#x27;helm/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">weapon</span></div>
   </header>
 <div class="cases">
   <div>
@@ -1017,7 +1731,38 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="hring ring, circle noun masc ring, hring hring hringr hriggs">
+<article class="word-card" data-search="hlōdowig famous-battle (personal name) name masc lūdwīg, hlūtwīg, hludwig hlōþewīġ lúðvíg, lóðvíg, lóðvík" data-category="">
+  <header>
+    <h2 class="headword">hlōdowig</h2>
+    <div class="ipa">/&#x27;hloːdowig/</div>
+    <div class="header-meta"><span class="pos">name</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">hlōdowig</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">hlōdowiges</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">hlōdowige</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">hlōdowig</span></div>
+  </div>
+</div>
+  <div class="english">famous-battle (personal name)</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>Lūdwīg, Hlūtwīg, Hludwig</span><span class="cognate"><span class="cog-label">OE</span>Hlōþewīġ</span><span class="cognate"><span class="cog-label">ON</span>Lúðvíg, Lóðvíg, Lóðvík</span></div>
+  <div class="notes">May be /&#x27;xloːdowiɣ/ in some dialects.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="honig honey noun neut honag, honeg huniġ hunag" data-category="">
+  <header>
+    <h2 class="headword">honig</h2>
+    <div class="ipa">/&#x27;honig/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+  <div class="english">honey</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>honag, honeg</span><span class="cognate"><span class="cog-label">OE</span>huniġ</span><span class="cognate"><span class="cog-label">ON</span>hunag</span></div>
+  <div class="notes">Pwgc hunag OHG honag OD honig. Wachtendonck honig.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="hring ring, circle noun masc ring, hring hring hringr hriggs" data-category="">
   <header>
     <h2 class="headword">hring</h2>
     <div class="ipa">/&#x27;hriŋ/</div>
@@ -1052,17 +1797,17 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="hwīt white adjective strong wīȥ, hwīȥ hwīt hvítr ƕeits">
+<article class="word-card" data-search="hwīt white adjective strong color wīȥ, hwīȥ hwīt hvítr ƕeits" data-category="color">
   <header>
     <h2 class="headword">hwīt</h2>
     <div class="ipa">/&#x27;ʍiːt/</div>
-    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span></div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span><span class="category-pill">color</span></div>
   </header>
   <div class="english">white</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wīȥ, hwīȥ</span><span class="cognate"><span class="cog-label">OE</span>hwīt</span><span class="cognate"><span class="cog-label">ON</span>hvítr</span><span class="cognate"><span class="cog-label">Gothic</span>ƕeits</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="ik i (1st person singular) pronoun personal ih ic ek ik">
+<article class="word-card" data-search="ik i (1st person singular) pronoun personal ih ic ek ik" data-category="">
   <header>
     <h2 class="headword">ik</h2>
     <div class="ipa">/ik/</div>
@@ -1097,7 +1842,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *ek (1sg). Pre-High German consonant shift form: k retained (OHG ih shows the later k → x shift, post-Siegfried). Suppletive oblique forms from PGmc *m-. Cognates: Gothic ik, OS ik, OE ic, ON ek.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="in in preposition in in í in">
+<article class="word-card" data-search="in in preposition in in í in" data-category="">
   <header>
     <h2 class="headword">in</h2>
     <div class="ipa">/in/</div>
@@ -1115,11 +1860,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Matches Pwgc, OE, OHG, OD</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="kuning king noun masc kuning cyning konungr">
+<article class="word-card" data-search="kuning king noun masc kinship kuning cyning konungr" data-category="kinship">
   <header>
     <h2 class="headword">kuning</h2>
     <div class="ipa">/&#x27;kuniŋ/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">kinship</span></div>
   </header>
 <div class="cases">
   <div>
@@ -1166,11 +1911,22 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="naht night noun fem naht niht nátt, nǫ́tt nahts">
+<article class="word-card" data-search="medu mead noun masc mëtu medu mjǫðr" data-category="">
+  <header>
+    <h2 class="headword">medu</h2>
+    <div class="ipa">/&#x27;medu/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+  </header>
+  <div class="english">mead</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>mëtu</span><span class="cognate"><span class="cog-label">OE</span>medu</span><span class="cognate"><span class="cog-label">ON</span>mjǫðr</span></div>
+  <div class="notes">Matches Pwgc OE OS</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="naht night noun fem time naht niht nátt, nǫ́tt nahts" data-category="time">
   <header>
     <h2 class="headword">naht</h2>
     <div class="ipa">/&#x27;naht/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span><span class="category-pill">time</span></div>
   </header>
 <div class="cases">
   <div>
@@ -1183,7 +1939,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Matches OHG, OD, and Pwgc.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="rīn rhine name masc rīn rīn rín">
+<article class="word-card" data-search="rīn rhine name masc rīn rīn rín" data-category="">
   <header>
     <h2 class="headword">rīn</h2>
     <div class="ipa">/&#x27;riːn/</div>
@@ -1209,7 +1965,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="sigifriþ victory-peace (personal name) name masc sigifrid sigefrið sigfriðr">
+<article class="word-card" data-search="sigifriþ victory-peace (personal name) name masc sigifrid sigefrið sigfriðr" data-category="">
   <header>
     <h2 class="headword">sigifriþ</h2>
     <div class="ipa">/&#x27;siɣifriθ/</div>
@@ -1256,11 +2012,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Voiced velar fricative reverse engineered from MHG Sivrit and ON Sigifrið.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="sunu son noun masc sunu sunu sonr sunus">
+<article class="word-card" data-search="sunu son noun masc kinship sunu sunu sonr sunus" data-category="kinship">
   <header>
     <h2 class="headword">sunu</h2>
     <div class="ipa">/&#x27;sunu/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">kinship</span></div>
   </header>
 <div class="cases">
   <div>
@@ -1297,7 +2053,18 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 </div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="swimman to swim verb class iii strong swimman swimman svimja">
+<article class="word-card" data-search="swart black adjective color swarz sweart svartr swarts" data-category="color">
+  <header>
+    <h2 class="headword">swart</h2>
+    <div class="ipa">/&#x27;swart/</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="category-pill">color</span></div>
+  </header>
+  <div class="english">black</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>swarz</span><span class="cognate"><span class="cog-label">OE</span>sweart</span><span class="cognate"><span class="cog-label">ON</span>svartr</span><span class="cognate"><span class="cog-label">Gothic</span>swarts</span></div>
+  <div class="notes">Same word Pwgc, OD, OS. OHG shifted to swarz.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="swimman to swim verb class iii strong swimman swimman svimja" data-category="">
   <header>
     <h2 class="headword">swimman</h2>
     <div class="ipa">/&#x27;swim:an/</div>
@@ -1324,11 +2091,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *swimmaną. Strong verb class III, nasal+consonant subtype. Infinitive identical across OE, OD, OHG (all swimman). Ablaut series i-a-u-o: present stem i (swimmit), past sg a-grade (swam), past pl u-grade (swummun), past participle o-grade (swommen). The past 2sg uses the plural u-grade stem (swummi) — class III peculiarity. Present plural endings use -amēs/-at/-ant rather than later OHG -emēs/-et/-ent.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="twaine two number cardinal zwēne twēġen tveir twai">
+<article class="word-card" data-search="twaine two number cardinal number zwēne twēġen tveir twai" data-category="number">
   <header>
     <h2 class="headword">twaine</h2>
     <div class="ipa">/&#x27;twaine/</div>
-    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span></div>
+    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span><span class="category-pill">number</span></div>
   </header>
 <div class="adj-grid">
   <div class="adj-col">
@@ -1349,7 +2116,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Reconstructed from comparative WGmc evidence; not attested in Wachtendonck. Cf. Goth. twai/twōs/twa, OS twēne/twā/twē, OHG zwēne/zwā/zwei. Note unshifted /tw-/ confirmed by Frankish loans into Old French.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="wesan to be verb irregular wesan wesan, bēon">
+<article class="word-card" data-search="wesan to be verb irregular wesan wesan, bēon" data-category="">
   <header>
     <h2 class="headword">wesan</h2>
     <div class="ipa">/&#x27;wesan/</div>
@@ -1401,7 +2168,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">OE, OHG, and OD wesan. bin/bim, bist/bis, ist from Wachtendonck Psalms</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="winnan to strive, struggle, toil for, fight for verb class iii strong winnan winnan vinna winnan">
+<article class="word-card" data-search="winnan to strive, struggle, toil for, fight for verb class iii strong winnan winnan vinna winnan" data-category="">
   <header>
     <h2 class="headword">winnan</h2>
     <div class="ipa">/&#x27;win:an/</div>
@@ -1428,20 +2195,41 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *winnaną. Strong verb class III, nasal+consonant subtype. Infinitive identical across OE, OD, OHG (all winnan). Ablaut series i-a-u-u: present stem i (winnit), past sg a-grade (wann), past pl u-grade (wunnun), past participle u-grade (wunnen — geminate nn blocks lowering to o, unlike swommen). Original meaning is strive/struggle/toil/labor-for; the English semantic shift to &quot;win&quot; (achieve victory) is a late Old English development. Gothic winnan attests the related sense of &quot;suffer&quot; (cf. Gothic wunns &quot;passion&quot;).</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="âlgêr spear for fishing eel noun masc">
+<article class="word-card" data-search="âlgêr spear for fishing eel noun masc compound/kenning" data-category="compound/kenning">
   <header>
     <h2 class="headword">âlgêr</h2>
     <div class="ipa">/&#x27;aːlgeːr/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">compound/kenning</span></div>
   </header>
   <div class="english">spear for fishing eel</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="þrī three number cardinal drī þrīe, þrī þrír þreis">
+<article class="word-card" data-search="ôd wealth, riches noun neut ōt ēad audahafts" data-category="">
+  <header>
+    <h2 class="headword">ôd</h2>
+    <div class="ipa">/&#x27;ɔːd/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span></div>
+  </header>
+  <div class="english">wealth, riches</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ōt</span><span class="cognate"><span class="cog-label">OE</span>ēad</span><span class="cognate"><span class="cog-label">Gothic</span>audahafts</span></div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="ôra ear noun neut body part ōra eare eyra ausō" data-category="body part">
+  <header>
+    <h2 class="headword">ôra</h2>
+    <div class="ipa">/&#x27;ɔːra/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pill">body part</span></div>
+  </header>
+  <div class="english">ear</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ōra</span><span class="cognate"><span class="cog-label">OE</span>eare</span><span class="cognate"><span class="cog-label">ON</span>eyra</span><span class="cognate"><span class="cog-label">Gothic</span>ausō</span></div>
+  <div class="notes">dipthong not conserved in OHG, so no dipthong here</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="þrī three number cardinal number drī þrīe, þrī þrír þreis" data-category="number">
   <header>
     <h2 class="headword">þrī</h2>
     <div class="ipa">/&#x27;θriː/</div>
-    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span></div>
+    <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span><span class="category-pill">number</span></div>
   </header>
 <div class="adj-grid">
   <div class="adj-col">
@@ -1462,7 +2250,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Reconstructed from comparative WGmc + Gothic evidence; not attested in Wachtendonck. Cf. Goth. þreis/þrijōs/þrija, OS thrie/thriā/thriu, OHG drī/drīo/driu. Initial /θ-/ confirmed by 5th-6th c. Latin renderings of Frankish names (Theod- not Deod-).</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="þū you (2nd person singular) pronoun personal dū þū þú þu">
+<article class="word-card" data-search="þū you (2nd person singular) pronoun personal dū þū þú þu" data-category="">
   <header>
     <h2 class="headword">þū</h2>
     <div class="ipa">/θū/</div>
@@ -1493,11 +2281,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *þū (2sg). Pre-High German consonant shift form: thorn /θ/ retained (OHG dū shows the later þ → d shift, post-Siegfried). Cognates: Gothic þu, OS thū, OE þū, ON þú.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="āl eel noun masc āl ǣl, ēl áll">
+<article class="word-card" data-search="āl eel noun masc animal āl ǣl, ēl áll" data-category="animal">
   <header>
     <h2 class="headword">āl</h2>
     <div class="ipa">/&#x27;aːl/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pill">animal</span></div>
   </header>
 <div class="cases">
   <div>
@@ -1529,13 +2317,13 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="source">reconstructed</div>
 </article>
   </div>
-  <div class="meta">generated from siegfried_lang.sqlite at 2026-06-10 21:36</div>
+  <div class="meta">generated from siegfried_lang.sqlite at 2026-06-14 20:45</div>
 </div>
 <script>
 const search = document.getElementById('search');
+const catFilter = document.getElementById('cat-filter');
 const cards = document.querySelectorAll('.word-card');
 const countEl = document.getElementById('visible-count');
-const grid = document.getElementById('grid');
 const totalCount = cards.length;
 
 function updateCount(visible) {
@@ -1544,17 +2332,24 @@ function updateCount(visible) {
     : `${visible} of ${totalCount} entries`;
 }
 
-search.addEventListener('input', () => {
+function applyFilters() {
   const q = search.value.trim().toLowerCase();
+  const cat = catFilter ? catFilter.value : '';
   let visible = 0;
   cards.forEach(card => {
     const data = card.getAttribute('data-search');
-    const show = !q || data.includes(q);
+    const cardCat = card.getAttribute('data-category') || '';
+    const matchText = !q || data.includes(q);
+    const matchCat = !cat || cardCat === cat;
+    const show = matchText && matchCat;
     card.classList.toggle('hidden', !show);
     if (show) visible++;
   });
   updateCount(visible);
-});
+}
+
+search.addEventListener('input', applyFilters);
+if (catFilter) catFilter.addEventListener('change', applyFilters);
 </script>
 </body>
 </html>
