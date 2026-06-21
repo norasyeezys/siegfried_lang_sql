@@ -147,6 +147,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   font-style: italic;
   letter-spacing: 0.02em;
 }
+.category-pills { display: inline-flex; gap: 0.3rem; flex-wrap: wrap; }
 .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .case-col-header {
   text-transform: uppercase;
@@ -279,9 +280,9 @@ function applyFilters() {
   let visible = 0;
   cards.forEach(card => {
     const data = card.getAttribute('data-search');
-    const cardCat = card.getAttribute('data-category') || '';
+    const cardCats = (card.getAttribute('data-categories') || '').split('|').filter(Boolean);
     const matchText = !q || data.includes(q);
-    const matchCat = !cat || cardCat === cat;
+    const matchCat = !cat || cardCats.includes(cat);
     const show = matchText && matchCat;
     card.classList.toggle('hidden', !show);
     if (show) visible++;
@@ -365,10 +366,14 @@ def render_gender_class(w):
 
 
 def render_category(w):
-    cat = w.get('category')
-    if not cat:
+    pills = []
+    for key in ('category', 'category2'):
+        v = (w.get(key) or '').strip()
+        if v:
+            pills.append(f'<span class="category-pill">{esc(v)}</span>')
+    if not pills:
         return ''
-    return f'<span class="category-pill">{esc(cat)}</span>'
+    return f'<span class="category-pills">{"".join(pills)}</span>'
 
 
 def render_case_grid(w):
@@ -474,16 +479,19 @@ def render_examples(examples):
 def render_word(w, examples):
     search_text = ' '.join(filter(None, [
         w.get('headword'), w.get('english'), w.get('pos'), w.get('gender_class'),
-        w.get('category'),
+        w.get('category'), w.get('category2'),
         w.get('old_high_german'), w.get('old_english'),
         w.get('old_norse'), w.get('gothic'),
     ])).lower()
 
-    cat_attr = esc(w.get('category') or '')
+    cats_attr = '|'.join(filter(None, [
+        (w.get('category') or '').strip(),
+        (w.get('category2') or '').strip(),
+    ]))
     pieces = [
         f'<article class="word-card" '
         f'data-search="{esc(search_text)}" '
-        f'data-category="{cat_attr}">'
+        f'data-categories="{esc(cats_attr)}">'
     ]
     pieces.append('  <header>')
     pieces.append(f'    <h2 class="headword">{esc(w["headword"])}</h2>')
@@ -520,8 +528,14 @@ def render_word(w, examples):
 
 
 def build_category_select(words):
-    """Build the dropdown filter from distinct non-empty categories present in the data."""
-    cats = sorted({(w.get('category') or '').strip() for w in words if (w.get('category') or '').strip()})
+    """Build the dropdown filter from distinct non-empty categories across both columns."""
+    cats = set()
+    for w in words:
+        for key in ('category', 'category2'):
+            v = (w.get(key) or '').strip()
+            if v:
+                cats.add(v)
+    cats = sorted(cats)
     if not cats:
         return ''  # no categories yet, omit the dropdown entirely
     opts = ['<option value="">all categories</option>']
@@ -556,8 +570,13 @@ def main():
         timestamp=datetime.now().strftime("%Y-%m-%d %H:%M"),
     )
     out_path.write_text(out, encoding='utf-8')
-    n_cats = len({(w.get('category') or '').strip() for w in words if (w.get('category') or '').strip()})
-    print(f"wrote {out_path} with {len(words)} word cards, {n_cats} categories")
+    cats = set()
+    for w in words:
+        for key in ('category', 'category2'):
+            v = (w.get(key) or '').strip()
+            if v:
+                cats.add(v)
+    print(f"wrote {out_path} with {len(words)} word cards, {len(cats)} categories")
 
 
 if __name__ == '__main__':
