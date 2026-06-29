@@ -1,28 +1,35 @@
-# Siegfried Lexicon — 800 entries
+# Siegfried Lexicon — 914 entries
 # headword — english
 
+agja — edge, corner
 aha — river, water
 ahsa — axle
 ahsla — shoulder
 ahto — eight
+ahtotehan — eighteen (eight ten)
 aik — oak, oak tree
 ain — one
+ainlif — eleven (literal: One left)
 air — bronze
 airīn — made of copper, bronze, brass
+aiwa — long time, age, eternity; law
 aiþ — oath, solemn promise, sworn binding
 aiþbrōþer — oath-brother (sworn ritual brotherhood)
 aj — egg
 akus — axe
 āl — eel
 al — all
+ald — old
 âlgêr — spear for fishing eel
 alina — forearm, ell, ulna, elbow
 alôd — freehold land, property
 alu — ale
 anattjan — to provoke, drive
+ander — second, other
 ankja — joint, limb (particularly leg or shin)
 appel — apple, fruit
 arm — arm
+aro — eagle
 arƀaid — hardship
 arƀi — heritage, inheritance
 arƀjo — heir
@@ -57,6 +64,7 @@ bīa — bee
 biar — beer
 bīdan — to wait, remain
 biddjan — to ask, request, pray for
+biliþjan — to form, represent
 bilīƀan — to stay, remain
 bindan — to bind, to tie
 bītan — to bite
@@ -88,6 +96,7 @@ brinnan — to burn, to be on fire
 brōd — bread
 brōþer — brother
 brūd — bride
+brugja — bridge
 brūn — brown
 brunnia — chainmail, suit of armor, breastplate
 brunno — well, spring; brook, stream
@@ -95,11 +104,13 @@ brunst — burning, heat
 brust — breast, chest
 būk — belly
 burg — fortification, fortified city
+butera — butter
 buwan — to build, reside
 dag — day
 dagrōd — dawn (literal: day-red)
 dailjan — to divide, deal, share
 danni — flat surface, floor
+darni — hidden, concealed
 daroþ — javelin, dart
 dintjan — to move back and forth
 diop — deep
@@ -107,13 +118,17 @@ dōd — dead
 dohter — daughter
 dōm — judgement, doom
 dōn — to do
+doppīn — pot, bowl
 dôþ — death
 dragan — to carry
 draiƀjo — sprout, sucker, offshoot
 drako — dragon
+draum — dream
+draumjan — to dream
 drinkan — to drink
 druhtin — lord, Lord
 dubban — to dub, to strike with honor
+duri — door
 dusin — dun, brownish yellow
 dust — dust
 ebur — wild boar
@@ -146,16 +161,20 @@ fehu — livestock, cattle
 feld — field
 fellian — to fell, kill
 ferah — life
+ferro — far
 fetur — fetter
 fīand — fiend
 fillo — evildoer
 filtir — felt
 fimf — five
+fimftehan — fifteen (five ten)
 findan — to find
 fingar — finger
 first — roof ridge
 fisk — fish
 fiuwer — four
+fiuwertehan — fourteen (four ten)
+fiþeri — feathers, plumage; wing
 flahs — flax
 flaisk — flesh
 flaska — flask, bottle
@@ -166,6 +185,8 @@ fliogan — to fly
 fliohan — to flee
 fliukka — arrow
 flōd — flood
+flugi — flight
+flugil — wing
 fluti — river, stream, flow
 fô — few
 fōda — food
@@ -174,8 +195,12 @@ fogal — bird
 foll — full
 fōt — foot
 frank — Frank, free, spear
+frauwa — lady, wife of a lord
+frī — free
 frisk — fresh
 friund — friend
+friþ — love, peace, protection
+frōjo — lord
 frosk — frog
 frost — frost
 frumjan — to move forward, produce, complete, execute
@@ -184,6 +209,7 @@ fūir — fire
 fulk — crowd, troup, people, multitude (of people)
 furbjan — to clean
 furh — fir, pine
+furista — first
 gabaiti — to hunt with falcons
 gadailo — comrade, partner
 gafōri — convenience, comfort
@@ -200,6 +226,8 @@ gardō — enclosure, yard, garden
 garo — ready, prepared
 garƀa — sheaf
 gaspia — buckle, loop
+gast — guest, stranger
+gata — street, passage
 gaumjan — to observe, perceive, notice
 gaʀd — spike, stick, staff, goad
 geld — payment, tribute
@@ -214,6 +242,7 @@ geƀan — to give
 gibb — forked stick
 gift — gift
 giotan — to pour
+glas — glass
 glīdan — to glide, slide
 glōen — to glow; to anneal (steel)
 gōd — good
@@ -266,6 +295,7 @@ halōn — to bring, fetch, haul
 hals — neck, throat
 halsberg — neck covering armor, hauberc, type of chainmail
 halto — lame, limping
+halƀ — half
 hamar — hammer
 hand — hand
 handjan — to seize
@@ -314,6 +344,7 @@ heriwald — herald
 hernôdi — military emergency
 herta — heart
 heƀen — to lift, raise
+hirut — deer, stag
 hiupo — rosehip
 hladan — to load
 hlahhjan — to laugh
@@ -327,6 +358,8 @@ hlūd — loud, famous
 hnapp — bowl, cup
 hnut — nut
 hoddôn — to torment, harass
+hôh — high
+hôhiþa — height
 hôi — height, hill
 hôk — hook
 hokka — rootstock
@@ -358,6 +391,7 @@ hriuƀisk — rough
 hrôk — rook (bird)
 hrokk — robe, garment
 hros — horse
+hrōþ — praise, fame, glory
 hrunga — stake, rod, rung
 hrunkja — wrinkle
 hruƀisk — rough
@@ -402,6 +436,7 @@ jangalôn — to entertain
 jār — year
 jehhjan — to say, confess
 jûk — perch
+jung — young
 kâda — Crackling, residue from rendered fat, leftover chunk from cooking
 kaf — chaff
 kald — cold
@@ -409,6 +444,7 @@ kalƀ — calf, baby cow
 kâm — mold on fermented liquids
 kamerling — chamberlain
 kampjo — fighter, soldier
+kappa — cloak, coat, cape
 karil — free man, middle class man, commoner
 karinga — carangid (fish)
 kāsi — cheese
@@ -441,6 +477,7 @@ kot — cot, cottage
 kotta — coat
 krabbo — crab
 krabbôn — to crab, scratch, scrape, claw at
+kraft — strength, power; skill
 kramp — cramp
 kran — juniper
 krappa — hook
@@ -449,7 +486,7 @@ krattôn — to scratch, remove by scraping
 krawa — claw
 krawjan — to claw
 kresso — cress (plant)
-kreƀitja — crustacean
+kreƀitja — crawfish, crustacean
 krippia — crate, trough, crib
 krîsan — to squeal, creak, crunch
 krōk — hook
@@ -479,6 +516,7 @@ laiƀijan — to leave behind
 laka — pool, body of water, lake
 lākan — to trail a path
 landa — pole
+lang — long
 lâri — undeveloped area
 lātan — to let, allow
 laubja — arbor, shelter
@@ -553,8 +591,13 @@ mauwa — sleeve, protruding lip, pout
 maþo — worm, maggot
 medu — mead
 meltjan — to melt, cause to melt
+mennisko — human, man
+meri — sea, ocean, body of water
 metan — to measure
+mid — with
+middi — middle, mid
 milok — milk
+minna — remembrance, love
 missjan — to go wrong, miss, fail
 mōd — mind, boldness
 mōder — mother
@@ -575,6 +618,7 @@ murþer — death, killing, murder
 murþerjan — to murder, kill
 mūs — mouse
 mūsgauda — food storage
+nāh — near
 naht — night
 namnjan — to name, call, give name to
 namo — name
@@ -584,15 +628,20 @@ neman — to take
 nest — nest
 ni — no, not
 niun — nine
+niuntehan — nineteen (nine ten)
+niuwi — new
+nīþ — envy, hate, malice
 nôd — depression (geological), low place, hollow
 norþ — north
 nū — now
 nuska — buckle, clasp
+oba — above
 ôd — wealth, riches, property
 ôdi — wasteland; empty, desolate
 ohso — ox
 ôra — ear
 ôst — east
+oƀ — if, when
 parifrid — horse
 pera — pear
 pīk — sharp point, pike
@@ -606,17 +655,20 @@ plegan — to pledge, promise
 plōg — plow
 pokka — pouch, bag
 pōl — pool
+porta — portal, gateway
 purpura — purple, purple cloth
 rād — advice, counsel
 raihō — roe deer
 rain — balk, ridge
 ramm — ram
 rand — running, race
+rauk — smoke, vapor
 raumjan — to take the top layer off, to skim off the top layer of milk
 rauƀa — plunder, robbery; robe, garment
 rauƀôn — to rob, steal, plunder
 raþ — wheel
 regan — rain
+regin — decision, advice, counsel
 reht — upright, just
 ribbi — rib
 rīdan — to ride
@@ -646,19 +698,24 @@ saiwi — sea
 sal — room, dwelling, hall
 salha — willow
 salo — murky, dirty
+sand — sand
 saur — dry
 sehan — to see
 sehs — six
+sehstehan — sixteen (six ten)
 seuro — mite
 sigi — victory
 sigifriþ — victory-peace (personal name)
 sigimund — victory-protection (personal name)
 silƀer — silver
+singan — to sing
 siniskalk — steward
 siniwald — civil servant, senator
 sinn — direction; sense, reason
+siok — sick
 sittjan — to sit
 siƀun — seven
+siƀuntehan — seventeen (seven ten)
 skaidan — to separate
 skâk — robbery, abduction
 skakkja — stilt
@@ -718,10 +775,16 @@ slīster — lightning bolt
 slītan — to split, tear apart
 slopp — loop, noose
 smalt — smalt, oil, fat, metal coating
+smauk — smoke
 smeltjan — to smelt, melt, liquefy
+smero — grease, fat
 smiril — pygmy falcon
+smītan — to cast; to hit
+smiþ — craftsman, smith
+snajo — snow
 snako — snake
 snel — nimble, quick, agile
+spado — spade (tool)
 spald — crack, fissure
 spalturōian — split up
 spanna — span, range, stretch
@@ -766,6 +829,7 @@ stolt — proud, stiff
 stoppôn — to stop, halt; to stuff, cram
 stôt — ball
 strakkjan — to stretch
+strāta — street, paved road
 streup — stirrup
 strīd — battle, fight, conflict, uprising
 strîkan — to stroke, rub
@@ -773,6 +837,7 @@ strôm — stream
 strunt — dirt, filth; dung, feces
 stunda — short period of time
 sturm — storm
+suht — sickness
 sultja — saltwater, brine
 sumar — summer
 sunni — responsibility, care; concern, worry
@@ -789,8 +854,40 @@ swerjan — to swear (an oath)
 swester — sister
 swimman — to swim
 swīn — pig, swine
+takko — twig, branch, shoot
+tālōn — to tear, rip apart
+tanþ — tooth
+tappjan — to close, shut in, lock
+tappo — plug, tap
+tarewamelo — wheat flour
+targa — edge, rim; shield
+tas — heap, pile
+taska — bag, purse; pocket
+tēha — toe
 tehan — ten
+têrī — row, ordered line
+tilja — line, row, strip
+tin — tin
+tind — tooth, prong, point
+titta — breast, tit
+tiþl — beehive
+tiƀer — sacrificial animal
+togôn — to tow, pull
+top — top, peak; tuft of hair
+trampan — to step
+trappa — trap; step, stairs
+treuwa — fidelity, faithfulness, truth
+trippōn — to hop, jump
+trog — trough
+trottôn — to go, run, trot
+trugil — dogwood, liguster
+trumba — trumpet (instrument)
+tûmôn — to rotate, turn around
+tunga — tongue, language
+turƀa — turf
 twaine — two
+twaintig — twenty (two groups of ten)
+twalif — twelve (literally: two left)
 uƀil — evil
 water — water
 wesan — to be
@@ -799,5 +896,22 @@ winnan — to strive, struggle, toil for, fight for
 winter — winter; year
 wurd — fate, destiny
 wurm — serpent, snake, worm
+þâhi — loamy, clay-like
+þâho — clay
+þaihjan — to grow, thrive, prosper
+þak — roof, cover
+þakisla — lid, cover
+þarrjan — to dry
+þio — servant, slave
+þiohabrōk — trousers, loincloth
+þiudisk — of the people
+þorp — village
+þrastala — thrush (bird)
+þreosk — fallow, fallow land
+þreskan — to thresh; to thrash, tread
 þrī — three
+þritehan — thirteen (literally three ten)
+þrum — stump, trunk, stub
 þū — you (2nd person singular)
+þūta — pipe
+þwahlja — cloth, towel
