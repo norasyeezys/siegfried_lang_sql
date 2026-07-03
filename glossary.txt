@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 914 entries
+# Siegfried Lexicon — 1000 entries
 # headword — english
 
 agja — edge, corner
@@ -153,6 +153,7 @@ fano — cloth, flag
 fara — kin-group, clan, companions you travel with
 fāra — danger, fear
 faran — to travel, fare
+farlātan — to leave, dismiss
 farwa — color
 farwiđôn — to dye, color
 fast — steadfast, firm, steady, fixed
@@ -279,6 +280,7 @@ hagja — hedge
 haid — emotion, joy
 haigro — heron
 hailag — holy, sacred
+hailagōn — to hallow, sanctify, make holy
 haim — home, house, small village
 haimgard — enclosure/fence around a house or houses
 haimiþi — enclosed settlement
@@ -344,6 +346,7 @@ heriwald — herald
 hernôdi — military emergency
 herta — heart
 heƀen — to lift, raise
+himil — sky, heaven
 hirut — deer, stag
 hiupo — rosehip
 hladan — to load
@@ -351,6 +354,7 @@ hlahhjan — to laugh
 hlaiƀ — bread, loaf
 hlanka — bend, curve; side, flank
 hlankjan — to bend, turn around
+hlaupan — to run, jump forward, leap
 hlīda — slope, incline
 hlōdowig — famous-battle (personal name)
 hlot — lot, share; fate
@@ -419,6 +423,8 @@ hwanne — when
 hwār — where
 hwat — what
 hwē — who
+hwerƀel — thing that whirls; mole cricket; instrument spinner
+hwerƀilôn — to whirl
 hwī — how, by what means, why
 hwihol — wheel
 hwīla — time, period of time, while
@@ -672,7 +678,9 @@ regin — decision, advice, counsel
 reht — upright, just
 ribbi — rib
 rīdan — to ride
+rīk — king, ruler
 rîki — mighty, powerful; rich
+rīki — kingdom, realm
 rīkisōn — to rule, reign
 rīkjan — to rule over, reign
 rilpjan — to belch, eructate
@@ -704,6 +712,7 @@ sehan — to see
 sehs — six
 sehstehan — sixteen (six ten)
 seuro — mite
+sī — be (subjunctive/optative)
 sigi — victory
 sigifriþ — victory-peace (personal name)
 sigimund — victory-protection (personal name)
@@ -888,12 +897,88 @@ turƀa — turf
 twaine — two
 twaintig — twenty (two groups of ten)
 twalif — twelve (literally: two left)
+umbigân — to walk around, circulate
+urdaili — something handed out; allotment, share; judgement
+urgōlī — pride, arrogance
 uƀil — evil
+wād — cloth, garment
+waddi — wager, stake, pledge
+wāfla — honeycomb, waffle
+wahta — watch, vigil
+waigaro — much, a lot
+waizda — woad, dye
+waiđa — pasture
+waiđanjan — to hunt, graze
+wala — well
+wald — forest
+walda — weld (plant), yellow dye
+waldan — to rule, hold power over
+walgjan — to roll
+walhisk — foreign (non-Germanic, Celtic or Roman)
+walkan — to walk
+walkjan — to press. full, soak, crumple
+walm — boiling, rising steam
+walu — stick, rod
+wamba — womb, belly
+wandjan — to turn
+wankjan — to waver, sway
+wankôn — to waver, sway
+want — glove
+wappan — to swing, wave
+wapsa — wasp
+war — dirty fluid
+wardôn — to guard, watch, protect
+warga — pus
+warjan — to ward off, defend against
+warmmōs — warm porridge
+warnjan — to warn, caution,; to den,
+warôn — to watch, protect
+wasal — sudden downpour; fistula
+waskôn — to wash
+waso — sod, soggy ground
+wastil — cake
 water — water
+wađ — ford, crossing
+wenkjan — to stagger, wave, move aside
+wer — man
+werpjan — to throw
+werra — confusion; riot
+werwolf — werewolf (man-wolf)
 wesan — to be
+wester — west
+wiara — gold thread
+widuhoppa — hoopoe (bird)
+wīg — fight, battle
+wigila — divination, ruse
+wīh — sacred, holy
+wīhjan — to hallow, consecrate
+wīhsila — sour cherry
+wiht — creature, thing
+wimpil — head scarf
 wīn — wine
+wingjan — to wave, nod, shake
 winnan — to strive, struggle, toil for, fight for
+winst — gain, victory
 winter — winter; year
+wīpan — to wind, wrap
+wîsa — manner, way
+wîsarm — guisarme (polearm with spearhead)
+wiskjan — to wisk, sweep away, clean
+wisp — bundle of straw
+wîtan — to lead, guide; to accuse, blame
+wîto — leader
+wiþþja — strap (for clothes)
+wiđarlōn — recompense, reward
+wīƀ — woman, wife
+wōd — fury, possession
+wolf — wolf
+worm — worm, infection
+worp — mole (animal)
+wrainjo — male horse, stallion, stud
+wrakkjo — exile, outcast
+wratja — red dye, scarlet, madder
+wrist — joint (wrist or ankle)
+wrokkôn — to wrench, to turn vigorously
 wurd — fate, destiny
 wurm — serpent, snake, worm
 þâhi — loamy, clay-like
@@ -903,6 +988,7 @@ wurm — serpent, snake, worm
 þakisla — lid, cover
 þarrjan — to dry
 þio — servant, slave
+þiod — people, nation
 þiohabrōk — trousers, loincloth
 þiudisk — of the people
 þorp — village
