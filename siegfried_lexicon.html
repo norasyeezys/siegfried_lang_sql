@@ -66,7 +66,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
   gap: 1.5rem;
 }
 .word-card {
@@ -164,36 +164,83 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   align-self: center;
 }
 .case-val { font-family: inherit; }
-.verb-parts { display: flex; flex-direction: column; gap: 0.2rem; }
-.part-row { display: grid; grid-template-columns: 6rem 1fr; gap: 0.5rem; }
-.part-label {
-  text-transform: uppercase; letter-spacing: 0.06em;
-  font-size: 0.7rem; color: var(--muted); align-self: center;
-}
-.adj-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  padding-top: 0.2rem;
+
+/* --- non-finite verb forms (infinitive, imperatives, past participle) --- */
+.nonfinite {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
+  padding-top: 0.4rem;
   border-top: 1px dashed var(--border);
+  font-size: 0.9rem;
+}
+.nonfinite-item { display: inline-flex; gap: 0.35rem; align-items: baseline; }
+.nf-label {
+  color: var(--muted); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* --- verb paradigm grid: rows = person/num, columns = mood/tense --- */
+.paradigm-wrap {
   padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+  overflow-x: auto;
 }
-.adj-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.1rem;
+table.paradigm {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
 }
-.adj-label {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.6rem;
-  color: var(--muted);
+table.paradigm th, table.paradigm td {
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  text-align: left;
+  vertical-align: baseline;
 }
-.adj-val {
-  font-family: inherit;
-  font-size: 0.95rem;
+table.paradigm thead th {
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.6rem; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: normal;
+  padding-bottom: 0.35rem;
 }
+table.paradigm tbody th {
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 0.65rem; color: var(--muted);
+  font-weight: normal;
+  padding-right: 0.7rem;
+  width: 2.6rem;
+}
+table.paradigm td.empty-cell { color: var(--border); }
+
+/* --- adjective grid: rows = case, columns = gender/number --- */
+.adj-wrap {
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+  overflow-x: auto;
+}
+table.adj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+table.adj-table th, table.adj-table td {
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  text-align: left;
+}
+table.adj-table thead th {
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.6rem; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: normal;
+  padding-bottom: 0.35rem;
+}
+table.adj-table tbody th {
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 0.65rem; color: var(--muted);
+  font-weight: normal;
+  padding-right: 0.6rem;
+  width: 2.4rem;
+}
+table.adj-table td.empty-cell { color: var(--border); }
+
 .english {
   padding: 0.5rem 0 0.3rem;
   border-top: 1px dashed var(--border);
@@ -259,9 +306,9 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
     <div class="subtitle">Reconstructed Old Ripuarian Frankish</div>
   </header>
   <div class="search-row">
-    <input type="text" id="search" class="search" placeholder="filter by headword, meaning, part of speech, or cognate...">
-    <select id="cat-filter" class="cat-filter"><option value="">all categories</option><option value="action">action</option><option value="animal">animal</option><option value="body part">body part</option><option value="clothing">clothing</option><option value="color">color</option><option value="compound/kenning">compound/kenning</option><option value="craft">craft</option><option value="direction">direction</option><option value="dwelling">dwelling</option><option value="farming">farming</option><option value="fire/heat">fire/heat</option><option value="food &amp; drink">food &amp; drink</option><option value="heroic">heroic</option><option value="kinship">kinship</option><option value="legal/social">legal/social</option><option value="mental/emotional">mental/emotional</option><option value="metal">metal</option><option value="motion">motion</option><option value="nature">nature</option><option value="number">number</option><option value="personal name">personal name</option><option value="plant">plant</option><option value="politics/power">politics/power</option><option value="quality">quality</option><option value="question">question</option><option value="religion/spiritual">religion/spiritual</option><option value="time">time</option><option value="tool">tool</option><option value="weapon/battle">weapon/battle</option></select>
-    <span class="count" id="visible-count">1065 entries</span>
+    <input type="text" id="search" class="search" placeholder="filter by headword, meaning, part of speech, cognate, or paradigm cell...">
+    <select id="cat-filter" class="cat-filter"><option value="">all categories</option><option value="action">action</option><option value="animal">animal</option><option value="body part">body part</option><option value="clothing">clothing</option><option value="color">color</option><option value="communication">communication</option><option value="compound/kenning">compound/kenning</option><option value="craft">craft</option><option value="direction">direction</option><option value="dwelling">dwelling</option><option value="farming">farming</option><option value="fire/heat">fire/heat</option><option value="food">food</option><option value="food &amp; drink">food &amp; drink</option><option value="grammar">grammar</option><option value="heroic">heroic</option><option value="kinship">kinship</option><option value="legal/social">legal/social</option><option value="mental/emotional">mental/emotional</option><option value="metal">metal</option><option value="motion">motion</option><option value="movement">movement</option><option value="nature">nature</option><option value="number">number</option><option value="perception">perception</option><option value="personal name">personal name</option><option value="plant">plant</option><option value="politics/power">politics/power</option><option value="quality">quality</option><option value="question">question</option><option value="religion/spiritual">religion/spiritual</option><option value="time">time</option><option value="tool">tool</option><option value="weapon/battle">weapon/battle</option></select>
+    <span class="count" id="visible-count">1069 entries</span>
   </div>
   <div class="grid" id="grid">
 <article class="word-card" data-search="agja edge, corner noun fem egga eċġ egg" data-categories="">
@@ -346,30 +393,30 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>eih</span><span class="cognate"><span class="cog-label">OE</span>āc</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="ain one number cardinal number ein ān einn ains" data-categories="number">
+<article class="word-card" data-search="ain one number cardinal number ein ān einn ains ain aina ain ain" data-categories="number">
   <header>
     <h2 class="headword">ain</h2>
     <div class="ipa">/&#x27;ain/</div>
     <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span><span class="category-pills"><span class="category-pill">number</span></span></div>
   </header>
-<div class="adj-grid">
-  <div class="adj-col">
-    <div class="adj-label">masc</div>
-    <div class="adj-val">ain</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">fem</div>
-    <div class="adj-val">aina</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">neut</div>
-    <div class="adj-val">ain</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">pl</div>
-    <div class="adj-val">ain</div>
-  </div>
-</div>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>ain</td>
+    <td>aina</td>
+    <td>ain</td>
+    <td>ain</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">one</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ein</span><span class="cognate"><span class="cog-label">OE</span>ān</span><span class="cognate"><span class="cog-label">ON</span>einn</span><span class="cognate"><span class="cog-label">Gothic</span>ains</span></div>
   <div class="notes">Pwgc ain
@@ -428,7 +475,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ēwa</span><span class="cognate"><span class="cog-label">OE</span>āwa, ā (always), ǣ (law)</span><span class="cognate"><span class="cog-label">ON</span>æ, ey</span><span class="cognate"><span class="cog-label">Gothic</span>aiws, aiw</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="aiþ oath, solemn promise, sworn binding noun masc legal/social heroic eid āþ eiðr aiþs" data-categories="legal/social|heroic">
+<article class="word-card" data-search="aiþ oath, solemn promise, sworn binding noun masc legal/social heroic eid āþ eiðr aiþs aiþ aiþas aiþe aiþ aiþu aiþōs aiþō aiþum aiþā aiþum" data-categories="legal/social|heroic">
   <header>
     <h2 class="headword">aiþ</h2>
     <div class="ipa">/&#x27;aiθ/</div>
@@ -457,7 +504,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">PGmc *aiþaz. Diphthong *ai retained in 5th c. Ripuarian; monophthongization to ē happens later in coastal West Germanic dialects but not yet in Siegfried&#x27;s speech.</div>
   <div class="source">Comparative</div>
 </article>
-<article class="word-card" data-search="aiþbrōþer oath-brother (sworn ritual brotherhood) noun masc kinship compound/kenning eidbruoder āþbrōðor eiðbróðir" data-categories="kinship|compound/kenning">
+<article class="word-card" data-search="aiþbrōþer oath-brother (sworn ritual brotherhood) noun masc kinship compound/kenning eidbruoder āþbrōðor eiðbróðir aiþbrōþer aiþbrōþres aiþbrōþre aiþbrōþer aiþbrōþre aiþbrōþre aiþbrōþrō aiþbrōþrum aiþbrōþre aiþbrōþrum" data-categories="kinship|compound/kenning">
   <header>
     <h2 class="headword">aiþbrōþer</h2>
     <div class="ipa">/&#x27;aiθbrōθer/</div>
@@ -492,6 +539,18 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="example">
     <div class="example-frk">Aiþbrōþre winnant</div>
     <div class="example-eng">Oath-brothers strive (together).</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre farant in rīne.</div>
+    <div class="example-eng">Oath-brothers travel in the Rhine.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre sāhun sigifriþ.</div>
+    <div class="example-eng">Oath-brothers saw Sigifrīþ.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Werþe sigifriþ mīn aiþbrōþer.</div>
+    <div class="example-eng">May Sigifrīþ become my oath-brother.</div>
   </div>
 </div>
   <div class="notes">Compound of aiþ + brōþer. Refers to sworn ritual brotherhood, a real Germanic institution (Eidbruderschaft). Most strongly attested in ON eiðbróðir; OE āþbrōðor and OHG eidbruoder also occur. Declines on the second element following the brōþer r-stem paradigm.</div>
@@ -640,7 +699,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>apful</span><span class="cognate"><span class="cog-label">OE</span>æppel</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="arm arm noun masc body part arm earm armr arms" data-categories="body part">
+<article class="word-card" data-search="arm arm noun masc body part arm earm armr arms arm armas arme arm armu armōs armō armum armā armum" data-categories="body part">
   <header>
     <h2 class="headword">arm</h2>
     <div class="ipa">/&#x27;arm/</div>
@@ -730,7 +789,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>asca, aska</span><span class="cognate"><span class="cog-label">OE</span>æsċe</span><span class="cognate"><span class="cog-label">ON</span>aska</span><span class="cognate"><span class="cog-label">Gothic</span>azgō</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="auga eye noun neut body part auga, ouga ēage auga augō" data-categories="body part">
+<article class="word-card" data-search="auga eye noun neut body part auga, ouga ēage auga augō auga augin augin auga augu augun augōno augōm augun augum" data-categories="body part">
   <header>
     <h2 class="headword">auga</h2>
     <div class="ipa">/&#x27;auɣa/</div>
@@ -807,7 +866,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Same word Pwgc, OE, OS. OHG pre-shift</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bain bone noun neut body part bein bān bein" data-categories="body part">
+<article class="word-card" data-search="bain bone noun neut body part bein bān bein bain bainas baine bain bainu bainōs bainō bainum bainā bainum" data-categories="body part">
   <header>
     <h2 class="headword">bain</h2>
     <div class="ipa">/&#x27;bain/</div>
@@ -836,7 +895,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">See &quot;ain&quot;. ai not yet monothongized</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bair boar noun masc animal bēr bār bassi" data-categories="animal">
+<article class="word-card" data-search="bair boar noun masc animal bēr bār bassi bair bairas baire bair bairu bairōs bairō bairum bairā bairum" data-categories="animal">
   <header>
     <h2 class="headword">bair</h2>
     <div class="ipa">/&#x27;bair/</div>
@@ -916,7 +975,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>balz</span><span class="cognate"><span class="cog-label">OE</span>belt</span><span class="cognate"><span class="cog-label">ON</span>belti</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bank bench noun fem dwelling bank benċ bekkr" data-categories="dwelling">
+<article class="word-card" data-search="bank bench noun fem dwelling bank benċ bekkr bank" data-categories="dwelling">
   <header>
     <h2 class="headword">bank</h2>
     <div class="ipa">/&#x27;baŋk/</div>
@@ -1137,7 +1196,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">blunđa in Wartburg. blund is the frankish reconstruction.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blād field produce noun neut farming" data-categories="farming">
+<article class="word-card" data-search="blād field produce noun neut farming blād" data-categories="farming">
   <header>
     <h2 class="headword">blād</h2>
     <div class="ipa">/&#x27;blaːd/</div>
@@ -1153,12 +1212,37 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">False friends with the word for blade</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="blāo blue adjective strong color blāo blāw blár" data-categories="color">
+<article class="word-card" data-search="blāo blue adjective strong color blāo blāw blár blāo blāwu blāo blāwe blāwan blāwa blāo blāwe" data-categories="color">
   <header>
     <h2 class="headword">blāo</h2>
     <div class="ipa">/&#x27;blaːo/</div>
     <div class="header-meta"><span class="pos">adjective</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">strong</span></span><span class="category-pills"><span class="category-pill">color</span></span></div>
   </header>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>blāo</td>
+    <td>blāwu</td>
+    <td>blāo</td>
+    <td>blāwe</td>
+  </tr>
+  <tr>
+    <th>acc</th>
+    <td>blāwan</td>
+    <td>blāwa</td>
+    <td>blāo</td>
+    <td>blāwe</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">blue</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>blāo</span><span class="cognate"><span class="cog-label">OE</span>blāw</span><span class="cognate"><span class="cog-label">ON</span>blár</span></div>
 <div class="examples">
@@ -1168,6 +1252,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
     <div class="example-eng">Sigifrīþ&#x27;s eyes are blue.</div>
   </div>
 </div>
+  <div class="notes">Strong adjective, w-stem from PGmc *blēwaz. The -w- (from PGmc labiovelar semivowel) vocalizes to -o before Ø or consonant boundaries (masc/neut nom = blāo), and resurfaces as consonantal -w- before vowel-initial endings (fem nom blāwu, masc acc blāwan, pl blāwe). Not a paradigm irregularity — this is regular w-stem behavior in Germanic.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
 <article class="word-card" data-search="blī lead noun neut metal blīo blý" data-categories="metal">
@@ -1181,7 +1266,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">same as OS and OD.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="blōd blood noun neut body part bluot blōd blóð blōþ" data-categories="body part">
+<article class="word-card" data-search="blōd blood noun neut body part bluot blōd blóð blōþ blōd blōdas blōde blōd blōdu blōdōs blōdō blōdum blōdā blōdum" data-categories="body part">
   <header>
     <h2 class="headword">blōd</h2>
     <div class="ipa">/&#x27;bloːd/</div>
@@ -1221,7 +1306,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Same OHG and OD</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bolla bowl, bun, ball noun fem bolla bolla bolli" data-categories="">
+<article class="word-card" data-search="bolla bowl, bun, ball noun fem bolla bolla bolli bolla" data-categories="">
   <header>
     <h2 class="headword">bolla</h2>
     <div class="ipa">/&#x27;bolːa/</div>
@@ -1247,7 +1332,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>bolz</span><span class="cognate"><span class="cog-label">OE</span>bolt</span><span class="cognate"><span class="cog-label">ON</span>boltr, bolti</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bord board noun neut dwelling bort bord borð baurd" data-categories="dwelling">
+<article class="word-card" data-search="bord board noun neut dwelling bort bord borð baurd bord" data-categories="dwelling">
   <header>
     <h2 class="headword">bord</h2>
     <div class="ipa">/&#x27;bord/</div>
@@ -1273,7 +1358,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>borgōn, borgēn</span><span class="cognate"><span class="cog-label">OE</span>borgian</span><span class="cognate"><span class="cog-label">ON</span>borga</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="bosk bush, forest noun masc nature busk busc buskr" data-categories="nature">
+<article class="word-card" data-search="bosk bush, forest noun masc nature busk busc buskr bosk boskas boske bosk bosku boskōs boskō boskum boskā boskum" data-categories="nature">
   <header>
     <h2 class="headword">bosk</h2>
     <div class="ipa">/&#x27;bosk/</div>
@@ -1312,15 +1397,15 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brahsma</span><span class="cognate"><span class="cog-label">ON</span>brosma</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brambazi blackberry noun neut plant food &amp; drink brāmberi brēmber" data-categories="plant|food &amp; drink">
+<article class="word-card" data-search="brambari blackberry noun neut plant food &amp; drink brāmberi brēmber" data-categories="plant|food &amp; drink">
   <header>
-    <h2 class="headword">brambazi</h2>
-    <div class="ipa">/&#x27;brambaʐi/</div>
+    <h2 class="headword">brambari</h2>
+    <div class="ipa">/&#x27;brambari/</div>
     <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pills"><span class="category-pill">plant</span><span class="category-pill">food &amp; drink</span></span></div>
   </header>
   <div class="english">blackberry</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brāmberi</span><span class="cognate"><span class="cog-label">OE</span>brēmber</span></div>
-  <div class="notes">Written as brambasi. Dialectal pronounciation. /&#x27;brambazi/ is the specific accent spread to France. /&#x27;brambaʐi/ is likely what was said in 5th century Rhineland.</div>
+  <div class="notes">Written as brambasi. Dialectal pronounciation. brambari /&#x27;brambazi/ is the specific accent spread to France. /&#x27;brambari/ is likely what was said in 5th century Rhineland.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
 <article class="word-card" data-search="brekan to break verb class iv strong brëhhan brecan brikan" data-categories="">
@@ -1414,18 +1499,51 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brātan</span><span class="cognate"><span class="cog-label">OE</span>brǣdan</span><span class="cognate"><span class="cog-label">ON</span>bræða</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="brōd bread noun masc food &amp; drink brōt brēad brauð brauþ" data-categories="food &amp; drink">
+<article class="word-card" data-search="brōd bread noun neut food brōt brēad brauð brauþ brōd brōdas brōde brōd brōdu brōdu brōdō brōdum brōdu brōdum" data-categories="food">
   <header>
     <h2 class="headword">brōd</h2>
     <div class="ipa">/&#x27;broːd/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pills"><span class="category-pill">food &amp; drink</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">neut</span></span><span class="category-pills"><span class="category-pill">food</span></span></div>
   </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">brōd</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">brōdas</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">brōde</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">brōd</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">brōdu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">brōdu</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">brōdō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">brōdum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">brōdu</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">brōdum</span></div>
+  </div>
+</div>
   <div class="english">bread</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brōt</span><span class="cognate"><span class="cog-label">OE</span>brēad</span><span class="cognate"><span class="cog-label">ON</span>brauð</span><span class="cognate"><span class="cog-label">Gothic</span>brauþ</span></div>
-  <div class="notes">au shifts in OHG and OD, pre d to t shift. same as OS.</div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Ik etu brōd.</div>
+    <div class="example-eng">I eat bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Kuning giƀid brōd sune.</div>
+    <div class="example-eng">The king gives bread to the son.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Brōd unser dagalīka giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+</div>
+  <div class="notes">Neuter a-stem. PGmc *braudą. Wachtendonck-style au &gt; ō monophthongization applied; d retained (pre-consonant-shift Ripuarian, does not go to t as in later OHG). All WGmc/NGmc/Gothic descendants are neuter — OS brōd, OHG brōt, OE brēad, ON brauð, Goth brauþ (attested Mt 26:26). Gender in DB corrected from masc → neut. Semantic doublet with hlaif — OHG/OS/OD prefer this brōd root, OE and Gothic-primary use hlāf/hlaifs. Same branch-split shape as hailagōn (WGmc, from *hailag-) vs wīhjan (from *wīh-, closer to Goth weihs).</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="brōþer brother noun masc kinship bruoder brōþor bróðir brōþar" data-categories="kinship">
+<article class="word-card" data-search="brōþer brother noun masc kinship bruoder brōþor bróðir brōþar brōþer brōþres brōþre brōþer brōþre brōþre brōþrō brōþrum brōþre brōþrum" data-categories="kinship">
   <header>
     <h2 class="headword">brōþer</h2>
     <div class="ipa">/&#x27;brōθer/</div>
@@ -1474,7 +1592,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>brūn</span><span class="cognate"><span class="cog-label">OE</span>brūn</span><span class="cognate"><span class="cog-label">ON</span>brúnn</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="burg fortification, fortified city noun fem dwelling burg burg borg baurgs" data-categories="dwelling">
+<article class="word-card" data-search="burg fortification, fortified city noun fem dwelling burg burg borg baurgs burg" data-categories="dwelling">
   <header>
     <h2 class="headword">burg</h2>
     <div class="ipa">/&#x27;burg/</div>
@@ -1511,7 +1629,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Wachtendonck Psalms</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="bëra funeral bier noun fem bāra bēr bára" data-categories="">
+<article class="word-card" data-search="bëra funeral bier noun fem bāra bēr bára bëra" data-categories="">
   <header>
     <h2 class="headword">bëra</h2>
     <div class="ipa">/&#x27;beːra/</div>
@@ -1621,7 +1739,8 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>būh</span><span class="cognate"><span class="cog-label">OE</span>būc, būcc</span><span class="cognate"><span class="cog-label">ON</span>búkr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="dag day noun masc time tag dæġ dagr dags" data-categories="time">
+<article class="word-card" data-search="dag day noun masc time tag dæġ dagr dags dag
+ dagas dage dag dagu dagōs dagō dagum dagā dagum" data-categories="time">
   <header>
     <h2 class="headword">dag</h2>
     <div class="ipa">/&#x27;dag/</div>
@@ -1649,6 +1768,53 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="english">day</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tag</span><span class="cognate"><span class="cog-label">OE</span>dæġ</span><span class="cognate"><span class="cog-label">ON</span>dagr</span><span class="cognate"><span class="cog-label">Gothic</span>dags</span></div>
   <div class="notes">Wachtendonck Psalms has dag. Unchanged since Pwgc. /&#x27;daɣ/ in some dialects.</div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="dagalīk daily adjective time tagalīh dæġlīċ dagalīk dagalīku dagalīk dagalīke dagalīkan dagalīka dagalīka dagalīke" data-categories="time">
+  <header>
+    <h2 class="headword">dagalīk</h2>
+    <div class="ipa">/&#x27;daɣaliːk/</div>
+    <div class="header-meta"><span class="pos">adjective</span><span class="category-pills"><span class="category-pill">time</span></span></div>
+  </header>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>dagalīk</td>
+    <td>dagalīku</td>
+    <td>dagalīk</td>
+    <td>dagalīke</td>
+  </tr>
+  <tr>
+    <th>acc</th>
+    <td>dagalīkan</td>
+    <td>dagalīka</td>
+    <td>dagalīka</td>
+    <td>dagalīke</td>
+  </tr>
+  </tbody>
+</table></div>
+  <div class="english">daily</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>tagalīh</span><span class="cognate"><span class="cog-label">OE</span>dæġlīċ</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Brōd unser dagalīka giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Hlaiƀ unseran dagalīkan giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+</div>
+  <div class="notes">Adjective, &quot;daily, of-this-day, pertaining-to-the-day.&quot; Formation: dag (root of dagaz, &quot;day&quot;) + -e- linking vowel + -līk (productive WGmc adjective-forming suffix, from PGmc *-līkaz, cognate to English -ly, German -lich, from the noun *līką &quot;body, form, likeness&quot;). Full strong declension in OS/pre-shift Ripuarian style — nom sg: dagalīk/dagalīku/dagalīk (M/F/N), acc sg: dagalīkan/dagalīka/dagalīka (M/F/N with -a rather than OHG -az for neut), dat sg: dagalīkumu/dagalīkeru/dagalīkumu, nom pl: dagalīke/dagalīka/dagalīk. For Pater Noster line 3 modifying brōd (neut acc sg), the surface form is dagalīka (OS-style neut acc sg strong). Standard WGmc rendering of Vulgate ,,quotidianum,&#x27; itself a simplification of Greek ,,ἐπιούσιον&#x27; — a hapax legomenon that Jerome flagged as vocabulary he was inventing. Alternate root worth noting: OHG-St.Gall uses ,,emizzīg&#x27; (continual, incessant) from PGmc *ammatiga- for the same slot, a completely different lexical choice.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="dagrōd dawn (literal: day-red) noun time compound/kenning tagarōt dæġrēd" data-categories="time|compound/kenning">
@@ -1794,18 +1960,66 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>troumen</span><span class="cognate"><span class="cog-label">OE</span>drīeman</span><span class="cognate"><span class="cog-label">ON</span>dreyma</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="drinkan to drink verb class iii strong trinkan drincan drekka drigkan" data-categories="">
+<article class="word-card" data-search="drinkan to drink verb class iii strong action trinkan drincan drekka drigkan drinkan drink drinkad gadrunkan drinku drinke drank drunki drinkis drinkēs drunki drunkīs drinkid drinke drank drunki drinkēm drunkum drunkīm drinkēt drunkud drunkīt drinkēn drunkun drunkīn" data-categories="action">
   <header>
     <h2 class="headword">drinkan</h2>
     <div class="ipa">/&#x27;drinkan/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">drinkan</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">drinku</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">drinkis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">drinkid</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>drinkan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>drink</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>drinkad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gadrunkan</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>drinku</td>
+    <td>drinke</td>
+    <td>drank</td>
+    <td>drunki</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>drinkis</td>
+    <td>drinkēs</td>
+    <td>drunki</td>
+    <td>drunkīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>drinkid</td>
+    <td>drinke</td>
+    <td>drank</td>
+    <td>drunki</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td class="empty-cell">—</td>
+    <td>drinkēm</td>
+    <td>drunkum</td>
+    <td>drunkīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td class="empty-cell">—</td>
+    <td>drinkēt</td>
+    <td>drunkud</td>
+    <td>drunkīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td class="empty-cell">—</td>
+    <td>drinkēn</td>
+    <td>drunkun</td>
+    <td>drunkīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to drink</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>trinkan</span><span class="cognate"><span class="cog-label">OE</span>drincan</span><span class="cognate"><span class="cog-label">ON</span>drekka</span><span class="cognate"><span class="cog-label">Gothic</span>drigkan</span></div>
 <div class="examples">
@@ -1814,8 +2028,12 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
     <div class="example-frk">Ik drinku watres</div>
     <div class="example-eng">I drink [of] water.</div>
   </div>
+  <div class="example">
+    <div class="example-frk">Kuning drinkid.</div>
+    <div class="example-eng">The king drinks.</div>
+  </div>
 </div>
-  <div class="notes">Same word Pwgc, OD, OS. OHG shifted to trinkan</div>
+  <div class="notes">Class III strong. PGmc *drinkaną. Ablaut i — a — u — u. Past sg stem drank-, past pl stem drunk-. Cognates: OS drinkan, OHG trinkan, OE drincan, Goth drigkan. Note pres_3sg drinkid in Ripuarian (vs standard drinkit) reflects Lower Rhine phonology, matching the ,,drenke Wasser&#x27; pattern from sentence 14.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="druhtin lord, lord noun masc legal/social religion/spiritual truhtin dryhten dróttin" data-categories="legal/social|religion/spiritual">
@@ -1904,15 +2122,69 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">Same word Pwgc OS OE OD. OHG pre-shift.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="dōn to do verb irregular duon dōn" data-categories="">
+<article class="word-card" data-search="dōn to do verb irregular action duon dōn dōn dō dōd gadōn dōm dōe dede dedi dōs dōēs dedi dedīs dōt dōe dede dedi dōmēs dōēm dedum dedīm dōt dōēt dedud dedīt dōnt dōēn dedun dedīn" data-categories="action">
   <header>
     <h2 class="headword">dōn</h2>
     <div class="ipa">/&#x27;doːn/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Irregular</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Irregular</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>dōn</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>dō</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>dōd</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gadōn</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>dōm</td>
+    <td>dōe</td>
+    <td>dede</td>
+    <td>dedi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>dōs</td>
+    <td>dōēs</td>
+    <td>dedi</td>
+    <td>dedīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>dōt</td>
+    <td>dōe</td>
+    <td>dede</td>
+    <td>dedi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>dōmēs</td>
+    <td>dōēm</td>
+    <td>dedum</td>
+    <td>dedīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>dōt</td>
+    <td>dōēt</td>
+    <td>dedud</td>
+    <td>dedīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>dōnt</td>
+    <td>dōēn</td>
+    <td>dedun</td>
+    <td>dedīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to do</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>duon</span><span class="cognate"><span class="cog-label">OE</span>dōn</span></div>
-  <div class="notes">Same as Pwgc and OS. OD and OHG pre-shifted.</div>
+  <div class="notes">Irregular (athematic). PGmc *dōną. Reduplicating past *dede- from PIE *dhe-dheH- (,,put-put&#x27;), the same root that gives Latin -dere and Greek τίθημι. Cognates: OS dōn (past dede), OHG tuon (past teta), OE dōn (past dyde). Not attested in Gothic; Gothic uses taujan instead. Highly frequent — needed for most everyday sentences.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="ebur wild boar noun masc animal ebur eofur jǫfurr" data-categories="animal">
@@ -1958,7 +2230,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>engil</span><span class="cognate"><span class="cog-label">OE</span>enġel</span><span class="cognate"><span class="cog-label">ON</span>engill</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="erþa earth noun fem nature ërda eorþe jǫrð airþa" data-categories="nature">
+<article class="word-card" data-search="erþa earth noun fem nature ërda eorþe jǫrð airþa erþa erþō erþu, erþe erþa erþō erþōno erþōm erþā" data-categories="nature">
   <header>
     <h2 class="headword">erþa</h2>
     <div class="ipa">/&#x27;erθa/</div>
@@ -1969,7 +2241,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
     <div class="case-col-header">singular</div>
     <div class="case-row"><span class="case-label">nom</span><span class="case-val">erþa</span></div>
     <div class="case-row"><span class="case-label">gen</span><span class="case-val">erþō</span></div>
-    <div class="case-row"><span class="case-label">dat</span><span class="case-val">erþe</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">erþu, erþe</span></div>
     <div class="case-row"><span class="case-label">acc</span><span class="case-val">erþa</span></div>
   </div>
   <div>
@@ -1989,21 +2261,82 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
   </div>
 </div>
-  <div class="notes">Same word OD and OS. Feminine ō-stem. PGmc *erþō. Dat.sg canonical form is erþu (Wachtendonck Psalms pattern); the -e variant reflects unstressed-vowel leveling seen in later Ripuarian and is documented in Pater Noster line 2. Cognates: OS ertha, OHG erda, OE eorþe, Goth airþa.</div>
+  <div class="notes">Feminine ō-stem. PGmc *erþō. Same word OD and OS. Dat.sg canonical form is erþu (Wachtendonck Psalms pattern); the -e variant reflects unstressed-vowel leveling seen in later Ripuarian and is documented in Pater Noster line 2. Cognates: OS ertha, OHG erda, OE eorþe, Goth airþa.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="etan to eat verb class v strong ëȥȥan etan eta itan" data-categories="">
+<article class="word-card" data-search="etan to eat verb class v strong action ëȥȥan etan eta itan etan it etad gaetan etu ete at āti itis etēs āti ātīs itit ete at āti etamēs etēm ātum ātīm etet etēt ātud ātīt etant etēn ātun ātīn" data-categories="action">
   <header>
     <h2 class="headword">etan</h2>
     <div class="ipa">/&#x27;etan/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>etan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>it</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>etad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gaetan</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>etu</td>
+    <td>ete</td>
+    <td>at</td>
+    <td>āti</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>itis</td>
+    <td>etēs</td>
+    <td>āti</td>
+    <td>ātīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>itit</td>
+    <td>ete</td>
+    <td>at</td>
+    <td>āti</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>etamēs</td>
+    <td>etēm</td>
+    <td>ātum</td>
+    <td>ātīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>etet</td>
+    <td>etēt</td>
+    <td>ātud</td>
+    <td>ātīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>etant</td>
+    <td>etēn</td>
+    <td>ātun</td>
+    <td>ātīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to eat</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ëȥȥan</span><span class="cognate"><span class="cog-label">OE</span>etan</span><span class="cognate"><span class="cog-label">ON</span>eta</span><span class="cognate"><span class="cog-label">Gothic</span>itan</span></div>
-  <div class="notes">Same as Pwgc, OS OD, OE.</div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Ik etu brōd.</div>
+    <div class="example-eng">I eat bread.</div>
+  </div>
+</div>
+  <div class="notes">Class V strong. PGmc *etaną. Ablaut e — a — ē — e. 2sg/3sg present show i-mutation (itis, itit). Cognates: OS etan, OHG ezzan (post-shift), OE etan, Goth itan. Diagnostic pair with drinkan for basic sentences.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="eþiling prince, nobleman, noble vassal noun masc kinship adaling æþeling, æðeling, eþeling ǫðlingr" data-categories="kinship">
+<article class="word-card" data-search="eþiling prince, nobleman, noble vassal noun masc kinship adaling æþeling, æðeling, eþeling ǫðlingr eþiling eþilingas eþilinge eþiling eþilingu eþilingōs eþilingō eþilingum eþilingā eþilingum" data-categories="kinship">
   <header>
     <h2 class="headword">eþiling</h2>
     <div class="ipa">/&#x27;eθiliŋ/</div>
@@ -2043,7 +2376,11 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="examples">
   <div class="examples-label">used in</div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
@@ -2190,15 +2527,76 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
   <div class="notes">mentioned as a frankish word not just germanic</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="faran to travel, fare verb class vi strong motion faran faran fara faran" data-categories="motion">
+<article class="word-card" data-search="faran to travel, fare verb class vi strong movement faran faran fara faran faran far farad gafaran faru fare fōr fōri feris farēs fōri fōrīs ferit fare fōr fōri faramēs farēm fōrum fōrīm faret farēt fōrud fōrīt farant farēn fōrun fōrīn" data-categories="movement">
   <header>
     <h2 class="headword">faran</h2>
     <div class="ipa">/&#x27;faran/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class VI Strong</span></span><span class="category-pills"><span class="category-pill">motion</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class VI Strong</span></span><span class="category-pills"><span class="category-pill">movement</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>faran</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>far</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>farad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gafaran</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>faru</td>
+    <td>fare</td>
+    <td>fōr</td>
+    <td>fōri</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>feris</td>
+    <td>farēs</td>
+    <td>fōri</td>
+    <td>fōrīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>ferit</td>
+    <td>fare</td>
+    <td>fōr</td>
+    <td>fōri</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>faramēs</td>
+    <td>farēm</td>
+    <td>fōrum</td>
+    <td>fōrīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>faret</td>
+    <td>farēt</td>
+    <td>fōrud</td>
+    <td>fōrīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>farant</td>
+    <td>farēn</td>
+    <td>fōrun</td>
+    <td>fōrīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to travel, fare</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>faran</span><span class="cognate"><span class="cog-label">OE</span>faran</span><span class="cognate"><span class="cog-label">ON</span>fara</span><span class="cognate"><span class="cog-label">Gothic</span>faran</span></div>
-  <div class="notes">same in all germanic</div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre farant in rīne.</div>
+    <div class="example-eng">Oath-brothers travel in the Rhine.</div>
+  </div>
+</div>
+  <div class="notes">Class VI strong. PGmc *faraną. Ablaut a — ō — ō — a. 2sg/3sg present show a→e i-mutation (feris, ferit). Past uses long ō throughout the past stem. Cognates: OS faran, OHG faran, OE faran, Goth faran. Semantic range covers ,,to go / travel / fare&#x27; — cognate with English fare in ,,farewell&#x27;.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="farlātan to leave, dismiss verb class vii strong firlāzzan, farlāzan forlǣtan fralētan" data-categories="">
@@ -2894,7 +3292,7 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gagel</span><span class="cognate"><span class="cog-label">OE</span>gagel</span><span class="cognate"><span class="cog-label">ON</span>gagl</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="gair spear noun masc weapon/battle gēr gār geirr gais" data-categories="weapon/battle">
+<article class="word-card" data-search="gair spear noun masc weapon/battle gēr gār geirr gais gair gairas gaire gair gairu gairōs gairō gairum gairā gairum" data-categories="weapon/battle">
   <header>
     <h2 class="headword">gair</h2>
     <div class="ipa">/&#x27;gair/</div>
@@ -2995,6 +3393,17 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>ginuog</span><span class="cognate"><span class="cog-label">OE</span>ġenōg</span><span class="cognate"><span class="cog-label">ON</span>gnógr, nógr</span><span class="cognate"><span class="cog-label">Gothic</span>ganōhs</span></div>
   <div class="source">reconstructed</div>
 </article>
+<article class="word-card" data-search="gard spike, stick, staff, goad noun tool gart ġeard gaddr gazds" data-categories="tool">
+  <header>
+    <h2 class="headword">gard</h2>
+    <div class="ipa">/&#x27;gard/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="category-pills"><span class="category-pill">tool</span></span></div>
+  </header>
+  <div class="english">spike, stick, staff, goad</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gart</span><span class="cognate"><span class="cog-label">OE</span>ġeard</span><span class="cognate"><span class="cog-label">ON</span>gaddr</span><span class="cognate"><span class="cog-label">Gothic</span>gazds</span></div>
+  <div class="notes">Wartburg has it as gard. Reconstruction page shows gaʀd. Likely a transition letter from z to r. Given how Old French is gart/gars, the letter here is probably closer to r than z. May be dialectal /&#x27;gar̝d/ instead of /&#x27;gard/.</div>
+  <div class="source">reconstructed</div>
+</article>
 <article class="word-card" data-search="gardō enclosure, yard, garden noun masc farming garto ġeard garði garda" data-categories="farming">
   <header>
     <h2 class="headword">gardō</h2>
@@ -3067,17 +3476,6 @@ Siegfried&#x27;s window is ~420 AD. Wachtendonck is 400–500 years downstream. 
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>goumen</span><span class="cognate"><span class="cog-label">OE</span>ġīeman</span><span class="cognate"><span class="cog-label">ON</span>geyma</span><span class="cognate"><span class="cog-label">Gothic</span>gaumjan</span></div>
   <div class="notes">Did not sound shift to monophong in OHG. it is au in Frankish.</div>
   <div class="source">Wartburg + Reconstructed</div>
-</article>
-<article class="word-card" data-search="gaʀd spike, stick, staff, goad noun tool gart ġeard gaddr gazds" data-categories="tool">
-  <header>
-    <h2 class="headword">gaʀd</h2>
-    <div class="ipa">/&#x27;gar̝d/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="category-pills"><span class="category-pill">tool</span></span></div>
-  </header>
-  <div class="english">spike, stick, staff, goad</div>
-<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gart</span><span class="cognate"><span class="cog-label">OE</span>ġeard</span><span class="cognate"><span class="cog-label">ON</span>gaddr</span><span class="cognate"><span class="cog-label">Gothic</span>gazds</span></div>
-  <div class="notes">Wartburg has it as gard. Reconstruction page shows ʀ. Likely a transition letter from z to r. Given how Old French is gart/gars, the letter here is probably closer to r than z. May be dialectal. Sound may be like Czech ř.</div>
-  <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="geld payment, tribute noun neut legal/social gelt ġield gjald gild" data-categories="legal/social">
   <header>
@@ -3156,14 +3554,84 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gezan, gezzan</span><span class="cognate"><span class="cog-label">OE</span>ġetan, ġietan</span><span class="cognate"><span class="cog-label">ON</span>geta</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="geƀan to give verb class v strong gëban, gëvan  ġiefan gefa giban" data-categories="">
+<article class="word-card" data-search="geƀan to give verb class v strong action gëban, gëvan  ġiefan gefa giban geƀan giƀ geƀad gageƀan geƀu geƀe gaƀ gāƀi giƀis geƀēs gāƀi gāƀīs giƀit geƀe gaƀ gāƀi geƀamēs geƀēm gāƀum gāƀīm geƀet geƀēt gāƀud gāƀīt geƀant geƀēn gāƀun gāƀīn" data-categories="action">
   <header>
     <h2 class="headword">geƀan</h2>
     <div class="ipa">/&#x27;geβan/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>geƀan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>giƀ</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>geƀad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gageƀan</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>geƀu</td>
+    <td>geƀe</td>
+    <td>gaƀ</td>
+    <td>gāƀi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>giƀis</td>
+    <td>geƀēs</td>
+    <td>gāƀi</td>
+    <td>gāƀīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>giƀit</td>
+    <td>geƀe</td>
+    <td>gaƀ</td>
+    <td>gāƀi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>geƀamēs</td>
+    <td>geƀēm</td>
+    <td>gāƀum</td>
+    <td>gāƀīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>geƀet</td>
+    <td>geƀēt</td>
+    <td>gāƀud</td>
+    <td>gāƀīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>geƀant</td>
+    <td>geƀēn</td>
+    <td>gāƀun</td>
+    <td>gāƀīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to give</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gëban, gëvan </span><span class="cognate"><span class="cog-label">OE</span>ġiefan</span><span class="cognate"><span class="cog-label">ON</span>gefa</span><span class="cognate"><span class="cog-label">Gothic</span>giban</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Kuning giƀid brōd sune.</div>
+    <div class="example-eng">The king gives bread to the son.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Brōd unser dagalīka giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Hlaiƀ unseran dagalīkan giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+</div>
+  <div class="notes">Class V strong. PGmc *geƀaną. Ablaut e — a — ē — e. Intervocalic ƀ /β/ (bilabial fricative) is the pre-shift Ripuarian allophone of /b/ between vowels. 2sg/3sg present show i-mutation (giƀis, giƀit). Imperative 2sg giƀ is the form needed for Pater Noster line 3 (,,giƀ uns hindaga unser dagelīkan brōd&#x27;). Cognates: OS geƀan, OHG geban, OE giefan, Goth giban.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="gibb forked stick noun tool" data-categories="tool">
@@ -3238,7 +3706,7 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
   <div class="notes">Same word Pwgc, OE, OS. OHG pre-shift&#x27;</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="gold gold noun neut metal color gold gold gull gulþ" data-categories="metal|color">
+<article class="word-card" data-search="gold gold noun neut metal color gold gold gull gulþ gold goldes golde gold" data-categories="metal|color">
   <header>
     <h2 class="headword">gold</h2>
     <div class="ipa">/&#x27;gold/</div>
@@ -3289,7 +3757,7 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>graban</span><span class="cognate"><span class="cog-label">OE</span>grafan</span><span class="cognate"><span class="cog-label">ON</span>grafa</span><span class="cognate"><span class="cog-label">Gothic</span>graban</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="grimahild mask-battle or fierce-battle (personal name) name fem personal name heroic" data-categories="personal name|heroic">
+<article class="word-card" data-search="grimahild mask-battle or fierce-battle (personal name) name fem personal name heroic grimahild" data-categories="personal name|heroic">
   <header>
     <h2 class="headword">grimahild</h2>
     <div class="ipa">/&#x27;grimahild/</div>
@@ -3468,7 +3936,7 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
   <div class="notes">Same as OD.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="gunþahari battle-army (personal name) name masc personal name heroic gundhari gūþhere gunnarr" data-categories="personal name|heroic">
+<article class="word-card" data-search="gunþahari battle-army (personal name) name masc personal name heroic gundhari gūþhere gunnarr gunþahari" data-categories="personal name|heroic">
   <header>
     <h2 class="headword">gunþahari</h2>
     <div class="ipa">/&#x27;gunθahari/</div>
@@ -3526,15 +3994,40 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>gēro</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="gōd good adjective quality guot gōd góðr gōþs" data-categories="quality">
+<article class="word-card" data-search="gōd good adjective quality guot gōd góðr gōþs gōd gōdu gōd gōde gōdan gōda gōd gōde" data-categories="quality">
   <header>
     <h2 class="headword">gōd</h2>
     <div class="ipa">/&#x27;goːd/</div>
     <div class="header-meta"><span class="pos">adjective</span><span class="category-pills"><span class="category-pill">quality</span></span></div>
   </header>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>gōd</td>
+    <td>gōdu</td>
+    <td>gōd</td>
+    <td>gōde</td>
+  </tr>
+  <tr>
+    <th>acc</th>
+    <td>gōdan</td>
+    <td>gōda</td>
+    <td>gōd</td>
+    <td>gōde</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">good</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>guot</span><span class="cognate"><span class="cog-label">OE</span>gōd</span><span class="cognate"><span class="cog-label">ON</span>góðr</span><span class="cognate"><span class="cog-label">Gothic</span>gōþs</span></div>
-  <div class="notes">Same as Pwgc. reconstructed from OHG guot pre sound shift.</div>
+  <div class="notes">Same as Pwgc. reconstructed from OHG guot pre sound shift. Strong adjective from PGmc *gōdaz. Retained /d/ (pre-consonant-shift Ripuarian, does not go to /t/ as in OHG guot). Cognates: OS gōd, OHG guot, OE gōd, Goth gōþs.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="habbian to have verb class 3 weak habēn habban hefja hafjan" data-categories="">
@@ -3608,27 +4101,72 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>heilag</span><span class="cognate"><span class="cog-label">OE</span>hāliġ</span><span class="cognate"><span class="cog-label">ON</span>heilagr</span><span class="cognate"><span class="cog-label">Gothic</span>hailags</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="hailagōn to hallow, sanctify, make holy verb class 2 weak religion/spiritual heilagōn hālgian helga" data-categories="religion/spiritual">
+<article class="word-card" data-search="hailagōn to hallow, sanctify, make holy verb class 2 weak religion/spiritual heilagōn hālgian helga hailagōn hailagō hailagōd gahailagōd hailagōm hailagō hailagōda hailagōdi hailagōs hailagōs hailagōdēs hailagōdīs hailagōt hailagō hailagōda hailagōdi hailagōmēs hailagōm hailagōdum hailagōdīm hailagōt hailagōt hailagōdud hailagōdīt hailagōnt hailagōn hailagōdun hailagōdīn" data-categories="religion/spiritual">
   <header>
     <h2 class="headword">hailagōn</h2>
     <div class="ipa">/&#x27;hailagoːn/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 2 Weak</span></span><span class="category-pills"><span class="category-pill">religion/spiritual</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">hailagōn</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">hailagōm</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">hailagōs</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">hailagōt</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">hailagōda</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">hailagōdun</span></div>
-  <div class="part-row"><span class="part-label">past part</span><span class="case-val">gahailagōd</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>hailagōn</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>hailagō</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>hailagōd</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gahailagōd</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>hailagōm</td>
+    <td>hailagō</td>
+    <td>hailagōda</td>
+    <td>hailagōdi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>hailagōs</td>
+    <td>hailagōs</td>
+    <td>hailagōdēs</td>
+    <td>hailagōdīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>hailagōt</td>
+    <td>hailagō</td>
+    <td>hailagōda</td>
+    <td>hailagōdi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>hailagōmēs</td>
+    <td>hailagōm</td>
+    <td>hailagōdum</td>
+    <td>hailagōdīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>hailagōt</td>
+    <td>hailagōt</td>
+    <td>hailagōdud</td>
+    <td>hailagōdīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>hailagōnt</td>
+    <td>hailagōn</td>
+    <td>hailagōdun</td>
+    <td>hailagōdīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to hallow, sanctify, make holy</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>heilagōn</span><span class="cognate"><span class="cog-label">OE</span>hālgian</span><span class="cognate"><span class="cog-label">ON</span>helga</span></div>
 <div class="examples">
   <div class="examples-label">used in</div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
@@ -3885,6 +4423,17 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
     <div class="header-meta"><span class="pos">noun</span></div>
   </header>
   <div class="english">hill (toponym only)</div>
+  <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="hard twisted thread noun heorde" data-categories="">
+  <header>
+    <h2 class="headword">hard</h2>
+    <div class="ipa">/&#x27;hard/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">twisted thread</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OE</span>heorde</span></div>
+  <div class="notes">Written as hard in Wartburg. Dialectal. May have been haʀd /&#x27;har̝d/ in some dialects.</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
 <article class="word-card" data-search="hard hard adjective quality hart heard harðr hardus" data-categories="quality">
@@ -4144,17 +4693,6 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>habuch</span><span class="cognate"><span class="cog-label">OE</span>hafoc</span><span class="cognate"><span class="cog-label">ON</span>haukr</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="haʀd twisted thread noun heorde" data-categories="">
-  <header>
-    <h2 class="headword">haʀd</h2>
-    <div class="ipa">/&#x27;har̝d/</div>
-    <div class="header-meta"><span class="pos">noun</span></div>
-  </header>
-  <div class="english">twisted thread</div>
-<div class="cognates"><span class="cognate"><span class="cog-label">OE</span>heorde</span></div>
-  <div class="notes">Written as hard in Wartburg</div>
-  <div class="source">Wartburg + Reconstructed</div>
-</article>
 <article class="word-card" data-search="heliþ hero noun masc heroic helid hæle, hæleþ, hæleð hǫldr" data-categories="heroic">
   <header>
     <h2 class="headword">heliþ</h2>
@@ -4165,7 +4703,7 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>helid</span><span class="cognate"><span class="cog-label">OE</span>hæle, hæleþ, hæleð</span><span class="cognate"><span class="cog-label">ON</span>hǫldr</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="helm helmet noun masc weapon/battle hëlm helm hjalmr hilms" data-categories="weapon/battle">
+<article class="word-card" data-search="helm helmet noun masc weapon/battle hëlm helm hjalmr hilms helm helmas helme helm helmu helmōs helmō helmum helmā helmum" data-categories="weapon/battle">
   <header>
     <h2 class="headword">helm</h2>
     <div class="ipa">/&#x27;helm/</div>
@@ -4283,7 +4821,7 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
   <div class="notes">Written as heven</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="himil sky, heaven noun masc nature religion/spiritual himil himinn himins" data-categories="nature|religion/spiritual">
+<article class="word-card" data-search="himil sky, heaven noun masc nature religion/spiritual himil himinn himins himil himilas himile himil himilu himilōs himilō himilum himilā himilum" data-categories="nature|religion/spiritual">
   <header>
     <h2 class="headword">himil</h2>
     <div class="ipa">/&#x27;himil/</div>
@@ -4312,12 +4850,20 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="examples">
   <div class="examples-label">used in</div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
   <div class="example">
     <div class="example-frk">Kweme rīki þīn, werþe willjo þīn, sō in himile, sō in erþe.</div>
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Þū sihis himil.</div>
+    <div class="example-eng">You see the sky.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
   <div class="notes">In Wachtendonck Psalms.</div>
@@ -4341,6 +4887,28 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
   </header>
   <div class="english">deer, stag</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hiruz</span><span class="cognate"><span class="cog-label">OE</span>heorot</span><span class="cognate"><span class="cog-label">ON</span>hjǫrtr</span></div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="hiudag today adverb time hiutu hēodæġ himma daga" data-categories="time">
+  <header>
+    <h2 class="headword">hiudag</h2>
+    <div class="ipa">/&#x27;hiudag/</div>
+    <div class="header-meta"><span class="pos">adverb</span><span class="category-pills"><span class="category-pill">time</span></span></div>
+  </header>
+  <div class="english">today</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hiutu</span><span class="cognate"><span class="cog-label">OE</span>hēodæġ</span><span class="cognate"><span class="cog-label">Gothic</span>himma daga</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Brōd unser dagalīka giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Hlaiƀ unseran dagalīkan giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+</div>
+  <div class="notes">Temporal adverb, indeclinable. From PGmc *hiu (demonstrative &quot;this,&quot; the ja-stem instrumental of *hiz) + *dag- (root of *dagaz &quot;day&quot;). The fused adverb represents an early stage before the dative -u ending crystallized (later stage: hiudagu &gt; hiudu &gt; OHG hiutu &gt; modern German heute). The unfused two-word ancestor is visible in Gothic ,,himma daga&#x27; (dat masc dem + dat sg dag). Ripuarian at 5th c. sits at the point where fusion is happening but before the case-ending erosion. Semantic scope: ,,today, on this day, this present day.&#x27; Direct temporal adverb, not a prepositional phrase.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="hiupo rosehip noun fem plant food &amp; drink hiofa, hiufa, hiofo, hiufo hēope, hēopa hjúpa" data-categories="plant|food &amp; drink">
@@ -4374,14 +4942,40 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hlahhan, hlahhēn</span><span class="cognate"><span class="cog-label">OE</span>hliehhan</span><span class="cognate"><span class="cog-label">ON</span>hlæja</span><span class="cognate"><span class="cog-label">Gothic</span>hlahjan</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="hlaiƀ bread, loaf noun masc food &amp; drink hleib, leib hlāf hleifr hlaifs, hlaibs" data-categories="food &amp; drink">
+<article class="word-card" data-search="hlaiƀ bread, loaf noun masc food hleib, leib hlāf hleifr hlaifs, hlaibs hlaiƀ hlaiƀes hlaiƀe hlaiƀ hlaiƀu hlaiƀōs hlaiƀō hlaiƀum hlaiƀā hlaiƀum" data-categories="food">
   <header>
     <h2 class="headword">hlaiƀ</h2>
     <div class="ipa">/&#x27;hlaiβ/</div>
-    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pills"><span class="category-pill">food &amp; drink</span></span></div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">masc</span></span><span class="category-pills"><span class="category-pill">food</span></span></div>
   </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">hlaiƀ</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">hlaiƀes</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">hlaiƀe</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">hlaiƀ</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">hlaiƀu</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">hlaiƀōs</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">hlaiƀō</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">hlaiƀum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">hlaiƀā</span></div>
+    <div class="case-row"><span class="case-label">instr</span><span class="case-val">hlaiƀum</span></div>
+  </div>
+</div>
   <div class="english">bread, loaf</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hleib, leib</span><span class="cognate"><span class="cog-label">OE</span>hlāf</span><span class="cognate"><span class="cog-label">ON</span>hleifr</span><span class="cognate"><span class="cog-label">Gothic</span>hlaifs, hlaibs</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Hlaiƀ unseran dagalīkan giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+</div>
+  <div class="notes">Masculine a-stem. PGmc *hlaibaz. Intervocalic ƀ /β/ (bilabial fricative) is the pre-shift Ripuarian allophone of /b/ between vowels — same convention as geƀan. Semantic doublet with brōd (id 176) for &quot;bread&quot; — hlaiƀ is the Gothic/OE-lineage word (Goth hlaifs, OE hlāf), brōd is the OHG/OS/OD-lineage word (OHG brōt, OS brōd, Wachtendonck brōt). Both roots existed in Ripuarian and either could be used liturgically; the choice is a philological reconstruction call. Cognates: Goth hlaifs, OE hlāf, OHG hleib (with i-mutation), ON hleifr, Ripuarian hlaiƀ preserves the PGmc /ai/ diphthong.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="hlanka bend, curve; side, flank noun fem hlanca, lanca, lanka hlanc, hlonc" data-categories="">
@@ -4446,7 +5040,7 @@ Cognates: directly attested only through the Romance loan stratum and the 9th-ce
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hlīta, līta</span><span class="cognate"><span class="cog-label">ON</span>hlíð</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="hlōdowig famous-battle (personal name) name masc personal name heroic lūdwīg, hlūtwīg, hludwig hlōþewīġ lúðvíg, lóðvíg, lóðvík" data-categories="personal name|heroic">
+<article class="word-card" data-search="hlōdowig famous-battle (personal name) name masc personal name heroic lūdwīg, hlūtwīg, hludwig hlōþewīġ lúðvíg, lóðvíg, lóðvík hlōdowig hlōdowiges hlōdowige hlōdowig" data-categories="personal name|heroic">
   <header>
     <h2 class="headword">hlōdowig</h2>
     <div class="ipa">/&#x27;hloːdowig/</div>
@@ -4716,7 +5310,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>rimpfan</span><span class="cognate"><span class="cog-label">OE</span>hrimpan</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="hring ring, circle noun masc ring, hring hring hringr hriggs" data-categories="">
+<article class="word-card" data-search="hring ring, circle noun masc ring, hring hring hringr hriggs hring hringas hringe hring hringu hringōs hringō hringum hringā hringum" data-categories="">
   <header>
     <h2 class="headword">hring</h2>
     <div class="ipa">/&#x27;hriŋ/</div>
@@ -5271,17 +5865,79 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hie, hier</span><span class="cognate"><span class="cog-label">OE</span>hēr</span><span class="cognate"><span class="cog-label">ON</span>hér</span><span class="cognate"><span class="cog-label">Gothic</span>hēr</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="hōren to hear, listen verb class 1 weak hōren hīeran heyra hausjan" data-categories="">
+<article class="word-card" data-search="hōrjan to hear, listen verb class 1 weak perception hōren hīeran heyra hausjan hōren hōri hōriad gahōrid hōrju hōrie hōrda hōrdi hōris hōriēs hōrdēs hōrdīs hōrit hōrie hōrda hōrdi hōriamēs hōriēm hōrdum hōrdīm hōret hōriēt hōrdud hōrdīt hōriant hōriēn hōrdun hōrdīn" data-categories="perception">
   <header>
-    <h2 class="headword">hōren</h2>
-    <div class="ipa">/&#x27;hoːren/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
+    <h2 class="headword">hōrjan</h2>
+    <div class="ipa">/&#x27;hoːrjan/</div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span><span class="category-pills"><span class="category-pill">perception</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>hōren</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>hōri</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>hōriad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gahōrid</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>hōrju</td>
+    <td>hōrie</td>
+    <td>hōrda</td>
+    <td>hōrdi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>hōris</td>
+    <td>hōriēs</td>
+    <td>hōrdēs</td>
+    <td>hōrdīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>hōrit</td>
+    <td>hōrie</td>
+    <td>hōrda</td>
+    <td>hōrdi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>hōriamēs</td>
+    <td>hōriēm</td>
+    <td>hōrdum</td>
+    <td>hōrdīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>hōret</td>
+    <td>hōriēt</td>
+    <td>hōrdud</td>
+    <td>hōrdīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>hōriant</td>
+    <td>hōriēn</td>
+    <td>hōrdun</td>
+    <td>hōrdīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to hear, listen</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>hōren</span><span class="cognate"><span class="cog-label">OE</span>hīeran</span><span class="cognate"><span class="cog-label">ON</span>heyra</span><span class="cognate"><span class="cog-label">Gothic</span>hausjan</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Ik hōrju sigifriþ sprekan.</div>
+    <div class="example-eng">I hear Sigifrīþ speak.</div>
+  </div>
+</div>
+  <div class="notes">Class 1 weak. PGmc *hauzijaną (with grammatischer Wechsel to /z/ &gt; /r/ in West Germanic). Headword hōren in DB reflects post-j-loss form; -i- surfaces in paradigm cells where the historical -j- would appear (1sg, 1pl, 3pl, all subjunctive). Cognates: OS hōrian, OHG hōren, OE hīeran, Goth hausjan.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="ik i (1st person singular) pronoun personal ih ic ek ik" data-categories="">
+<article class="word-card" data-search="ik i (1st person singular) pronoun personal ih ic ek ik ik mīn mīr mīk wī unser uns uns" data-categories="">
   <header>
     <h2 class="headword">ik</h2>
     <div class="ipa">/ik/</div>
@@ -5324,8 +5980,40 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">I drink [of] water.</div>
   </div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Ik etu brōd.</div>
+    <div class="example-eng">I eat bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Sigifriþ nam mīn swerd.</div>
+    <div class="example-eng">Sigifrīþ took my sword.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Ik willju sehan sigifriþ.</div>
+    <div class="example-eng">I want to see Sigifrīþ.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Werþe sigifriþ mīn aiþbrōþer.</div>
+    <div class="example-eng">May Sigifrīþ become my oath-brother.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Ik hōrju sigifriþ sprekan.</div>
+    <div class="example-eng">I hear Sigifrīþ speak.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Brōd unser dagalīka giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Hlaiƀ unseran dagalīkan giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
   </div>
 </div>
   <div class="notes">PGmc *ek (1sg). Pre-High German consonant shift form: k retained (OHG ih shows the later k → x shift, post-Siegfried). Suppletive oblique forms from PGmc *m-. Cognates: Gothic ik, OS ik, OE ic, ON ek.</div>
@@ -5346,7 +6034,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">The eel swims in the Rhine.</div>
   </div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
   <div class="example">
@@ -5356,6 +6044,14 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="example">
     <div class="example-frk">Kweme rīki þīn, werþe willjo þīn, sō in himile, sō in erþe.</div>
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre farant in rīne.</div>
+    <div class="example-eng">Oath-brothers travel in the Rhine.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
   <div class="notes">Matches Pwgc, OE, OHG, OD</div>
@@ -6013,7 +6709,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>kunt</span><span class="cognate"><span class="cog-label">OE</span>cynd</span><span class="cognate"><span class="cog-label">ON</span>kind</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="kuning king noun masc kinship kuning cyning konungr" data-categories="kinship">
+<article class="word-card" data-search="kuning king noun masc kinship kuning cyning konungr kuning kuninges kuninge kuning kuningu kuningōs kuningō kuningum kuningā kuningum" data-categories="kinship">
   <header>
     <h2 class="headword">kuning</h2>
     <div class="ipa">/&#x27;kuniŋ/</div>
@@ -6061,6 +6757,14 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-frk">Þū bis kuning</div>
     <div class="example-eng">You are king.</div>
   </div>
+  <div class="example">
+    <div class="example-frk">Kuning drinkid.</div>
+    <div class="example-eng">The king drinks.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Kuning giƀid brōd sune.</div>
+    <div class="example-eng">The king gives bread to the son.</div>
+  </div>
 </div>
   <div class="source">reconstructed</div>
 </article>
@@ -6074,21 +6778,66 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>kunni</span><span class="cognate"><span class="cog-label">OE</span>cynn</span><span class="cognate"><span class="cog-label">ON</span>kyn</span><span class="cognate"><span class="cog-label">Gothic</span>kuni</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="kweman to come verb class iv strong action quëman, kwëman, kweman cuman koma qiman" data-categories="action">
+<article class="word-card" data-search="kweman to come verb class iv strong action quëman, kwëman, kweman cuman koma qiman kweman kwim kwemad gakweman kwemu kweme kwam kwāmi kwimis kwemēs kwāmi kwāmīs kwimit kweme kwam kwāmi kwemamēs kwemēm kwāmum kwāmīm kwemet kwemēt kwāmud kwāmīt kwemant kwemēn kwāmun kwāmīn" data-categories="action">
   <header>
     <h2 class="headword">kweman</h2>
     <div class="ipa">/&#x27;kweman/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class IV Strong</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">kweman</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">kwemu</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">kwimis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">kwimit</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">kwam</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">kwāmun</span></div>
-  <div class="part-row"><span class="part-label">past part</span><span class="case-val">gakweman</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>kweman</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>kwim</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>kwemad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gakweman</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>kwemu</td>
+    <td>kweme</td>
+    <td>kwam</td>
+    <td>kwāmi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>kwimis</td>
+    <td>kwemēs</td>
+    <td>kwāmi</td>
+    <td>kwāmīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>kwimit</td>
+    <td>kweme</td>
+    <td>kwam</td>
+    <td>kwāmi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>kwemamēs</td>
+    <td>kwemēm</td>
+    <td>kwāmum</td>
+    <td>kwāmīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>kwemet</td>
+    <td>kwemēt</td>
+    <td>kwāmud</td>
+    <td>kwāmīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>kwemant</td>
+    <td>kwemēn</td>
+    <td>kwāmun</td>
+    <td>kwāmīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to come</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>quëman, kwëman, kweman</span><span class="cognate"><span class="cog-label">OE</span>cuman</span><span class="cognate"><span class="cog-label">ON</span>koma</span><span class="cognate"><span class="cog-label">Gothic</span>qiman</span></div>
 <div class="examples">
@@ -6098,7 +6847,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
   </div>
 </div>
-  <div class="notes">Class IV strong. PGmc *kwemaną. Retained kw- (pre-High-German consonant-shift Ripuarian). 2sg/3sg present show i-mutation (kwimis, kwimit). Ablaut series: e — a — ā — e. 3sg pres subjunctive = kweme (used in Pater Noster line 2). Cognates: OS kuman, OHG queman, OE cuman, Goth qiman.</div>
+  <div class="notes">Class IV strong. PGmc *kwemaną. Retained kw- (pre-High-German consonant-shift Ripuarian). 2sg/3sg present show i-mutation (kwimis, kwimit). Ablaut series: e — a — ā — e. 3sg pres subjunctive kweme used in Pater Noster line 2. Cognates: OS kuman, OHG queman, OE cuman, Goth qiman.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="kweþan to say, speak, quote verb class v strong quëdan cweþan kveða qiþan" data-categories="">
@@ -6122,7 +6871,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="notes">written as quërn</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="kâda crackling, residue from rendered fat, leftover chunk from cooking noun fem food &amp; drink" data-categories="food &amp; drink">
+<article class="word-card" data-search="kâda crackling, residue from rendered fat, leftover chunk from cooking noun fem food &amp; drink kâda kâdon, kâdun" data-categories="food &amp; drink">
   <header>
     <h2 class="headword">kâda</h2>
     <div class="ipa">/&#x27;kaːda/</div>
@@ -7117,14 +7866,40 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>mitti</span><span class="cognate"><span class="cog-label">OE</span>midd</span><span class="cognate"><span class="cog-label">ON</span>miðr</span><span class="cognate"><span class="cog-label">Gothic</span>midjis</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="mikil much, many; large, great adjective mihhil miċel mikill mikils" data-categories="">
+<article class="word-card" data-search="mikil much, many; large, great adjective mihhil miċel mikill mikils mikil mikilu mikil mikile mikilan mikila mikil mikile" data-categories="">
   <header>
     <h2 class="headword">mikil</h2>
     <div class="ipa">/&#x27;mikil/</div>
     <div class="header-meta"><span class="pos">adjective</span></div>
   </header>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>mikil</td>
+    <td>mikilu</td>
+    <td>mikil</td>
+    <td>mikile</td>
+  </tr>
+  <tr>
+    <th>acc</th>
+    <td>mikilan</td>
+    <td>mikila</td>
+    <td>mikil</td>
+    <td>mikile</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">much, many; large, great</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>mihhil</span><span class="cognate"><span class="cog-label">OE</span>miċel</span><span class="cognate"><span class="cog-label">ON</span>mikill</span><span class="cognate"><span class="cog-label">Gothic</span>mikils</span></div>
+  <div class="notes">Strong adjective from PGmc *mekilaz (with i-mutation to *mikilaz). Unsyncopated paradigm — Ripuarian/OS preserve the -i- of the -il suffix before vowel endings, unlike OHG which shows syncope (mihhil &gt; mihhla-). Cognates: OS mikil, OHG mihhil (post-shift hh), OE micel, Goth mikils.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="milok milk noun fem food &amp; drink miluh meolc mjǫlk miluks" data-categories="food &amp; drink">
@@ -7388,7 +8163,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="notes">Marked as &quot;germ&quot;</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="naht night noun fem time naht niht nátt, nǫ́tt nahts" data-categories="time">
+<article class="word-card" data-search="naht night noun fem time naht niht nátt, nǫ́tt nahts naht" data-categories="time">
   <header>
     <h2 class="headword">naht</h2>
     <div class="ipa">/&#x27;naht/</div>
@@ -7415,7 +8190,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>nemnen</span><span class="cognate"><span class="cog-label">OE</span>nemnan</span><span class="cognate"><span class="cog-label">ON</span>nefna</span><span class="cognate"><span class="cog-label">Gothic</span>namnjan</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="namo name noun masc namo nama nafn namō" data-categories="">
+<article class="word-card" data-search="namo name noun masc namo nama nafn namō namo" data-categories="">
   <header>
     <h2 class="headword">namo</h2>
     <div class="ipa">/&#x27;namo/</div>
@@ -7432,7 +8207,11 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="examples">
   <div class="examples-label">used in</div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
@@ -7458,14 +8237,76 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>nestila, nestilo</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="neman to take verb class iv strong nëman niman nema niman" data-categories="">
+<article class="word-card" data-search="neman to take verb class iv strong action nëman niman nema niman neman nim nemad ganoman nemu neme nam nāmi nimis nemēs nāmi nāmīs nimit neme nam nāmi nemamēs nemēm nāmum nāmīm nemet nemēt nāmud nāmīt nemant nemēn nāmun nāmīn" data-categories="action">
   <header>
     <h2 class="headword">neman</h2>
     <div class="ipa">/&#x27;neman/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class IV Strong</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class IV Strong</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>neman</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>nim</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>nemad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>ganoman</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>nemu</td>
+    <td>neme</td>
+    <td>nam</td>
+    <td>nāmi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>nimis</td>
+    <td>nemēs</td>
+    <td>nāmi</td>
+    <td>nāmīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>nimit</td>
+    <td>neme</td>
+    <td>nam</td>
+    <td>nāmi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>nemamēs</td>
+    <td>nemēm</td>
+    <td>nāmum</td>
+    <td>nāmīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>nemet</td>
+    <td>nemēt</td>
+    <td>nāmud</td>
+    <td>nāmīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>nemant</td>
+    <td>nemēn</td>
+    <td>nāmun</td>
+    <td>nāmīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to take</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>nëman</span><span class="cognate"><span class="cog-label">OE</span>niman</span><span class="cognate"><span class="cog-label">ON</span>nema</span><span class="cognate"><span class="cog-label">Gothic</span>niman</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Sigifriþ nam mīn swerd.</div>
+    <div class="example-eng">Sigifrīþ took my sword.</div>
+  </div>
+</div>
+  <div class="notes">Class IV strong. PGmc *nemaną. Ablaut e — a — ā — o (past participle shows o-grade: ganoman, matching kweman which shows e-grade gakweman as an outlier). 2sg/3sg present show i-mutation. Cognates: OS neman, OHG neman, OE niman, Goth niman.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="nest nest noun neut nëst nest" data-categories="">
@@ -7709,6 +8550,23 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   </header>
   <div class="english">portal, gateway</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>pforta</span><span class="cognate"><span class="cog-label">OE</span>porte</span></div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="pratt boastful talk; trickery noun prætt prettr" data-categories="">
+  <header>
+    <h2 class="headword">pratt</h2>
+    <div class="ipa">/&#x27;pratː/</div>
+    <div class="header-meta"><span class="pos">noun</span></div>
+  </header>
+  <div class="english">boastful talk; trickery</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OE</span>prætt</span><span class="cognate"><span class="cog-label">ON</span>prettr</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="purpura purple, purple cloth adjective color purpura purple, purpure" data-categories="color">
@@ -8089,7 +8947,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="notes">names only</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="rīki kingdom, realm noun neut religion/spiritual politics/power rīhhi rīċe ríki reiki" data-categories="religion/spiritual|politics/power">
+<article class="word-card" data-search="rīki kingdom, realm noun neut religion/spiritual politics/power rīhhi rīċe ríki reiki rīki rīkjes rīkje rīki rīkju rīki rīkjō rīkjum rīki rīkjum" data-categories="religion/spiritual|politics/power">
   <header>
     <h2 class="headword">rīki</h2>
     <div class="ipa">/&#x27;riːki/</div>
@@ -8122,7 +8980,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
   </div>
 </div>
-  <div class="notes">Neuter ja-stem. PGmc *rīkiją. Semantic range: &quot;kingdom, realm, rule, dominion&quot;. The -j- surfaces in the oblique cases (gen/dat/instr) as expected for ja-stems. Cognates: OS rīki, OHG rīhhi, OE rīce, Goth reiki. Latin loan root (rēx → *rīk-) inherited pre-Grimm.</div>
+  <div class="notes">Neuter ja-stem. PGmc *rīkiją. Semantic range: kingdom, realm, rule, dominion. The -j- surfaces in the oblique cases (gen/dat/instr) as expected for ja-stems. Cognates: OS rīki, OHG rīhhi, OE rīce, Goth reiki. Root Celtic *rīg- inherited pre-Grimm.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="rīkisōn to rule, reign verb class 2 weak rīhhisōn, rīchisōn rīcsian" data-categories="">
@@ -8145,7 +9003,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>rīhhen</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="rīn rhine name masc rīn rīn rín" data-categories="">
+<article class="word-card" data-search="rīn rhine name masc rīn rīn rín rīn rīnes rīne rīn" data-categories="">
   <header>
     <h2 class="headword">rīn</h2>
     <div class="ipa">/&#x27;riːn/</div>
@@ -8167,6 +9025,10 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="example">
     <div class="example-frk">Āl swimmit in rīne</div>
     <div class="example-eng">The eel swims in the Rhine.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre farant in rīne.</div>
+    <div class="example-eng">Oath-brothers travel in the Rhine.</div>
   </div>
 </div>
   <div class="source">reconstructed</div>
@@ -8335,14 +9197,84 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sōr</span><span class="cognate"><span class="cog-label">OE</span>sīere</span><span class="cognate"><span class="cog-label">ON</span>sauri, seyra</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="sehan to see verb class v strong sehan sēon sjá saiƕan" data-categories="">
+<article class="word-card" data-search="sehan to see verb class v strong perception sehan sēon sjá saiƕan sehan sih sehad gasehan sehu sehe sah sāhi sihis sehēs sāhi sāhīs sihit sehe sah sāhi sehamēs sehēm sāhum sāhīm sehet sehēt sāhud sāhīt sehant sehēn sāhun sāhīn" data-categories="perception">
   <header>
     <h2 class="headword">sehan</h2>
     <div class="ipa">/&#x27;sehan/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span><span class="category-pills"><span class="category-pill">perception</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>sehan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>sih</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>sehad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gasehan</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>sehu</td>
+    <td>sehe</td>
+    <td>sah</td>
+    <td>sāhi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>sihis</td>
+    <td>sehēs</td>
+    <td>sāhi</td>
+    <td>sāhīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>sihit</td>
+    <td>sehe</td>
+    <td>sah</td>
+    <td>sāhi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>sehamēs</td>
+    <td>sehēm</td>
+    <td>sāhum</td>
+    <td>sāhīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>sehet</td>
+    <td>sehēt</td>
+    <td>sāhud</td>
+    <td>sāhīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>sehant</td>
+    <td>sehēn</td>
+    <td>sāhun</td>
+    <td>sāhīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to see</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sehan</span><span class="cognate"><span class="cog-label">OE</span>sēon</span><span class="cognate"><span class="cog-label">ON</span>sjá</span><span class="cognate"><span class="cog-label">Gothic</span>saiƕan</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Þū sihis himil.</div>
+    <div class="example-eng">You see the sky.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre sāhun sigifriþ.</div>
+    <div class="example-eng">Oath-brothers saw Sigifrīþ.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Ik willju sehan sigifriþ.</div>
+    <div class="example-eng">I want to see Sigifrīþ.</div>
+  </div>
+</div>
+  <div class="notes">Class V strong. PGmc *sehwaną. Verner alternation historically: past sg *sah (voiceless), past pl *sēgun (voiced, from Grammatischer Wechsel). OHG and OS levelled to uniform h (sāhum, sāhun); ON preserves g (sá / sá(g)um). Filled with the uniform-h pattern matching the West Germanic tradition. Cognates: OS sehan, OHG sehan, OE sēon, Goth saihwan.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="sehs six number cardinal number sehs six sex saihs" data-categories="number">
@@ -8395,7 +9327,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sigu</span><span class="cognate"><span class="cog-label">OE</span>siġe</span><span class="cognate"><span class="cog-label">ON</span>sigr</span><span class="cognate"><span class="cog-label">Gothic</span>sigis</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="sigifriþ victory-peace (personal name) name masc personal name heroic sigifrid sigefrið sigfriðr" data-categories="personal name|heroic">
+<article class="word-card" data-search="sigifriþ victory-peace (personal name) name masc personal name heroic sigifrid sigefrið sigfriðr sigifriþ sigifriþes sigifriþe sigifriþ" data-categories="personal name|heroic">
   <header>
     <h2 class="headword">sigifriþ</h2>
     <div class="ipa">/&#x27;siɣifriθ/</div>
@@ -8442,11 +9374,31 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-frk">Sigifriþes augun sind blāo</div>
     <div class="example-eng">Sigifrīþ&#x27;s eyes are blue.</div>
   </div>
+  <div class="example">
+    <div class="example-frk">Aiþbrōþre sāhun sigifriþ.</div>
+    <div class="example-eng">Oath-brothers saw Sigifrīþ.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Sigifriþ nam mīn swerd.</div>
+    <div class="example-eng">Sigifrīþ took my sword.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Ik willju sehan sigifriþ.</div>
+    <div class="example-eng">I want to see Sigifrīþ.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Werþe sigifriþ mīn aiþbrōþer.</div>
+    <div class="example-eng">May Sigifrīþ become my oath-brother.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Ik hōrju sigifriþ sprekan.</div>
+    <div class="example-eng">I hear Sigifrīþ speak.</div>
+  </div>
 </div>
   <div class="notes">Voiced velar fricative reverse engineered from MHG Sivrit and ON Sigifrið.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="sigimund victory-protection (personal name) name masc personal name heroic sigimund, sigimunt siġemund sigmundr" data-categories="personal name|heroic">
+<article class="word-card" data-search="sigimund victory-protection (personal name) name masc personal name heroic sigimund, sigimunt siġemund sigmundr sigimund sigimundes sigimunde sigimund" data-categories="personal name|heroic">
   <header>
     <h2 class="headword">sigimund</h2>
     <div class="ipa">/&#x27;siɣimund/</div>
@@ -8926,6 +9878,32 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="english">cut piece</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>scrōt</span><span class="cognate"><span class="cog-label">OE</span>sċrēad</span><span class="cognate"><span class="cog-label">ON</span>skrjóðr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
+</article>
+<article class="word-card" data-search="skuld obligation, debt, guilt noun fem sculd sċyld skuld skuld skuldi skuldi skuld skuldi skuldo skuldum skuldi" data-categories="">
+  <header>
+    <h2 class="headword">skuld</h2>
+    <div class="ipa">/&#x27;skuld/</div>
+    <div class="header-meta"><span class="pos">noun</span><span class="gender-class"><span class="gc-label">gender</span><span class="gc-val">fem</span></span></div>
+  </header>
+<div class="cases">
+  <div>
+    <div class="case-col-header">singular</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">skuld</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">skuldi</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">skuldi</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">skuld</span></div>
+  </div>
+  <div>
+    <div class="case-col-header">plural</div>
+    <div class="case-row"><span class="case-label">nom</span><span class="case-val">skuldi</span></div>
+    <div class="case-row"><span class="case-label">gen</span><span class="case-val">skuldo</span></div>
+    <div class="case-row"><span class="case-label">dat</span><span class="case-val">skuldum</span></div>
+    <div class="case-row"><span class="case-label">acc</span><span class="case-val">skuldi</span></div>
+  </div>
+</div>
+  <div class="english">obligation, debt, guilt</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sculd</span><span class="cognate"><span class="cog-label">OE</span>sċyld</span><span class="cognate"><span class="cog-label">ON</span>skuld</span></div>
+  <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="skurbjan to wipe, scrub verb" data-categories="">
   <header>
@@ -9437,14 +10415,76 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sporo</span><span class="cognate"><span class="cog-label">OE</span>spura</span><span class="cognate"><span class="cog-label">ON</span>spori</span><span class="cognate"><span class="cog-label">Gothic</span>spaura</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="sprekan to speak, say verb class v strong sprëhhan sprecan" data-categories="">
+<article class="word-card" data-search="sprekan to speak, say verb class v strong communication sprëhhan sprecan sprekan sprik sprekad gasprekan spreku spreke sprak sprāki sprikis sprekēs sprāki sprākīs sprikit spreke sprak sprāki sprekamēs sprekēm sprākum sprākīm spreket sprekēt sprākud sprākīt sprekant sprekēn sprākun sprākīn" data-categories="communication">
   <header>
     <h2 class="headword">sprekan</h2>
     <div class="ipa">/&#x27;sprekan/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class V Strong</span></span><span class="category-pills"><span class="category-pill">communication</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>sprekan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>sprik</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>sprekad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gasprekan</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>spreku</td>
+    <td>spreke</td>
+    <td>sprak</td>
+    <td>sprāki</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>sprikis</td>
+    <td>sprekēs</td>
+    <td>sprāki</td>
+    <td>sprākīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>sprikit</td>
+    <td>spreke</td>
+    <td>sprak</td>
+    <td>sprāki</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>sprekamēs</td>
+    <td>sprekēm</td>
+    <td>sprākum</td>
+    <td>sprākīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>spreket</td>
+    <td>sprekēt</td>
+    <td>sprākud</td>
+    <td>sprākīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>sprekant</td>
+    <td>sprekēn</td>
+    <td>sprākun</td>
+    <td>sprākīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to speak, say</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sprëhhan</span><span class="cognate"><span class="cog-label">OE</span>sprecan</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Ik hōrju sigifriþ sprekan.</div>
+    <div class="example-eng">I hear Sigifrīþ speak.</div>
+  </div>
+</div>
+  <div class="notes">Class V strong. PGmc *sprekaną. Ablaut e — a — ē — e. 2sg/3sg present show i-mutation. Cognates: OS sprekan, OHG sprehhan, OE sprecan. Not in Gothic (Goth uses rodjan / qiþan).</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="springan to jump up, spring up verb class iii strong motion springan springan springa" data-categories="motion">
@@ -9911,7 +10951,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="notes">May be sonista instead</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="sunu son noun masc kinship sunu sunu sonr sunus" data-categories="kinship">
+<article class="word-card" data-search="sunu son noun masc kinship sunu sunu sonr sunus sunu sunes sune sunu suni sunō sunum suni" data-categories="kinship">
   <header>
     <h2 class="headword">sunu</h2>
     <div class="ipa">/&#x27;sunu/</div>
@@ -9948,6 +10988,10 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="example">
     <div class="example-frk">Ik bim kuninges sunu</div>
     <div class="example-eng">I am the king&#x27;s son.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Kuning giƀid brōd sune.</div>
+    <div class="example-eng">The king gives bread to the son.</div>
   </div>
 </div>
   <div class="source">reconstructed</div>
@@ -10002,18 +11046,43 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="english">swinging motion, sweep</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="swart black adjective color swarz sweart svartr swarts" data-categories="color">
+<article class="word-card" data-search="swart black adjective color swarz sweart svartr swarts swart swartu swart swarte swartan swarta swart swarte" data-categories="color">
   <header>
     <h2 class="headword">swart</h2>
     <div class="ipa">/&#x27;swart/</div>
     <div class="header-meta"><span class="pos">adjective</span><span class="category-pills"><span class="category-pill">color</span></span></div>
   </header>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>swart</td>
+    <td>swartu</td>
+    <td>swart</td>
+    <td>swarte</td>
+  </tr>
+  <tr>
+    <th>acc</th>
+    <td>swartan</td>
+    <td>swarta</td>
+    <td>swart</td>
+    <td>swarte</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">black</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>swarz</span><span class="cognate"><span class="cog-label">OE</span>sweart</span><span class="cognate"><span class="cog-label">ON</span>svartr</span><span class="cognate"><span class="cog-label">Gothic</span>swarts</span></div>
-  <div class="notes">Same word Pwgc, OD, OS. OHG shifted to swarz.</div>
+  <div class="notes">Same word Pwgc, OD, OS. OHG shifted to swarz. Strong adjective, regular consonant-final stem from PGmc *swartaz. Cognates: OS swart, OHG swarz (post-shift z), OE sweart, ON svartr, Goth swarts.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="swerd sword noun neut weapon/battle swert sweord sverð" data-categories="weapon/battle">
+<article class="word-card" data-search="swerd sword noun neut weapon/battle swert sweord sverð swerd swerdas swerde swerd swerdu swerdu swerdō swerdum swerdu swerdum" data-categories="weapon/battle">
   <header>
     <h2 class="headword">swerd</h2>
     <div class="ipa">/&#x27;swerd/</div>
@@ -10039,6 +11108,13 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 </div>
   <div class="english">sword</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>swert</span><span class="cognate"><span class="cog-label">OE</span>sweord</span><span class="cognate"><span class="cog-label">ON</span>sverð</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Sigifriþ nam mīn swerd.</div>
+    <div class="example-eng">Sigifrīþ took my sword.</div>
+  </div>
+</div>
   <div class="notes">Pwgc. Pre d to t shift.</div>
   <div class="source">reconstructed</div>
 </article>
@@ -10062,21 +11138,66 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>swester</span><span class="cognate"><span class="cog-label">OE</span>sweostor, swester</span><span class="cognate"><span class="cog-label">ON</span>systir</span><span class="cognate"><span class="cog-label">Gothic</span>swistar</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="swimman to swim verb class iii strong motion swimman swimman svimja" data-categories="motion">
+<article class="word-card" data-search="swimman to swim verb class iii strong motion swimman swimman svimja swimman swim swimmad swommen swimmu swimme swam swummi swimmis swimmēs swummi swummīs swimmit swimme swam swummi swimmamēs swimmēm swummum swummīm swimmat swimmēt swummut swummīt swimmant swimmēn swummun swummīn" data-categories="motion">
   <header>
     <h2 class="headword">swimman</h2>
     <div class="ipa">/&#x27;swim:an/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span><span class="category-pills"><span class="category-pill">motion</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">swimman</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">swimmu</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">swimmis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">swimmit</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">swam</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">swummun</span></div>
-  <div class="part-row"><span class="part-label">past part</span><span class="case-val">swommen</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>swimman</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>swim</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>swimmad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>swommen</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>swimmu</td>
+    <td>swimme</td>
+    <td>swam</td>
+    <td>swummi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>swimmis</td>
+    <td>swimmēs</td>
+    <td>swummi</td>
+    <td>swummīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>swimmit</td>
+    <td>swimme</td>
+    <td>swam</td>
+    <td>swummi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>swimmamēs</td>
+    <td>swimmēm</td>
+    <td>swummum</td>
+    <td>swummīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>swimmat</td>
+    <td>swimmēt</td>
+    <td>swummut</td>
+    <td>swummīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>swimmant</td>
+    <td>swimmēn</td>
+    <td>swummun</td>
+    <td>swummīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to swim</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>swimman</span><span class="cognate"><span class="cog-label">OE</span>swimman</span><span class="cognate"><span class="cog-label">ON</span>svimja</span></div>
 <div class="examples">
@@ -10108,30 +11229,6 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="english">sour, acidic</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sūr</span><span class="cognate"><span class="cog-label">OE</span>sūr</span><span class="cognate"><span class="cog-label">ON</span>súrr</span></div>
   <div class="source">Wartburg + Reconstructed</div>
-</article>
-<article class="word-card" data-search="sī be (subjunctive/optative) verb sī (3sg); paradigm sī/sīs/sī/sīm/sīt/sīn sīe (3sg); paradigm sīe/sīe/sīe/sīen/sīen/sīen sé (3sg); paradigm sé/sér/sé/sém/séð/sé sijai (3sg); paradigm sijau/sijais/sijai/sijaima/sijaiþ/sijaina" data-categories="">
-  <header>
-    <h2 class="headword">sī</h2>
-    <div class="ipa">/siː/</div>
-    <div class="header-meta"><span class="pos">verb</span></div>
-  </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">sīn</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">sī</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">sīs</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">sī</span></div>
-</div>
-  <div class="english">be (subjunctive/optative)</div>
-<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>sī (3sg); paradigm sī/sīs/sī/sīm/sīt/sīn</span><span class="cognate"><span class="cog-label">OE</span>sīe (3sg); paradigm sīe/sīe/sīe/sīen/sīen/sīen</span><span class="cognate"><span class="cog-label">ON</span>sé (3sg); paradigm sé/sér/sé/sém/séð/sé</span><span class="cognate"><span class="cog-label">Gothic</span>sijai (3sg); paradigm sijau/sijais/sijai/sijaima/sijaiþ/sijaina</span></div>
-<div class="examples">
-  <div class="examples-label">used in</div>
-  <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
-    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
-  </div>
-</div>
-  <div class="notes">Present subjunctive/optative of the copula, suppletive with wesan (id 44). Distinct PIE root *h₁s-yeh₁- optative of *h₁es-, grammatically fused with the wes-/bin-/ist- paradigm as the modal counterpart. Used in optative constructions, wishes, blessings, subordinate clauses of uncertainty, and formulaic invocations. Lord&#x27;s Prayer opening in Frankish: &quot;unser fadar, hailagōd sī þīn namo.&quot; Cognates: Gothic sijau/sijais/sijai/sijaima/sijaiþ/sijaina, OHG sī/sīs/sī/sīm/sīt/sīn, OS sī, OE sīe/sī. Wachtendonck Psalter attests sī for 3sg subjunctive present.</div>
-  <div class="source">Comparative</div>
 </article>
 <article class="word-card" data-search="sō as, so, like adverb sō swā svá swa, swe" data-categories="">
   <header>
@@ -10448,26 +11545,28 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>zurft</span><span class="cognate"><span class="cog-label">OE</span>turf</span><span class="cognate"><span class="cog-label">ON</span>torf, torfa</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="twaine two number cardinal number zwēne twēġen tveir twai" data-categories="number">
+<article class="word-card" data-search="twaine two number cardinal number zwēne twēġen tveir twai twaine twā twai" data-categories="number">
   <header>
     <h2 class="headword">twaine</h2>
     <div class="ipa">/&#x27;twaine/</div>
     <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span><span class="category-pills"><span class="category-pill">number</span></span></div>
   </header>
-<div class="adj-grid">
-  <div class="adj-col">
-    <div class="adj-label">masc</div>
-    <div class="adj-val">twaine</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">fem</div>
-    <div class="adj-val">twā</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">neut</div>
-    <div class="adj-val">twai</div>
-  </div>
-</div>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>twaine</td>
+    <td>twā</td>
+    <td>twai</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">two</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>zwēne</span><span class="cognate"><span class="cog-label">OE</span>twēġen</span><span class="cognate"><span class="cog-label">ON</span>tveir</span><span class="cognate"><span class="cog-label">Gothic</span>twai</span></div>
   <div class="notes">Reconstructed from comparative WGmc evidence; not attested in Wachtendonck. Cf. Goth. twai/twōs/twa, OS twēne/twā/twē, OHG zwēne/zwā/zwei. Note unshifted /tw-/ confirmed by Frankish loans into Old French.</div>
@@ -10581,6 +11680,52 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   </header>
   <div class="english">under, beneath</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>untar</span><span class="cognate"><span class="cog-label">OE</span>under</span><span class="cognate"><span class="cog-label">ON</span>undir</span><span class="cognate"><span class="cog-label">Gothic</span>undar</span></div>
+  <div class="source">reconstructed</div>
+</article>
+<article class="word-card" data-search="unser our possessive grammar unsēr ūser, ūre, usser várr, órr unsar unser unseru unser unsere unseran unsera unser unsere" data-categories="grammar">
+  <header>
+    <h2 class="headword">unser</h2>
+    <div class="header-meta"><span class="pos">possessive</span><span class="category-pills"><span class="category-pill">grammar</span></span></div>
+  </header>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+    <th>pl</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>unser</td>
+    <td>unseru</td>
+    <td>unser</td>
+    <td>unsere</td>
+  </tr>
+  <tr>
+    <th>acc</th>
+    <td>unseran</td>
+    <td>unsera</td>
+    <td>unser</td>
+    <td>unsere</td>
+  </tr>
+  </tbody>
+</table></div>
+  <div class="english">our</div>
+<div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>unsēr</span><span class="cognate"><span class="cog-label">OE</span>ūser, ūre, usser</span><span class="cognate"><span class="cog-label">ON</span>várr, órr</span><span class="cognate"><span class="cog-label">Gothic</span>unsar</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Brōd unser dagalīka giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Hlaiƀ unseran dagalīkan giƀ uns hiudag</div>
+    <div class="example-eng">Give us this day our daily bread.</div>
+  </div>
+</div>
+  <div class="notes">First-person plural possessive determiner. Declines like a strong adjective — nom sg endings -Ø/-u/-Ø/-e (M/F/N/pl), acc sg endings -an/-a/-Ø/-e. Historically the possessive stem derives from the genitive plural of the 1pl pronoun (PGmc *unser- from *ns-er-, gen pl of *wiz &quot;we&quot;), which then acquired adjectival inflection to agree with the possessed noun. In sentence 15 (Fader unser) the modifier appears as bare masc nom sg (unser modifies fader in nominative address). In sentence 28 (Brōd unser dagalīka) it appears as neut acc sg (also unser, homophonous with masc nom). In sentence 29 (Hlaiƀ unseran dagalīkan) it appears as masc acc sg (unseran, distinct from nom). Related to ik (id 45) — the gen pl form of ik also surfaces as &quot;unser&quot; (see sentence 15 pos 2 which uses the ik-collapse convention rather than pointing here). Future sentences pointing at possessive contexts should target this entry (1068) rather than ik (45). Cognates: OS ûsa/unsa, OHG unsēr, OE ūser/ūre, Goth unsar. All descend from PGmc *unser-.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="up up adverb direction ūf, uf, up upp, up, ūp upp iup" data-categories="direction">
@@ -10985,7 +12130,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="english">cake</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="water water noun neut nature food &amp; drink waȥȥar wæter vatn watō" data-categories="nature|food &amp; drink">
+<article class="word-card" data-search="water water noun neut nature food &amp; drink waȥȥar wæter vatn watō water watres watre water wateru wateru waterō waterum wateru waterum" data-categories="nature|food &amp; drink">
   <header>
     <h2 class="headword">water</h2>
     <div class="ipa">/&#x27;water/</div>
@@ -11091,21 +12236,66 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wërwolf</span><span class="cognate"><span class="cog-label">OE</span>werewulf</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="werþan to become verb class iii strong action wërdan weorþan verða wairþan" data-categories="action">
+<article class="word-card" data-search="werþan to become verb class iii strong action wërdan weorþan verða wairþan werþan werþ werþad gaworþan werþu werþe warþ wurþi wirþis werþēs wurþi wurþīs wirþit werþe warþ wurþi werþamēs werþēm wurþum wurþīm werþet werþēt wurþud wurþīt werþant werþēn wurþun wurþīn" data-categories="action">
   <header>
     <h2 class="headword">werþan</h2>
     <div class="ipa">/&#x27;werθan/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span><span class="category-pills"><span class="category-pill">action</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">werþan</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">werþu</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">wirþis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">wirþit</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">warþ</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">wurþun</span></div>
-  <div class="part-row"><span class="part-label">past part</span><span class="case-val">gaworþan</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>werþan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>werþ</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>werþad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gaworþan</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>werþu</td>
+    <td>werþe</td>
+    <td>warþ</td>
+    <td>wurþi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>wirþis</td>
+    <td>werþēs</td>
+    <td>wurþi</td>
+    <td>wurþīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>wirþit</td>
+    <td>werþe</td>
+    <td>warþ</td>
+    <td>wurþi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>werþamēs</td>
+    <td>werþēm</td>
+    <td>wurþum</td>
+    <td>wurþīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>werþet</td>
+    <td>werþēt</td>
+    <td>wurþud</td>
+    <td>wurþīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>werþant</td>
+    <td>werþēn</td>
+    <td>wurþun</td>
+    <td>wurþīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to become</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wërdan</span><span class="cognate"><span class="cog-label">OE</span>weorþan</span><span class="cognate"><span class="cog-label">ON</span>verða</span><span class="cognate"><span class="cog-label">Gothic</span>wairþan</span></div>
 <div class="examples">
@@ -11114,24 +12304,74 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-frk">Kweme rīki þīn, werþe willjo þīn, sō in himile, sō in erþe.</div>
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
   </div>
+  <div class="example">
+    <div class="example-frk">Werþe sigifriþ mīn aiþbrōþer.</div>
+    <div class="example-eng">May Sigifrīþ become my oath-brother.</div>
+  </div>
 </div>
-  <div class="notes">Class III strong (nasal/liquid + consonant subtype). PGmc *werþaną. 2sg/3sg present show i-mutation (wirþis, wirþit). Ablaut series: e — a — u — o. 3sg pres subjunctive = werþe (used in Pater Noster line 2). Cognates: OS werthan, OHG werdan, OE weorþan, Goth wairþan.</div>
+  <div class="notes">Class III strong (nasal/liquid + consonant subtype). PGmc *werþaną. 2sg/3sg present show i-mutation (wirþis, wirþit). Ablaut series: e — a — u — o. 3sg pres subjunctive werþe used in Pater Noster line 2. Cognates: OS werthan, OHG werdan, OE weorþan, Goth wairþan.</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="wesan to be verb irregular wesan wesan, bēon" data-categories="">
+<article class="word-card" data-search="wesan to be verb irregular wesan wesan, bēon wesan wes wesad bin, bim sī was wāri bist, bis sīs wāri wārīs ist sī was wāri birum sīm wārum wārīm birut sīt wārud wārīt sind sīn wārun wārīn" data-categories="">
   <header>
     <h2 class="headword">wesan</h2>
     <div class="ipa">/&#x27;wesan/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Irregular</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">wesan</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">bin, bim</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">bist, bis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">ist</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">was</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">wārun</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>wesan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>wes</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>wesad</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>bin, bim</td>
+    <td>sī</td>
+    <td>was</td>
+    <td>wāri</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>bist, bis</td>
+    <td>sīs</td>
+    <td>wāri</td>
+    <td>wārīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>ist</td>
+    <td>sī</td>
+    <td>was</td>
+    <td>wāri</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>birum</td>
+    <td>sīm</td>
+    <td>wārum</td>
+    <td>wārīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>birut</td>
+    <td>sīt</td>
+    <td>wārud</td>
+    <td>wārīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>sind</td>
+    <td>sīn</td>
+    <td>wārun</td>
+    <td>wārīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to be</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wesan</span><span class="cognate"><span class="cog-label">OE</span>wesan, bēon</span></div>
 <div class="examples">
@@ -11173,7 +12413,15 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">Sigifrīþ&#x27;s eyes are blue.</div>
   </div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
@@ -11229,17 +12477,79 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wiht</span><span class="cognate"><span class="cog-label">OE</span>wiht</span><span class="cognate"><span class="cog-label">ON</span>véttr, vétr, vættr, vætr, vítr</span><span class="cognate"><span class="cog-label">Gothic</span>waihts</span></div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="willjan to want verb class 1 weak wellen willan vilja wiljan" data-categories="">
+<article class="word-card" data-search="willjan to want verb class 1 weak mental/emotional wellen willan vilja wiljan willjan wili williad gawelid willju willje welda weldi wilis willjēs weldēs weldīs wili willje welda weldi willjamēs willjēm weldum weldīm wilit willjēt weldud weldīt willjant willjēn weldun weldīn" data-categories="mental/emotional">
   <header>
     <h2 class="headword">willjan</h2>
     <div class="ipa">/&#x27;wilːjan/</div>
-    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span></div>
+    <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span><span class="category-pills"><span class="category-pill">mental/emotional</span></span></div>
   </header>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>willjan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>wili</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>williad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gawelid</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>willju</td>
+    <td>willje</td>
+    <td>welda</td>
+    <td>weldi</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>wilis</td>
+    <td>willjēs</td>
+    <td>weldēs</td>
+    <td>weldīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>wili</td>
+    <td>willje</td>
+    <td>welda</td>
+    <td>weldi</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>willjamēs</td>
+    <td>willjēm</td>
+    <td>weldum</td>
+    <td>weldīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>wilit</td>
+    <td>willjēt</td>
+    <td>weldud</td>
+    <td>weldīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>willjant</td>
+    <td>willjēn</td>
+    <td>weldun</td>
+    <td>weldīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to want</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wellen</span><span class="cognate"><span class="cog-label">OE</span>willan</span><span class="cognate"><span class="cog-label">ON</span>vilja</span><span class="cognate"><span class="cog-label">Gothic</span>wiljan</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Ik willju sehan sigifriþ.</div>
+    <div class="example-eng">I want to see Sigifrīþ.</div>
+  </div>
+</div>
+  <div class="notes">Class 1 weak but historically anomalous — preterite-present-like conjugation with suppletive dental past in weld-. PGmc *wiljaną (present) + *walde- (past). Cognates: OS willian (past welda), OHG wellen (past wolta), OE willan (past wolde), Goth wiljan (past wilda). Paired with noun willjo (id 1002).</div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="willjo will, wish, desire noun masc mental/emotional willo willa vili wilja" data-categories="mental/emotional">
+<article class="word-card" data-search="willjo will, wish, desire noun masc mental/emotional willo willa vili wilja willjo willjen willjen willjon willjon willjōno willjōm willjon" data-categories="mental/emotional">
   <header>
     <h2 class="headword">willjo</h2>
     <div class="ipa">/&#x27;wilːjo/</div>
@@ -11270,7 +12580,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
   </div>
 </div>
-  <div class="notes">Masculine n-stem (weak noun). PGmc *wiljô. Distinct from the verb willjan (id 1001) — the noun means &quot;will, desire, intent&quot;, the verb means &quot;to want&quot;. N-stem declension: single oblique stem in -en for gen/dat sg. Cognates: OS willio, OHG willo/willio, OE willa, Goth wilja.</div>
+  <div class="notes">Masculine n-stem (weak noun). PGmc *wiljô. Distinct from the verb willjan (id 1001) — the noun means will, desire, intent; the verb means to want. N-stem declension: single oblique stem in -en for gen/dat sg. Cognates: OS willio, OHG willo, OE willa, Goth wilja.</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="wimpil head scarf noun masc clothing wimpal wimpel vimpill" data-categories="clothing">
@@ -11303,21 +12613,66 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>winstar</span><span class="cognate"><span class="cog-label">OE</span>winestra</span><span class="cognate"><span class="cog-label">ON</span>vinstri</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="winnan to strive, struggle, toil for, fight for verb class iii strong winnan winnan vinna winnan" data-categories="">
+<article class="word-card" data-search="winnan to strive, struggle, toil for, fight for verb class iii strong winnan winnan vinna winnan winnan win winnad wunnen winnu winne wann wunni winnis winnēs wunni wunnīs winnit winne wann wunni winnamēs winnēm wunnum wunnīm winnat winnēt wunnut wunnīt winnant winnēn wunnun wunnīn" data-categories="">
   <header>
     <h2 class="headword">winnan</h2>
     <div class="ipa">/&#x27;win:an/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class III Strong</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">winnan</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">winnu</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">winnis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">winnit</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">wann</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">wunnun</span></div>
-  <div class="part-row"><span class="part-label">past part</span><span class="case-val">wunnen</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>winnan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>win</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>winnad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>wunnen</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>winnu</td>
+    <td>winne</td>
+    <td>wann</td>
+    <td>wunni</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>winnis</td>
+    <td>winnēs</td>
+    <td>wunni</td>
+    <td>wunnīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>winnit</td>
+    <td>winne</td>
+    <td>wann</td>
+    <td>wunni</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>winnamēs</td>
+    <td>winnēm</td>
+    <td>wunnum</td>
+    <td>wunnīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>winnat</td>
+    <td>winnēt</td>
+    <td>wunnut</td>
+    <td>wunnīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>winnant</td>
+    <td>winnēn</td>
+    <td>wunnun</td>
+    <td>wunnīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to strive, struggle, toil for, fight for</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>winnan</span><span class="cognate"><span class="cog-label">OE</span>winnan</span><span class="cognate"><span class="cog-label">ON</span>vinna</span><span class="cognate"><span class="cog-label">Gothic</span>winnan</span></div>
 <div class="examples">
@@ -11579,23 +12934,75 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wīh</span><span class="cognate"><span class="cog-label">OE</span>wēoh</span><span class="cognate"><span class="cog-label">Gothic</span>weihs</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="wīhjan to hallow, consecrate verb class 1 weak religion/spiritual wīhen wian (in fulwian) vígja" data-categories="religion/spiritual">
+<article class="word-card" data-search="wīhjan to hallow, consecrate verb class 1 weak religion/spiritual wīhen wian (in fulwian) vígja wīhjan wīhi wīhiad gawīhid wīhju wīhje wīhta wīhti wīhis wīhjēs wīhtēs wīhtīs wīhit wīhje wīhta wīhti wīhjamēs wīhjēm wīhtum wīhtīm wīhit wīhjēt wīhtud wīhtīt wīhjant wīhjēn wīhtun wīhtīn" data-categories="religion/spiritual">
   <header>
     <h2 class="headword">wīhjan</h2>
     <div class="ipa">/&#x27;wiːhjan/</div>
     <div class="header-meta"><span class="pos">verb</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">Class 1 Weak</span></span><span class="category-pills"><span class="category-pill">religion/spiritual</span></span></div>
   </header>
-<div class="verb-parts">
-  <div class="part-row"><span class="part-label">infinitive</span><span class="case-val">wīhjan</span></div>
-  <div class="part-row"><span class="part-label">pres 1sg</span><span class="case-val">wīhju</span></div>
-  <div class="part-row"><span class="part-label">pres 2sg</span><span class="case-val">wīhis</span></div>
-  <div class="part-row"><span class="part-label">pres 3sg</span><span class="case-val">wīhit</span></div>
-  <div class="part-row"><span class="part-label">past 3sg</span><span class="case-val">wīhta</span></div>
-  <div class="part-row"><span class="part-label">past 3pl</span><span class="case-val">wīhtun</span></div>
-  <div class="part-row"><span class="part-label">past part</span><span class="case-val">gawīhid</span></div>
-</div>
+<div class="nonfinite"><span class="nonfinite-item"><span class="nf-label">inf</span>wīhjan</span><span class="nonfinite-item"><span class="nf-label">imp sg</span>wīhi</span><span class="nonfinite-item"><span class="nf-label">imp pl</span>wīhiad</span><span class="nonfinite-item"><span class="nf-label">past ptc</span>gawīhid</span></div>
+<div class="paradigm-wrap">
+<table class="paradigm">
+  <thead><tr><th></th>
+    <th>pres</th>
+    <th>pres sbjv</th>
+    <th>past</th>
+    <th>past sbjv</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>1sg</th>
+    <td>wīhju</td>
+    <td>wīhje</td>
+    <td>wīhta</td>
+    <td>wīhti</td>
+  </tr>
+  <tr>
+    <th>2sg</th>
+    <td>wīhis</td>
+    <td>wīhjēs</td>
+    <td>wīhtēs</td>
+    <td>wīhtīs</td>
+  </tr>
+  <tr>
+    <th>3sg</th>
+    <td>wīhit</td>
+    <td>wīhje</td>
+    <td>wīhta</td>
+    <td>wīhti</td>
+  </tr>
+  <tr>
+    <th>1pl</th>
+    <td>wīhjamēs</td>
+    <td>wīhjēm</td>
+    <td>wīhtum</td>
+    <td>wīhtīm</td>
+  </tr>
+  <tr>
+    <th>2pl</th>
+    <td>wīhit</td>
+    <td>wīhjēt</td>
+    <td>wīhtud</td>
+    <td>wīhtīt</td>
+  </tr>
+  <tr>
+    <th>3pl</th>
+    <td>wīhjant</td>
+    <td>wīhjēn</td>
+    <td>wīhtun</td>
+    <td>wīhtīn</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">to hallow, consecrate</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>wīhen</span><span class="cognate"><span class="cog-label">OE</span>wian (in fulwian)</span><span class="cognate"><span class="cog-label">ON</span>vígja</span></div>
+<div class="examples">
+  <div class="examples-label">used in</div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+</div>
   <div class="source">reconstructed</div>
 </article>
 <article class="word-card" data-search="wīhsila sour cherry noun fem plant wīhsila" data-categories="plant">
@@ -11917,26 +13324,28 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="notes">Written as thrum</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="þrī three number cardinal number drī þrīe, þrī þrír þreis" data-categories="number">
+<article class="word-card" data-search="þrī three number cardinal number drī þrīe, þrī þrír þreis þrī þrīa þriu" data-categories="number">
   <header>
     <h2 class="headword">þrī</h2>
     <div class="ipa">/&#x27;θriː/</div>
     <div class="header-meta"><span class="pos">number</span><span class="gender-class"><span class="gc-label">class</span><span class="gc-val">cardinal</span></span><span class="category-pills"><span class="category-pill">number</span></span></div>
   </header>
-<div class="adj-grid">
-  <div class="adj-col">
-    <div class="adj-label">masc</div>
-    <div class="adj-val">þrī</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">fem</div>
-    <div class="adj-val">þrīa</div>
-  </div>
-  <div class="adj-col">
-    <div class="adj-label">neut</div>
-    <div class="adj-val">þriu</div>
-  </div>
-</div>
+<div class="adj-wrap">
+<table class="adj-table">
+  <thead><tr><th></th>
+    <th>masc</th>
+    <th>fem</th>
+    <th>neut</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <th>nom</th>
+    <td>þrī</td>
+    <td>þrīa</td>
+    <td>þriu</td>
+  </tr>
+  </tbody>
+</table></div>
   <div class="english">three</div>
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>drī</span><span class="cognate"><span class="cog-label">OE</span>þrīe, þrī</span><span class="cognate"><span class="cog-label">ON</span>þrír</span><span class="cognate"><span class="cog-label">Gothic</span>þreis</span></div>
   <div class="notes">Reconstructed from comparative WGmc + Gothic evidence; not attested in Wachtendonck. Cf. Goth. þreis/þrijōs/þrija, OS thrie/thriā/thriu, OHG drī/drīo/driu. Initial /θ-/ confirmed by 5th-6th c. Latin renderings of Frankish names (Theod- not Deod-).</div>
@@ -12004,7 +13413,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
 <div class="cognates"><span class="cognate"><span class="cog-label">OHG</span>dër</span><span class="cognate"><span class="cog-label">OE</span>þē</span></div>
   <div class="source">reconstructed</div>
 </article>
-<article class="word-card" data-search="þū you (2nd person singular) pronoun personal dū þū þú þu" data-categories="">
+<article class="word-card" data-search="þū you (2nd person singular) pronoun personal dū þū þú þu þū þīn þīr þīk" data-categories="">
   <header>
     <h2 class="headword">þū</h2>
     <div class="ipa">/θuː/</div>
@@ -12032,11 +13441,11 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
     <div class="example-eng">You are my oath-brother.</div>
   </div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
   <div class="example">
-    <div class="example-frk">Fader unser, þū bist in himilum, hailagōd sī þīn namo</div>
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)hailagōd sī þīn namo</div>
     <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
   <div class="example">
@@ -12046,6 +13455,18 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="example">
     <div class="example-frk">Kweme rīki þīn, werþe willjo þīn, sō in himile, sō in erþe.</div>
     <div class="example-eng">Thy kingdom come, Thy will be done, on earth as it is in Heaven.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Þū sihis himil.</div>
+    <div class="example-eng">You see the sky.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
+  </div>
+  <div class="example">
+    <div class="example-frk">Fader unser, þū bist in himilum, (ga)wīhid sī þīn namo</div>
+    <div class="example-eng">Our Father, Thou art in Heaven, Hallowed be Thy name.</div>
   </div>
 </div>
   <div class="notes">PGmc *þū (2sg). Pre-High German consonant shift form: thorn /θ/ retained (OHG dū shows the later þ → d shift, post-Siegfried). Cognates: Gothic þu, OS thū, OE þū, ON þú.</div>
@@ -12062,7 +13483,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="notes">Written as thūta</div>
   <div class="source">Wartburg + Reconstructed</div>
 </article>
-<article class="word-card" data-search="āl eel noun masc animal āl ǣl, ēl áll" data-categories="animal">
+<article class="word-card" data-search="āl eel noun masc animal āl ǣl, ēl áll āl ālas āle āl ālu ālōs ālō ālum ālā ālum" data-categories="animal">
   <header>
     <h2 class="headword">āl</h2>
     <div class="ipa">/&#x27;aːl/</div>
@@ -12151,7 +13572,7 @@ Wartburg FEW vol. XVI, p. 128 reconstructs Old Low Franconian *hal &quot;cave&qu
   <div class="source">reconstructed</div>
 </article>
   </div>
-  <div class="meta">generated from siegfried_lang.sqlite at 2026-07-04 11:40</div>
+  <div class="meta">generated from siegfried_lang.sqlite at 2026-07-05 16:13</div>
 </div>
 <script>
 const search = document.getElementById('search');

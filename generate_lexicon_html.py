@@ -75,7 +75,7 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
   gap: 1.5rem;
 }
 .word-card {
@@ -173,36 +173,83 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   align-self: center;
 }
 .case-val { font-family: inherit; }
-.verb-parts { display: flex; flex-direction: column; gap: 0.2rem; }
-.part-row { display: grid; grid-template-columns: 6rem 1fr; gap: 0.5rem; }
-.part-label {
-  text-transform: uppercase; letter-spacing: 0.06em;
-  font-size: 0.7rem; color: var(--muted); align-self: center;
-}
-.adj-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  padding-top: 0.2rem;
+
+/* --- non-finite verb forms (infinitive, imperatives, past participle) --- */
+.nonfinite {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
+  padding-top: 0.4rem;
   border-top: 1px dashed var(--border);
+  font-size: 0.9rem;
+}
+.nonfinite-item { display: inline-flex; gap: 0.35rem; align-items: baseline; }
+.nf-label {
+  color: var(--muted); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* --- verb paradigm grid: rows = person/num, columns = mood/tense --- */
+.paradigm-wrap {
   padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+  overflow-x: auto;
 }
-.adj-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.1rem;
+table.paradigm {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
 }
-.adj-label {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.6rem;
-  color: var(--muted);
+table.paradigm th, table.paradigm td {
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  text-align: left;
+  vertical-align: baseline;
 }
-.adj-val {
-  font-family: inherit;
-  font-size: 0.95rem;
+table.paradigm thead th {
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.6rem; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: normal;
+  padding-bottom: 0.35rem;
 }
+table.paradigm tbody th {
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 0.65rem; color: var(--muted);
+  font-weight: normal;
+  padding-right: 0.7rem;
+  width: 2.6rem;
+}
+table.paradigm td.empty-cell { color: var(--border); }
+
+/* --- adjective grid: rows = case, columns = gender/number --- */
+.adj-wrap {
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+  overflow-x: auto;
+}
+table.adj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+table.adj-table th, table.adj-table td {
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  text-align: left;
+}
+table.adj-table thead th {
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.6rem; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: normal;
+  padding-bottom: 0.35rem;
+}
+table.adj-table tbody th {
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 0.65rem; color: var(--muted);
+  font-weight: normal;
+  padding-right: 0.6rem;
+  width: 2.4rem;
+}
+table.adj-table td.empty-cell { color: var(--border); }
+
 .english {
   padding: 0.5rem 0 0.3rem;
   border-top: 1px dashed var(--border);
@@ -308,7 +355,7 @@ HTML_SHELL = """<!DOCTYPE html>
     <div class="subtitle">Reconstructed Old Ripuarian Frankish</div>
   </header>
   <div class="search-row">
-    <input type="text" id="search" class="search" placeholder="filter by headword, meaning, part of speech, or cognate...">
+    <input type="text" id="search" class="search" placeholder="filter by headword, meaning, part of speech, cognate, or paradigm cell...">
     {cat_select}
     <span class="count" id="visible-count">{count} entries</span>
   </div>
@@ -321,6 +368,40 @@ HTML_SHELL = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+# ---------- paradigm structure declarations ----------
+
+# rows in the finite verb paradigm, ordered
+PERSON_ROWS = [
+    ('1sg', '1sg'),
+    ('2sg', '2sg'),
+    ('3sg', '3sg'),
+    ('1pl', '1pl'),
+    ('2pl', '2pl'),
+    ('3pl', '3pl'),
+]
+
+# columns in the finite verb paradigm: (column label, column prefix)
+# each cell is column_prefix + '_' + row_key -> words table column
+MOOD_TENSE_COLS = [
+    ('pres',       'pres'),
+    ('pres sbjv',  'pres_sbjv'),
+    ('past',       'past'),
+    ('past sbjv',  'past_sbjv'),
+]
+
+# adjective grid: rows = case, columns = gender/number
+ADJ_ROWS = [
+    ('nom', 'nom'),
+    ('acc', 'acc'),
+]
+ADJ_COLS = [
+    ('masc', 'masc'),
+    ('fem',  'fem'),
+    ('neut', 'neut'),
+    ('pl',   'pl'),
+]
 
 
 def get_words(conn):
@@ -351,7 +432,7 @@ def esc(v):
 
 
 def render_gender_class(w):
-    """Render gender_class with conditional label: 'gender' for nouns/names, 'class' for everything else."""
+    """Conditional label: 'gender' for nouns/names, 'class' for everything else."""
     gc = w.get('gender_class')
     if not gc:
         return ''
@@ -379,10 +460,10 @@ def render_category(w):
 def render_case_grid(w):
     sg = [('nom', w.get('nom_sg')), ('gen', w.get('gen_sg')),
           ('dat', w.get('dat_sg')), ('acc', w.get('acc_sg')),
-          ('instr', w.get('instr_sg') if 'instr_sg' in w else None)]
+          ('instr', w.get('instr_sg'))]
     pl = [('nom', w.get('nom_pl')), ('gen', w.get('gen_pl')),
           ('dat', w.get('dat_pl')), ('acc', w.get('acc_pl')),
-          ('instr', w.get('instr_pl') if 'instr_pl' in w else None)]
+          ('instr', w.get('instr_pl'))]
     sg_has = [(l, v) for l, v in sg if v]
     pl_has = [(l, v) for l, v in pl if v]
     if not sg_has and not pl_has:
@@ -404,44 +485,117 @@ def render_case_grid(w):
     return '\n'.join(out)
 
 
-def render_verb_parts(w):
-    parts = [
-        ('infinitive', w.get('infinitive')),
-        ('pres 1sg', w.get('pres_1sg')),
-        ('pres 2sg', w.get('pres_2sg')),
-        ('pres 3sg', w.get('pres_3sg')),
-        ('past 3sg', w.get('past_3sg')),
-        ('past 3pl', w.get('past_3pl')),
-        ('past part', w.get('past_part')),
+def render_nonfinite(w):
+    """Infinitive, imperative sg/pl, past participle — the non-paradigm-cell verb forms."""
+    items = [
+        ('inf',      w.get('infinitive')),
+        ('imp sg',   w.get('imp_sg')),
+        ('imp pl',   w.get('imp_pl')),
+        ('past ptc', w.get('past_part')),
     ]
-    parts = [(l, v) for l, v in parts if v]
-    if not parts:
+    items = [(l, v) for l, v in items if v]
+    if not items:
         return ''
-    out = ['<div class="verb-parts">']
-    for l, v in parts:
-        out.append(f'  <div class="part-row"><span class="part-label">{l}</span><span class="case-val">{esc(v)}</span></div>')
-    out.append('</div>')
+    spans = ''.join(
+        f'<span class="nonfinite-item"><span class="nf-label">{l}</span>{esc(v)}</span>'
+        for l, v in items
+    )
+    return f'<div class="nonfinite">{spans}</div>'
+
+
+def render_paradigm(w):
+    """Grid: rows = person/number, cols = mood/tense. Drop columns and rows that are all-empty."""
+    # collect values into a 2D dict: paradigm[row_key][col_prefix] = value
+    paradigm = {}
+    for row_label, row_key in PERSON_ROWS:
+        paradigm[row_key] = {}
+        for col_label, col_prefix in MOOD_TENSE_COLS:
+            col_name = f'{col_prefix}_{row_key}'
+            paradigm[row_key][col_prefix] = w.get(col_name) or ''
+
+    # which columns have any content
+    active_cols = []
+    for col_label, col_prefix in MOOD_TENSE_COLS:
+        if any(paradigm[row_key][col_prefix] for _, row_key in PERSON_ROWS):
+            active_cols.append((col_label, col_prefix))
+    if not active_cols:
+        return ''
+
+    # which rows have any content (within the active columns only)
+    active_rows = []
+    for row_label, row_key in PERSON_ROWS:
+        if any(paradigm[row_key][col_prefix] for _, col_prefix in active_cols):
+            active_rows.append((row_label, row_key))
+    if not active_rows:
+        return ''
+
+    out = ['<div class="paradigm-wrap">', '<table class="paradigm">']
+    out.append('  <thead><tr><th></th>')
+    for col_label, _ in active_cols:
+        out.append(f'    <th>{esc(col_label)}</th>')
+    out.append('  </tr></thead>')
+    out.append('  <tbody>')
+    for row_label, row_key in active_rows:
+        out.append('  <tr>')
+        out.append(f'    <th>{esc(row_label)}</th>')
+        for col_label, col_prefix in active_cols:
+            val = paradigm[row_key][col_prefix]
+            if val:
+                out.append(f'    <td>{esc(val)}</td>')
+            else:
+                out.append('    <td class="empty-cell">—</td>')
+        out.append('  </tr>')
+    out.append('  </tbody>')
+    out.append('</table></div>')
     return '\n'.join(out)
 
 
 def render_adj_forms(w):
-    """Render the four adjective/number agreement forms as a horizontal grid."""
-    forms = [
-        ('masc', w.get('adj_masc')),
-        ('fem', w.get('adj_fem')),
-        ('neut', w.get('adj_neut')),
-        ('pl', w.get('adj_pl')),
-    ]
-    forms = [(l, v) for l, v in forms if v]
-    if not forms:
+    """
+    Adjective grid: rows = case (nom, acc), columns = gender/number (masc, fem, neut, pl).
+    Actual schema columns are adj_<gender>_<case>, e.g. adj_masc_nom, adj_pl_acc.
+    """
+    grid = {}
+    for row_label, row_key in ADJ_ROWS:
+        grid[row_key] = {}
+        for col_label, col_key in ADJ_COLS:
+            col_name = f'adj_{col_key}_{row_key}'
+            grid[row_key][col_key] = w.get(col_name) or ''
+
+    # active columns
+    active_cols = []
+    for col_label, col_key in ADJ_COLS:
+        if any(grid[row_key][col_key] for _, row_key in ADJ_ROWS):
+            active_cols.append((col_label, col_key))
+    if not active_cols:
         return ''
-    out = ['<div class="adj-grid">']
-    for l, v in forms:
-        out.append(f'  <div class="adj-col">')
-        out.append(f'    <div class="adj-label">{l}</div>')
-        out.append(f'    <div class="adj-val">{esc(v)}</div>')
-        out.append(f'  </div>')
-    out.append('</div>')
+
+    # active rows
+    active_rows = []
+    for row_label, row_key in ADJ_ROWS:
+        if any(grid[row_key][col_key] for _, col_key in active_cols):
+            active_rows.append((row_label, row_key))
+    if not active_rows:
+        return ''
+
+    out = ['<div class="adj-wrap">', '<table class="adj-table">']
+    out.append('  <thead><tr><th></th>')
+    for col_label, _ in active_cols:
+        out.append(f'    <th>{esc(col_label)}</th>')
+    out.append('  </tr></thead>')
+    out.append('  <tbody>')
+    for row_label, row_key in active_rows:
+        out.append('  <tr>')
+        out.append(f'    <th>{esc(row_label)}</th>')
+        for col_label, col_key in active_cols:
+            val = grid[row_key][col_key]
+            if val:
+                out.append(f'    <td>{esc(val)}</td>')
+            else:
+                out.append('    <td class="empty-cell">—</td>')
+        out.append('  </tr>')
+    out.append('  </tbody>')
+    out.append('</table></div>')
     return '\n'.join(out)
 
 
@@ -476,14 +630,34 @@ def render_examples(examples):
     return '\n'.join(out)
 
 
-def render_word(w, examples):
-    search_text = ' '.join(filter(None, [
+# ---------- search-text harvest: pull every displayed form into the filter index ----------
+
+def harvest_search_text(w):
+    """Everything a user might reasonably type to find this card, folded to lowercase."""
+    parts = [
         w.get('headword'), w.get('english'), w.get('pos'), w.get('gender_class'),
         w.get('category'), w.get('category2'),
         w.get('old_high_german'), w.get('old_english'),
         w.get('old_norse'), w.get('gothic'),
-    ])).lower()
+        # noun case forms
+        w.get('nom_sg'), w.get('gen_sg'), w.get('dat_sg'), w.get('acc_sg'), w.get('instr_sg'),
+        w.get('nom_pl'), w.get('gen_pl'), w.get('dat_pl'), w.get('acc_pl'), w.get('instr_pl'),
+        # non-finite verb forms
+        w.get('infinitive'), w.get('imp_sg'), w.get('imp_pl'), w.get('past_part'),
+    ]
+    # finite paradigm cells
+    for _, row_key in PERSON_ROWS:
+        for _, col_prefix in MOOD_TENSE_COLS:
+            parts.append(w.get(f'{col_prefix}_{row_key}'))
+    # adjective forms
+    for _, row_key in ADJ_ROWS:
+        for _, col_key in ADJ_COLS:
+            parts.append(w.get(f'adj_{col_key}_{row_key}'))
+    return ' '.join(p for p in parts if p).lower()
 
+
+def render_word(w, examples):
+    search_text = harvest_search_text(w)
     cats_attr = '|'.join(filter(None, [
         (w.get('category') or '').strip(),
         (w.get('category2') or '').strip(),
@@ -498,21 +672,25 @@ def render_word(w, examples):
     if w.get('ipa'):
         pieces.append(f'    <div class="ipa">{esc(w["ipa"])}</div>')
 
-    # pos, gender_class, category share the header_meta row
     pos_html = f'<span class="pos">{esc(w["pos"])}</span>' if w.get('pos') else ''
     gc_html = render_gender_class(w)
     cat_html = render_category(w)
     if pos_html or gc_html or cat_html:
         pieces.append(f'    <div class="header-meta">{pos_html}{gc_html}{cat_html}</div>')
-
     pieces.append('  </header>')
 
     cg = render_case_grid(w)
     if cg: pieces.append(cg)
-    vp = render_verb_parts(w)
-    if vp: pieces.append(vp)
+
+    nf = render_nonfinite(w)
+    if nf: pieces.append(nf)
+
+    par = render_paradigm(w)
+    if par: pieces.append(par)
+
     adj = render_adj_forms(w)
     if adj: pieces.append(adj)
+
     if w.get('english'):
         pieces.append(f'  <div class="english">{esc(w["english"])}</div>')
     cogs = render_cognates(w)
@@ -528,7 +706,7 @@ def render_word(w, examples):
 
 
 def build_category_select(words):
-    """Build the dropdown filter from distinct non-empty categories across both columns."""
+    """Dropdown filter built from distinct non-empty categories across both columns."""
     cats = set()
     for w in words:
         for key in ('category', 'category2'):
@@ -537,7 +715,7 @@ def build_category_select(words):
                 cats.add(v)
     cats = sorted(cats)
     if not cats:
-        return ''  # no categories yet, omit the dropdown entirely
+        return ''
     opts = ['<option value="">all categories</option>']
     for c in cats:
         opts.append(f'<option value="{esc(c)}">{esc(c)}</option>')
