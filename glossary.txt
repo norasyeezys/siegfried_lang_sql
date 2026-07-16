@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1083 entries
+# Siegfried Lexicon — 1104 entries
 # headword — english
 
 agja — edge, corner
@@ -21,7 +21,7 @@ akus — axe
 āl — eel
 al — all
 ald — old
-âlgêr — spear for fishing eel
+âlgair — spear for fishing eel
 alina — forearm, ell, ulna, elbow
 alôd — freehold land, property
 alu — ale
@@ -48,6 +48,7 @@ ađalaro — eagle
 badu — battle
 bain — bone
 bair — boar
+baitil — chisel
 bak — back
 bakko — ham, slice of bacon
 bald — bold, audacious
@@ -90,6 +91,7 @@ bolla — bowl, bun, ball
 bolt — bolt arrow
 bord — board
 borganjan — bargain, negotiate
+borōn — to bore, drill, pierce
 bosk — bush, forest
 bôtan — to beat
 brādo — piece of meat
@@ -109,6 +111,7 @@ brunst — burning, heat
 brust — breast, chest
 būk — belly
 burg — fortification, fortified city
+burþin — burden
 butera — butter
 buwan — to build, reside
 dag — day
@@ -167,8 +170,10 @@ farlātan — to leave, dismiss
 farwa — color
 farwiđôn — to dye, color
 fast — steadfast, firm, steady, fixed
+fat — vessel, container
 fehtan — to fight
 fehu — livestock, cattle
+fel — skin, hide
 feld — field
 fellian — to fell, kill
 ferah — life
@@ -177,6 +182,7 @@ fersna — heel
 fetur — fetter
 fīand — fiend
 fillo — evildoer
+fīlōn — to file, polish
 filtir — felt
 fimf — five
 fimftehan — fifteen (five ten)
@@ -226,6 +232,7 @@ furh — fir, pine
 furista — first
 gabaiti — to hunt with falcons
 gadailo — comrade, partner
+gadurōn — to gather, bring together
 gafōri — convenience, comfort
 gagel — gale (plant)
 gair — spear
@@ -361,6 +368,7 @@ heriwald — herald
 hernôdi — military emergency
 herta — heart
 heƀen — to lift, raise
+heƀil — lever, lifter
 himil — sky, heaven
 hinder — behind, beyond
 hirut — deer, stag
@@ -443,6 +451,7 @@ hwanne — when
 hwār — where
 hwat — what
 hwē — who
+hwerƀan — to turn
 hwerƀel — thing that whirls; mole cricket; instrument spinner
 hwerƀilôn — to whirl
 hwī — how, by what means, why
@@ -501,6 +510,7 @@ knoko — bone, joint
 knukil — knuckle, joint, small bone
 kō — cow
 kôli — cabbage, colewort
+kolƀo — club, mallet; bulb, cob
 kopar — copper
 kostōn — to try, taste
 kostunga — temptation
@@ -530,6 +540,7 @@ krusil — gooseberry
 krussjan — to crush, squeeze
 kukur — quiver
 kûla — grave pit, dug hole
+kump — bowl, vessel; vat, tub
 kund — kind, race
 kuning — king
 kunni — family, kin
@@ -558,6 +569,7 @@ leger — bed, lair
 lêha — wild sow, wild (female) boar
 lekkon — to lick
 leskan — to quench
+leþer — leather
 leƀera — liver
 libbjan — to live, be alive
 liggjan — to lie down, rest
@@ -573,6 +585,7 @@ listja — barrier, wall
 liuben — to love
 liud — people, nation
 liþ — bend, joint, body part, limb, member
+liþerīn — made of leather
 lobbôn — to lie in and wait for
 lôd — lead
 loguns — sword
@@ -661,6 +674,7 @@ namnjan — to name, call, give name to
 namo — name
 nasa — nose
 nastila — headband
+nāƀogair — borer, deep bore tool, auger
 neman — to take
 nest — nest
 ni — no, not
@@ -836,6 +850,7 @@ smero — grease, fat
 smiril — pygmy falcon
 smītan — to cast; to hit
 smiþ — craftsman, smith
+smiþōn — to forge, smith
 snajo — snow
 snako — snake
 snel — nimble, quick, agile
@@ -1008,8 +1023,12 @@ wastil — cake
 water — water
 waþ — calf of the leg
 wađ — ford, crossing
+wedar — weather
+weggi — wedge
 wenkjan — to stagger, wave, move aside
 wer — man
+werk — work
+werk — rope or cord
 werpjan — to throw
 werra — confusion; riot
 werwolf — werewolf (man-wolf)
@@ -1074,11 +1093,13 @@ wurm — serpent, snake, worm
 þiudisk — of the people
 þorn — thorn, briar
 þorp — village
+þrād — thread, twisted fiber
 þrastala — thrush (bird)
 þreosk — fallow, fallow land
 þreskan — to thresh; to thrash, tread
 þrī — three
 þritehan — thirteen (literally three ten)
+þrukkjan — to press
 þrum — stump, trunk, stub
 þū — you (2nd person singular)
 þuruh — through
