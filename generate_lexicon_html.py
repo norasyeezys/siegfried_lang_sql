@@ -411,14 +411,18 @@ def get_words(conn):
 
 
 def get_examples_for_word(conn, word_id):
-    """Pull example sentences this word appears in."""
+    """Pull distinct sentences this word appears in.
+    A word can occur multiple times in one sentence (e.g. 'sō ... sō ... sō ...'
+    in a Merseburg-style charm formula); collapse those to one row per sentence
+    instead of emitting the sentence once per occurrence."""
     try:
         cur = conn.execute("""
-            SELECT s.frankish, s.english, sw.surface_form
+            SELECT s.frankish, s.english
             FROM sentences s
-            JOIN sentence_words sw ON sw.sentence_id = s.id
-            WHERE sw.word_id = ?
-            ORDER BY s.id, sw.position;
+            WHERE s.id IN (
+                SELECT sentence_id FROM sentence_words WHERE word_id = ?
+            )
+            ORDER BY s.id;
         """, (word_id,))
         return cur.fetchall()
     except sqlite3.OperationalError:
@@ -620,7 +624,7 @@ def render_examples(examples):
     if not examples:
         return ''
     out = ['<div class="examples">', '  <div class="examples-label">used in</div>']
-    for frk, eng, surface in examples:
+    for frk, eng in examples:
         out.append(f'  <div class="example">')
         out.append(f'    <div class="example-frk">{esc(frk)}</div>')
         if eng:
