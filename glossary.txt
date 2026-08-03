@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1277 entries
+# Siegfried Lexicon — 1278 entries
 # headword — english
 
 agja — edge, corner
@@ -686,6 +686,7 @@ listja — barrier, wall
 liuben — to love
 liud — people, nation
 liþ — bend, joint, body part, limb, member
+līþan — to go, pass; to suffer loss
 liþerīn — made of leather
 lobbōn — to lie in and wait for
 lôd — lead
