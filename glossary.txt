@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1278 entries
+# Siegfried Lexicon — 1313 entries
 # headword — english
 
 agja — edge, corner
@@ -35,6 +35,7 @@ anabôt — anvil
 anafalt — anvil
 anattjan — to provoke, drive
 ander — second, other
+andlitti — form, appearance, face
 andrādan — to be afraid, fear
 aned — duck
 anker — anchor
@@ -146,7 +147,7 @@ dailjan — to divide, deal, share
 danni — flat surface, floor
 darni — hidden, concealed
 daroþ — javelin, dart
-deutonburg — Duisburg (on the Ruhr)
+deutonburg — Duisburg (on the Ruhr) (Literal: Fortress of Deuto)
 dintjan — to move back and forth
 diop — deep
 dior — animal
@@ -207,6 +208,7 @@ farwa — color
 farwiđōn — to dye, color
 fast — steadfast, firm, steady, fixed
 fat — vessel, container
+federo — paternal uncle
 fehtan — to fight
 fehu — livestock, cattle
 fel — skin, hide
@@ -231,6 +233,7 @@ fiuwertehan — fourteen (four ten)
 fiþeri — feathers, plumage; wing
 flahs — flax
 flaisk — flesh
+flak — flat
 flaska — flask, bottle
 flat — flat
 flaþo — flat cake
@@ -260,6 +263,7 @@ frauwa — lady, wife of a lord
 frī — free
 frīja — Frigg, Freya
 frisk — fresh
+frist — an appointed time, date
 friund — friend
 friþ — love, peace, protection
 frō — early
@@ -274,7 +278,11 @@ fulk — crowd, troup, people, multitude (of people)
 fulla — Fulla (goddess); the full one, the plentitude
 furbjan — to clean
 furh — fir, pine
+furhist — forest
 furista — first
+furisto — prince, ruler
+furt — fart
+furtjan — to break wind, fart
 gabaiti — to hunt with falcons
 gadailo — comrade, partner
 gadurōn — to gather, bring together
@@ -299,6 +307,7 @@ gaspia — buckle, loop
 gast — guest, stranger
 gata — street, passage
 gaumjan — to observe, perceive, notice
+gaunnan — to allow, grant, bestow
 geld — payment, tribute
 geldan — to pay
 geldapa — Krefeld-Gellep
@@ -444,6 +453,8 @@ hiudag — today
 hiupo — rosehip
 hladan — to load
 hlahhjan — to laugh
+hlaiwo — shelter
+hlaiwo — hill, mound, barrow; burial mound, grave
 hlaiƀ — bread, loaf
 hlanka — bend, curve; side, flank
 hlankjan — to bend, turn around
@@ -453,6 +464,7 @@ hlink — crooked, askew, left
 hlōdowig — famous-battle (personal name)
 hlot — lot, share; fate
 hlūd — loud, famous
+hnakko — back of neck, nape
 hnapp — bowl, cup
 hnut — nut
 hoddōn — to torment, harass
@@ -465,6 +477,7 @@ hokkōn — to lever out, extract (a stump or tooth)
 hol — hollow, hole
 holt — woods, forest, wood
 hōn — hen. chicken
+hôni — despised, poor
 honig — honey
 hōnjan — to humiliate, dishonor, shame
 horaha — muddy water
@@ -473,6 +486,7 @@ horn — horn
 hornīn — made of horn, made of keratin, horny
 hornung — bastard
 horwi — dirt, mud, swamp
+hosa — pants, trousers, stocking
 hotta — basket
 hottisōn — to shake
 hottōn — to shake
@@ -486,11 +500,13 @@ hrapōn — to grasp, snatch
 hraspōn — to rasp, grate, scratch
 hrâta — honeycomb
 hraƀan — raven
+hreuwa — regret
+hreuƀisk — rough
 hrîdera — sieve
 hrîm — hoarfrost
 hrimpan — to wrinkle, fold
 hring — ring, circle
-hriuƀisk — rough
+hriuwan — to regret
 hrôk — rook (bird)
 hrokk — robe, garment
 hrōpan — to cry out, call, shout
@@ -527,6 +543,7 @@ hwaiti — wheat
 hwal — whale
 hwanne — when
 hwār — where
+hwass — sharp
 hwat — what
 hwē — who
 hwerƀan — to turn
@@ -631,6 +648,7 @@ krusil — gooseberry
 krussjan — to crush, squeeze
 kukur — quiver
 kûla — grave pit, dug hole
+kumber — sorrow, burden, trouble
 kump — bowl, vessel; vat, tub
 kund — kind, race
 kundjan — to make known, announce
@@ -762,6 +780,7 @@ mōder — mother
 mōdig — bold, courageous
 moin — Main (river)
 mokka — lump
+mōma — maternal aunt
 morgan — morning
 mornōn — to be concerned of; to mourn
 mosa — moss, bog
@@ -787,6 +806,7 @@ namo — name
 nasa — nose
 nastila — headband
 nāƀogair — borer, deep bore tool, auger
+nefo — nephew, grandson
 neman — to take
 nest — nest
 ni — no, not
@@ -803,6 +823,7 @@ nuska — buckle, clasp
 oba — above
 ôd — wealth, riches, property
 ôdi — wasteland; empty, desolate
+ôhaim — maternal uncle
 ohso — ox
 ok — but
 olbanda — camel
@@ -873,7 +894,7 @@ saggjan — to say, speak
 sahs — dagger, knife
 saipa — soap
 saiwi — sea
-sajola — soul
+saiwola — soul
 sal — room, dwelling, hall
 salha — willow
 salo — murky, dirty
@@ -887,6 +908,8 @@ sehs — six
 sehstehan — sixteen (six ten)
 senewa — sinew
 seuro — mite
+sibbja — relationship, kinship
+sīda — side
 sigi — victory
 sigifriþ — victory-peace (personal name)
 sigilind — victory-linden (personal name)
@@ -905,6 +928,7 @@ siƀun — seven
 siƀuntehan — seventeen (seven ten)
 skaidan — to separate
 skaiþa — sheath, covering
+skaiþila — crown of the head, part of the hair
 skâk — robbery, abduction
 skakkja — stilt
 skala — shell
@@ -980,7 +1004,7 @@ smiril — pygmy falcon
 smītan — to cast; to hit
 smiþ — craftsman, smith
 smiþōn — to forge, smith
-snajo — snow
+snaiwo — snow
 snako — snake
 snel — nimble, quick, agile
 sō — as, so, like
@@ -1028,6 +1052,7 @@ steora — helm, rudder
 sterno — star
 stikkan — to pierce, sting, stick
 stimna — voice
+stirna — forehead
 stok — stock; stump
 stollo — support, post
 stolt — proud, stiff
@@ -1037,7 +1062,7 @@ strakkjan — to stretch
 strāla — arrow
 strand — shore, beach
 strāta — street, paved road
-stratiburg — Strasbourg
+stratiburg — Strasbourg (Literal: Fortress of Roads)
 streup — stirrup
 strīd — battle, fight, conflict, uprising
 strîkan — to stroke, rub
@@ -1060,10 +1085,13 @@ sunu — son
 sunþer — south
 suppa — soup, broth
 sûr — sour, acidic
+swāger — brother-in-law
 swait — sweat; blood
 swamm — sponge, mushroom, fungus
 swang — swinging motion, sweep
 swart — black
+swegar — mother in law
+sweher — father-in-law
 swellan — to swell
 swerd — sword
 swerjan — to swear (an oath)
@@ -1103,6 +1131,7 @@ tiþl — beehive
 tiƀer — sacrificial animal
 togōn — to tow, pull
 top — top, peak; tuft of hair
+torn — anger, fury, wrath
 traja — Xanten (Colonia Ulpia Traiana/Troia Francorum)
 trampan — to step
 trappa — trap; step, stairs
@@ -1123,9 +1152,11 @@ turƀa — turf
 twaine — two
 twaintig — twenty (two groups of ten)
 twalif — twelve (literally: two left)
+twiniling — twin
 umbi — around
 umbigân — to walk around, circulate
 under — under, beneath
+unnan — to grant, bestow
 unser — our
 up — up
 urdaili — something handed out; allotment, share; judgement
@@ -1155,6 +1186,7 @@ walu — stick, rod
 wamba — womb, belly
 wān — hope, expectation
 wandjan — to turn
+wanga — cheek; jaw
 wānjan — to hope, expect
 wankjan — to waver, sway
 wankôn — to waver, sway
@@ -1168,6 +1200,7 @@ warjan — to ward off, defend against
 warmmōs — warm porridge
 warnjan — to warn, caution,; to den,
 warôn — to watch, protect
+wasa — paternal aunt
 wasal — sudden downpour; fistula
 waskōn — to wash
 waso — sod, soggy ground
@@ -1179,6 +1212,7 @@ wedar — weather
 weggi — wedge
 wela — well
 wenkjan — to stagger, wave, move aside
+wennjan — to accustom, make used to
 wer — man
 werald — world
 werk — work
@@ -1193,6 +1227,7 @@ wiara — gold thread
 wīd — wide, broad
 widu — wood
 widuhoppa — hoopoe (bird)
+widuwa — widow
 wīg — fight, battle
 wīgan — to fight, battle
 wīgand — warrior, fighter, combatant
