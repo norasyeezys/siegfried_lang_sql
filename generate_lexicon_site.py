@@ -290,6 +290,14 @@ a.w { color: var(--link); }
 .nf-label { color: var(--muted); font-size: 0.62rem;
   text-transform: uppercase; letter-spacing: 0.08em; }
 
+/* degree forms (comparative, superlative) for adjectives and adverbs */
+.degrees { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem;
+  margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px dashed var(--line);
+  font-size: 0.9rem; }
+.deg-item { display: inline-flex; gap: 0.3rem; align-items: baseline; }
+.deg-label { color: var(--muted); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.08em; }
+
 /* paradigm & adjective tables */
 table.paradigm, table.adj-table {
   width: 100%; border-collapse: collapse; font-size: 0.88rem;
@@ -487,6 +495,23 @@ def render_adj(w):
         out.append('</tr>')
     out.append('</tbody></table></div>')
     return '\n'.join(out)
+
+
+def render_degrees(w):
+    """Comparative and superlative — for adjectives and adverbs that have them.
+    Rendered as a horizontal strip in the same shape as render_nonfinite."""
+    items = [
+        ('cmpr',   w.get('comparative')),
+        ('superl', w.get('superlative')),
+    ]
+    items = [(l, v) for l, v in items if v]
+    if not items:
+        return ''
+    spans = ''.join(
+        f'<span class="deg-item"><span class="deg-label">{l}</span>{esc(v)}</span>'
+        for l, v in items
+    )
+    return f'<div class="degrees">{spans}</div>'
 
 
 def render_cognates(w):
@@ -703,10 +728,12 @@ def build_word_page(w, sentences_by_id, sw_by_sid, db_to_new, new_to_word):
     nf  = render_nonfinite(w)
     par = render_paradigm(w)
     adj = render_adj(w)
+    deg = render_degrees(w)
     if cg:  body += cg
     if nf:  body += nf
     if par: body += par
     if adj: body += adj
+    if deg: body += deg
 
     # english gloss
     if w.get('english'):

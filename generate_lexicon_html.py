@@ -187,6 +187,19 @@ h1 { margin: 0 0 0.25rem; font-size: 2.5rem; color: var(--accent); letter-spacin
   text-transform: uppercase; letter-spacing: 0.08em;
 }
 
+/* --- degree forms (comparative, superlative) for adjectives and adverbs --- */
+.degrees {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.9rem;
+}
+.degrees-item { display: inline-flex; gap: 0.35rem; align-items: baseline; }
+.deg-label {
+  color: var(--muted); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
 /* --- verb paradigm grid: rows = person/num, columns = mood/tense --- */
 .paradigm-wrap {
   padding-top: 0.5rem;
@@ -603,6 +616,23 @@ def render_adj_forms(w):
     return '\n'.join(out)
 
 
+def render_degrees(w):
+    """Comparative and superlative — for adjectives and adverbs that have them.
+    Rendered as a horizontal strip in the same shape as render_nonfinite."""
+    items = [
+        ('cmpr',   w.get('comparative')),
+        ('superl', w.get('superlative')),
+    ]
+    items = [(l, v) for l, v in items if v]
+    if not items:
+        return ''
+    spans = ''.join(
+        f'<span class="degrees-item"><span class="deg-label">{l}</span>{esc(v)}</span>'
+        for l, v in items
+    )
+    return f'<div class="degrees">{spans}</div>'
+
+
 def render_cognates(w):
     cogs = [
         ('OHG', w.get('old_high_german')),
@@ -648,6 +678,8 @@ def harvest_search_text(w):
         w.get('nom_pl'), w.get('gen_pl'), w.get('dat_pl'), w.get('acc_pl'), w.get('instr_pl'),
         # non-finite verb forms
         w.get('infinitive'), w.get('imp_sg'), w.get('imp_pl'), w.get('past_part'),
+        # degree forms
+        w.get('comparative'), w.get('superlative'),
     ]
     # finite paradigm cells
     for _, row_key in PERSON_ROWS:
@@ -694,6 +726,9 @@ def render_word(w, examples):
 
     adj = render_adj_forms(w)
     if adj: pieces.append(adj)
+
+    deg = render_degrees(w)
+    if deg: pieces.append(deg)
 
     if w.get('english'):
         pieces.append(f'  <div class="english">{esc(w["english"])}</div>')
