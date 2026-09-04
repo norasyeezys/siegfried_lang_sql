@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1710 entries
+# Siegfried Lexicon — 1740 entries
 # headword — english
 
 aha — river, water
@@ -7,6 +7,7 @@ ahsa — axle
 ahsla — shoulder
 ahto — eight
 ahtodo — eighth
+ahtōn — to consider, to care about
 ahtotehan — eighteen (eight ten)
 aid — fire, pyre
 aigan — own
@@ -107,6 +108,7 @@ bautan — to beat
 baþ — bath
 baþōn — to bathe
 beddi — bed, plot of ground
+bekāri — beaker, jug
 bëra — funeral bier
 beran — to carry, bear
 berg — hill, mountain
@@ -166,6 +168,8 @@ brimman — to growl, grumble
 brinnan — to burn, to be on fire
 brōd — bread
 brōjan — to warm, boil, brew
+brōk — brook, stream, marsh
+brōk — pants, trousers
 brōþer — brother
 brūd — bride
 bruggja — bridge
@@ -187,6 +191,7 @@ dagalīk — daily
 dagraud — dawn (literal: day-red)
 dailjan — to divide, deal, share
 dal — valley, dale
+damp — vapour
 danni — flat surface, floor
 darni — hidden, concealed
 darnikappa — Tarnkappe, cloak of invisibility, hiding cape
@@ -222,6 +227,7 @@ druhtin — lord, Lord
 dubban — to dub, to strike with honor
 dulli — tube, pipe
 duni — sound, noise, din
+dunst — mist, haze
 duri — door
 durran — to dare
 dusin — dun, brownish yellow
@@ -290,7 +296,7 @@ fīand — fiend
 fīla — file (tool)
 fillo — evildoer
 fīlōn — to file, polish
-filtir — felt
+filt — felt
 fimf — five
 fimftehan — fifteen (five ten)
 fimfto — fifth
@@ -377,6 +383,7 @@ gair — spear
 gaist — ghost
 gait — goat
 galan — to sing, charm
+galauƀjan — to believe; to allow
 galga — measuring rod
 galiþ — joint, articulated limb, collection of limbs
 galpōn — to boast, brag, bark
@@ -488,6 +495,7 @@ haitī — heat
 haitjan — to heat
 hakkōn — to hack, chop
 haldan — to hold
+halftra — harness, halter
 halla — hall
 halōn — to bring, fetch, haul
 hals — neck, throat
@@ -562,7 +570,7 @@ henna — hen
 hēr — here
 herda — herd
 heriwald — herald
-hernaudi — military emergency
+hernaud — military emergency (literal: battle + need)
 herta — heart
 herþ — hearth, fireplace
 hewi — hay
@@ -590,8 +598,11 @@ hlōdhari — famous-warrior (personal name)
 hlōdowig — famous-battle (personal name)
 hlot — lot, share; fate
 hlūd — loud, famous
+hnaigjan — to lower, to cause to bow
 hnakko — back of neck, nape
 hnapp — bowl, cup
+hnauw — tight, narrow
+hnīgan — to bow
 hnut — nut
 hoddōn — to torment, harass
 hof — estate, yard
@@ -657,7 +668,9 @@ hukila — pile, heap
 hûkōn — to squat
 hulftia — blanket, cover
 hulis — holly
+hulistar — cover, case. sheath, hull, hiding spot
 hulla — sleeve
+hulljan — to cover, veil
 humilo — hop (plant)
 hund — dog
 hund — hundred
@@ -683,6 +696,7 @@ hwār — where
 hwass — sharp
 hwat — what
 hwē — who
+hwelīk — what kind of, what sort of
 hwerƀan — to turn
 hwerƀel — thing that whirls; mole cricket; instrument spinner
 hwerƀilōn — to whirl
@@ -785,6 +799,7 @@ kotta — coat
 krabbo — crab
 krabbōn — to crab, scratch, scrape, claw at
 kraft — strength, power; skill
+krāja — crow (bird)
 kramp — cramp
 kran — juniper
 krank — bent, crooked; weak
@@ -858,6 +873,8 @@ lausunga — lying, deceit
 lautja — ladle, spoon for hot metal
 lauþer — lure
 lauƀ — leaf
+lauƀa — permission
+lauƀjan — to allow, approve of; to praise
 lađo — board, shelf
 lēbard — leopard
 leger — bed, lair
@@ -944,6 +961,7 @@ mankunni — mankind
 māno — moon
 mānōþ — month
 mara — nightmare, demon
+mārewig — famous-battle (personal name)
 marh — horse
 marhskalk — marshal, high ranking officer
 marisk — marsh, swamp
@@ -980,6 +998,7 @@ miskjan — to mix, combine
 misklingu — mixture
 misklōn — to mix
 missjan — to go wrong, miss, fail
+mist — manure. dung
 mōd — mind, boldness
 mōder — mother
 mōdig — bold, courageous
@@ -1021,6 +1040,7 @@ namo — name
 nasa — nose
 nastila — headband
 naud — depression (geological), low place, hollow
+naud — need, necessity; emergency
 nāƀogair — borer, deep bore tool, auger
 nefo — nephew, grandson
 neman — to take
@@ -1111,6 +1131,7 @@ rīkjan — to rule over, reign
 rilpjan — to belch, eructate
 rîm — row, count, series; tale, account
 rīn — Rhine
+rinda — bark, crust, rind
 rinnan — to run, to flow
 rīsan — to move vertically, to rise, to fall
 riud — arable land, cleared land
@@ -1143,6 +1164,7 @@ saiwi — sea
 saiwola — soul
 sal — room, dwelling, hall
 salha — willow
+sālig — happy, blessed
 salo — murky, dirty
 salt — salt
 samfti — soft, gentle
@@ -1207,6 +1229,7 @@ skarda — splinter, shard
 skarfia — shard, splinter
 skarjan — to order, arrange
 skarjan — to rob, deprive of
+skarp — sharp, pointed
 skarwahta — guard duty, group of sentinels
 skatt — treasure
 skauta — sailcloth
@@ -1293,12 +1316,14 @@ spado — spade (tool)
 spald — crack, fissure
 spalturōian — split up
 spān — wood chip, shaving
+spanan — to lure, seduce
 spanna — span, range, stretch
 spannan — to span, stretch
 spannjan — to wean
 sparōn — to spare
 sparwa — sparrow
 sparwari — sparrow hawk
+speha — a looking, peering; prophesy
 spehōn — to peer, spy
 speht — woodpecker
 spellōn — to explain, recount
@@ -1488,6 +1513,7 @@ twīfal — doubt
 twifald — twofold, double
 twīfljan — to doubt
 twiniling — twin
+ūla — owl
 umbi — around
 umbigân — to walk around, circulate
 under — under, beneath
@@ -1533,6 +1559,8 @@ walm — boiling, rising steam
 walu — stick, rod
 wamba — womb, belly
 wān — hope, expectation
+wandalōn — to wander, go; to change
+wandōn — to change
 wanga — cheek; jaw
 wānjan — to hope, expect
 wankjan — to waver, sway
@@ -1606,6 +1634,7 @@ willjo — will, wish, desire
 wimpil — head scarf
 wīn — wine
 wind — wind
+windan — to wind, wrap
 wingjan — to wave, nod, shake
 wini — friend
 winistar — left (direction, position)
@@ -1621,6 +1650,7 @@ wîsarm — guisarme (polearm with spearhead)
 wīsdōm — wise judgement, wisdom
 wisk — bundle of straw, hay, wisp
 wiskjan — to wisk, sweep away, clean
+wist — essence, being; food, substinence
 wit — we two (archaic)
 wîtan — to lead, guide; to accuse, blame
 witan — to know (knowledge)
