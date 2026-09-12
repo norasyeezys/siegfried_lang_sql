@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1812 entries
+# Siegfried Lexicon — 1835 entries
 # headword — english
 
 ādera — vein
@@ -146,6 +146,7 @@ bitalōn — to pay
 bītan — to bite
 biti — bite
 bitter — bitter
+biudan — to offer, bid
 biugan — to bend, become bent
 biwarōn — to watch over, guard, protect
 biwellan — to stain, dirty
@@ -178,6 +179,7 @@ bōta — recompense, atonement
 brādan — to warm, heat, broil; to roast (meat)
 brādo — piece of meat
 brahsima — bream
+braid — broad, wide
 bramberi — blackberry
 brand — fire, flame; firebrand, torch; sword
 brekan — to break
@@ -243,6 +245,7 @@ drako — dragon
 draum — dream
 draumjan — to dream
 drenkjan — to wet, drench; to water; to cause to drink
+drepan — to hit, strike
 drinkan — to drink
 druht — band of retainers, troop
 druhtin — lord, Lord
@@ -316,19 +319,19 @@ fersna — heel
 fetur — fetter
 feurþo — fourth
 fīand — fiend
+fīf — five
+fīftehan — fifteen (five ten)
+fīfto — fifth
 fīla — file (tool)
 fillo — evildoer
 fīlōn — to file, polish
 filt — felt
-fimf — five
-fimftehan — fifteen (five ten)
-fimfto — fifth
 findan — to find
 fingar — finger
 first — roof ridge
 fisk — fish
 fiuwer — four
-fiuwer hund enti fimf enti twaintig — four hundred and twenty-five
+fiuwer hund enti fīf enti twaintig — four hundred and twenty-five
 fiuwerfald — qwadruple, fourfold
 fiuwertehan — fourteen (four ten)
 fiþeri — feathers, plumage; wing
@@ -504,10 +507,12 @@ hago — hedge, haw; grove, woods
 hāhan — to hang
 haid — emotion, joy
 haigro — heron
+hail — whole, complete; healthy
 hailag — holy, sacred
 hailagōn — to hallow, sanctify, make holy
 hailjan — to heal, cure
 hailjand — savior, healer; Jesus
+hailsam — wholesome, sound, healthy
 haim — home, house, small village
 haimgard — enclosure/fence around a house or houses
 haimiþi — enclosed settlement
@@ -725,6 +730,7 @@ hûƀa — hood
 hwahtila — quail
 hwaiti — wheat
 hwal — whale
+hwanda — for, beacause
 hwanne — when
 hwār — where
 hwass — sharp
@@ -765,6 +771,8 @@ juwar — your (plural), youse (possessive)
 kâda — Crackling, residue from rendered fat, leftover chunk from cooking
 kaf — chaff
 kald — cold
+kalk — lime, limestone
+kalkōn — to whitewash, cover with lime
 kallōn — to call, shout
 kalƀ — calf, baby cow
 kâm — mold on fermented liquids
@@ -789,6 +797,7 @@ kela — throat
 kēn — torch wood
 kerana — butter churn
 kerƀan — to cut, carve
+kīmo — sprout, germ
 kīnan — to split open
 kind — child
 kinni — chin, cheek
@@ -797,12 +806,14 @@ kirika — church
 kirsa — cherry
 kista — (treasure) chest, box
 kiul — keel of a ship, ship
+kiusan — to choose
 kiuwa — jaw, gill
 kiuwan — to chew
 kīþ — sprout, child, kid
 klagōn — to complain
 klaini — fine; small; clean
 kletto — burdock
+kleuƀan — to cleave, to split
 klinka — latch, door handle
 kliƀ — cliff, rock
 klōk — strong, quick, smart
@@ -850,6 +861,7 @@ krattōn — to scratch, remove by scraping
 krawa — claw
 krawjan — to claw
 kresso — cress (plant)
+kreupan — to creep, crawl
 kreƀitja — crayfish, crawfish, crustacean
 krippia — crate, trough, crib
 krîsan — to squeal, creak, crunch
@@ -859,7 +871,7 @@ krotta — excretion, feces, dung
 krûka — jug, pitcher, crock
 krukja — stick with a curved end, curved staff, crutch
 krumbjan — to bend
-kruppa — compressed; group
+krupp — compressed; group
 krusil — gooseberry
 krussjan — to crush, squeeze
 kukina — kitchen
@@ -876,6 +888,7 @@ kunni — family, kin
 kunta — vagina, vulva
 kūskhaid — chastity
 kūski — chaste
+kust — trial, choice
 kwella — spring (of water)
 kweman — to come
 kwërn — millstone, handmill, quern
@@ -1125,11 +1138,13 @@ opanōn — to open
 ord — spear point, sharp point; place
 ordwin — spear-friend (personal name)
 ottar — otter
+ōþil — homeland, patrimony, inheritance
 oƀ — if, when
 padda — toad
 palma — palm tree, palm leaf
 parifrid — horse
 pāwo — peacock
+paþ — path
 pera — pear
 pīk — sharp point, pike
 pīna — pine tree
@@ -1228,6 +1243,7 @@ samfto — softly, gently
 sand — sand
 sang — song, singing
 santen — Xanten (ad Sanctos)
+sap — juice, sap
 sāta — place, position
 sattjan — to set, place
 saur — dry
@@ -1300,7 +1316,6 @@ skilla — small bell, doorbell
 skimpjan — to mock, scold
 skina — bar, track; shin (of the leg)
 skind — skin (of animal, human, or fruit)
-skioƀan — to push, drive
 skip — ship, boat
 skirm — fur, hide, pelt; covering, shelter, screen
 skirmjan — to protect
@@ -1308,6 +1323,7 @@ skirnjan — to make fun of, mock
 skirpja — bag
 skītan — to shit, defecate
 skiuhjan — to dread, shun, avoid
+skiuƀan — to push, drive
 skīƀa — slice, disk
 skōh — shoe
 skōpa — scoop
@@ -1319,7 +1335,9 @@ skrapōn — to scrape
 skrauda — cut piece
 skrepan — to scratch, scrape
 skreunia — chamber
+skrīþan — to stride
 skrīƀan — to write
+skufla — shovel
 skulan — shall, ought, must
 skuld — obligation, debt, guilt
 skuldig — guilty, sinful
@@ -1353,11 +1371,14 @@ slītan — to split, tear apart
 slopp — loop, noose
 slot — bolt, lock
 slutil — key
+smal — small
+smalōn — to make smaller
 smalt — smalt, oil, fat, metal coating
 smauk — smoke
 smeltjan — to smelt, melt, liquefy
 smero — grease, fat
 smertan — to hurt
+smeugan — to creep, sneak, slip through
 smiril — pygmy falcon
 smītan — to cast; to hit
 smiþ — craftsman, smith
@@ -1427,6 +1448,7 @@ stampōn — to stamp, compress
 stān — to stand
 standan — to stand
 standhard — standing place (stand-hard)
+starēn — to stare, gaze
 stark — stiff, stark, strong
 starkjan — to strengthen, make stronger
 staup — mug
@@ -1466,6 +1488,7 @@ strengjan — to fasten with string, bind tight
 streup — stirrup
 strīd — battle, fight, conflict, uprising
 strîkan — to stroke, rub
+strunk — tree trunk, stalk (plant)
 strunt — dirt, filth; dung, feces
 stunda — short period of time
 stunōn — to rumble, groan; to thunder, crash, make a loud sound
