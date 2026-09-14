@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1835 entries
+# Siegfried Lexicon — 1870 entries
 # headword — english
 
 ādera — vein
@@ -130,6 +130,7 @@ berg — hill, mountain
 berht — bright, shining
 beri — berry
 bero — bear
+beud — table
 bī — by, at, near, around
 bīa — bee
 biar — beer
@@ -183,6 +184,8 @@ braid — broad, wide
 bramberi — blackberry
 brand — fire, flame; firebrand, torch; sword
 brekan — to break
+brestan — to burst, break, sunder, crack, split
+bresti — break, fracture; impairment, handicap
 breuwan — to brew
 brimman — to growl, grumble
 brinnan — to burn, to be on fire
@@ -229,6 +232,7 @@ della — dell, hollow
 delƀan — to dig, hollow out
 deutonburg — Duisburg (on the Ruhr) (Literal: Fortress of Deuto)
 dintjan — to move back and forth
+disk — disk
 diup — deep
 diur — animal
 diuta — Deutz (in Cologne)
@@ -239,6 +243,7 @@ dōm — judgement, doom
 dōn — to do
 dōnowa — Danube
 doppīn — pot, bowl
+doppōn — to dip
 dragan — to carry
 draiƀjo — sprout, sucker, offshoot
 drako — dragon
@@ -247,6 +252,7 @@ draumjan — to dream
 drenkjan — to wet, drench; to water; to cause to drink
 drepan — to hit, strike
 drinkan — to drink
+drīƀan — to drive, push, compel to go
 druht — band of retainers, troop
 druhtin — lord, Lord
 dubban — to dub, to strike with honor
@@ -257,6 +263,7 @@ duri — door
 durran — to dare
 dusin — dun, brownish yellow
 dust — dust
+dūƀa — dove, pigeon
 dwerg — dwarf
 ebur — wild boar
 edar — enclosure, shelter; ruler, protector (poetic)
@@ -286,6 +293,7 @@ faldistōl — folding stool, folding chair
 falis — rock, cliff fell
 falkō — falcon
 fallan — to fall
+falskōn — to falsify; to counterfeit
 falu — fallow
 fan — from
 fani — fen, marsh
@@ -348,6 +356,7 @@ fliuhan — to flee
 fliukka — arrow
 flōd — flood
 flōkan — to curse; to beat (rare)
+flōkēn — to curse, scold
 flōr — ground, floor
 flugi — flight
 flugil — wing
@@ -368,6 +377,7 @@ fōt — foot
 frāga — question
 frāgōn — to ask
 frank — Frank, free, spear
+frankisk — Frankish, Franconian
 fraujo — lord
 frauwa — lady, wife of a lord
 fremiþi — foreign, strange
@@ -438,6 +448,7 @@ geldo — one who pays, debtor
 gelo — yellow
 gerjan — to cause to ferment
 germja — young ewe, lamb
+gern — eager, willing
 gêro — wedge shaped piece of cloth
 gersta — barley
 gesan — to ferment
@@ -450,6 +461,7 @@ gift — gift
 gilpan — to boast, brag
 gingibero — ginger
 giotan — to pour
+girag — greedy
 gīsal — hostage
 gīsalhari — pledge-army (personal name)
 git — you two (archaic)
@@ -508,8 +520,10 @@ hāhan — to hang
 haid — emotion, joy
 haigro — heron
 hail — whole, complete; healthy
+hail — omen, luck
 hailag — holy, sacred
 hailagōn — to hallow, sanctify, make holy
+haili — health
 hailjan — to heal, cure
 hailjand — savior, healer; Jesus
 hailsam — wholesome, sound, healthy
@@ -533,6 +547,7 @@ hals — neck, throat
 halsberg — neck covering armor, hauberc, type of chainmail
 halto — lame, limping
 halƀ — half
+halƀfisk — flounder, flatfish
 hamar — hammer
 hanap — hemp
 hand — hand
@@ -779,6 +794,7 @@ kâm — mold on fermented liquids
 kamerling — chamberlain
 kampjo — fighter, soldier
 kappa — cloak, coat, cape
+kar — vessel, vat, trough
 karil — free man, middle class man, commoner
 karinga — carangid (fish)
 karpo — carp
@@ -797,6 +813,7 @@ kela — throat
 kēn — torch wood
 kerana — butter churn
 kerƀan — to cut, carve
+ketil — kettle, bucket, vessel
 kīmo — sprout, germ
 kīnan — to split open
 kind — child
@@ -805,11 +822,13 @@ kippjan — to peck open an egg, to crack open
 kirika — church
 kirsa — cherry
 kista — (treasure) chest, box
+kitiska — apple core, kernel, seed, little sprouter
 kiul — keel of a ship, ship
 kiusan — to choose
 kiuwa — jaw, gill
 kiuwan — to chew
 kīþ — sprout, child, kid
+klaga — lamentation, complaint
 klagōn — to complain
 klaini — fine; small; clean
 kletto — burdock
@@ -1077,6 +1096,7 @@ mornōn — to be concerned of; to mourn
 mosa — moss, bog
 mōsela — Moselle
 mōtan — to be allowed to, may
+mōþi — tired
 mugan — to be able, may
 mulīna — mill
 mulīnari — miller
@@ -1191,6 +1211,7 @@ regin — decision, advice, counsel
 reginbod — assembly-order (personal name)
 reginwald — counsel-ruler (personal name)
 reht — upright, just
+rēmo — oar
 ribbi — rib
 rīdan — to ride
 rihtjan — to align, set straight, straighten
@@ -1211,6 +1232,7 @@ rōma — Rome
 rōsa — rose
 rōtjan — to ret
 rōwa — calm, quiet, rest
+rōþer — oar, rudder
 rōƀa — beet, turnip
 rukkian — to jerk, move forcefully
 rūm — room, space; roomy, spacious
@@ -1220,6 +1242,7 @@ rūnstaƀ — letter of the runic alphabet
 rusk — rush (plant)
 rûsta — rust
 sād — seed
+sad — full, not hungry; had enough, fed up
 sadel — saddle
 saga — saw
 saggjan — to say, speak
@@ -1236,6 +1259,7 @@ saiwola — soul
 sal — room, dwelling, hall
 salha — willow
 sālig — happy, blessed
+sāliþa — joy, happiness
 salo — murky, dirty
 salt — salt
 samfti — soft, gentle
@@ -1347,6 +1371,7 @@ skūra — shelter, shack, barn
 skurbjan — to wipe, scrub
 skurd — a cutting, shearing
 skurt — short; lacking
+skutila — small bowl; dish
 slag — strike; footprint
 slagōn — to hit, knock
 slahan — to slay, strike
@@ -1544,8 +1569,10 @@ tanga — tongs, pliers
 tanþ — tooth
 tappjan — to close, shut in, lock
 tappo — plug, tap
+tard — tender, delicate fragile
 tarewamelo — wheat flour
 targa — edge, rim; shield
+tarjan — to consume, to wear out
 tas — heap, pile
 taska — bag, purse; pocket
 taƀula — table, tablet, plank
@@ -1558,6 +1585,7 @@ teko — tick (bug)
 telga — branch, twig
 telljan — to count; to tell
 têrī — row, ordered line
+ters — penis
 tīd — time; moment
 tilja — line, row, strip
 timbar — timber, building
@@ -1572,7 +1600,9 @@ tiþl — beehive
 tiƀer — sacrificial animal
 togōn — to tow, pull
 top — top, peak; tuft of hair
+tord — dung, excretement
 torn — anger, fury, wrath
+tornōn — to tear off; to be angry, to rage
 trada — way, track
 traja — Xanten (Colonia Ulpia Traiana/Troia Francorum)
 trampan — to step
@@ -1580,6 +1610,7 @@ trappa — trap; step, stairs
 traust — trust; help
 traustjan — to strengthen; to comfort
 tredan — to tread, step on
+trennjan — to divide, separate; to cause to separate
 treuwa — fidelity, faithfulness, truth
 trewiri — Trier
 trippōn — to hop, jump
@@ -1602,6 +1633,7 @@ twīfal — doubt
 twifald — twofold, double
 twīfljan — to doubt
 twiniling — twin
+ūhta — midnight, last part of the night, early morning
 ūka — toad
 ūla — owl
 umbi — around
@@ -1644,7 +1676,7 @@ waldan — to rule, hold power over
 walgjan — to roll
 walhisk — foreign (non-Germanic, Celtic or Roman)
 walkan — to walk
-walkjan — to press. full, soak, crumple
+walkjan — to press. full, soak, crumple (cloth)
 wallan — to well up, boil
 walm — boiling, rising steam
 walu — stick, rod
@@ -1663,6 +1695,7 @@ wapsa — wasp
 war — dirty fluid
 wār — true, truthful, reliable
 wardōn — to guard, watch, protect
+warg — outlaw, criminal
 warga — pus
 wārhaid — truth
 warjan — to ward off, defend against
@@ -1769,6 +1802,7 @@ wrekan — to drive out, persecute; to punish
 wrenkjan — to twist, wring
 wrist — joint (wrist or ankle)
 wrokkōn — to wrench, to turn vigorously
+wullōn — to disgust, to vomit
 wunda — wound
 wundōn — to wound
 wunnja — joy, delight
@@ -1827,6 +1861,7 @@ zibolla — onion
 þū — you (2nd person singular)
 þūmo — thumb
 þunni — thin
+þuroh — through
 þurri — dry
 þurst — thirst
 þurstjan — to thirst
