@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1870 entries
+# Siegfried Lexicon — 1921 entries
 # headword — english
 
 ādera — vein
@@ -58,6 +58,7 @@ angust — fear, anxiety
 anker — anchor
 ankja — joint, limb (particularly leg or shin)
 ans — deity, god
+apa — creek, river
 apo — ape, monkey
 appel — apple, fruit
 arg — cowardly
@@ -74,8 +75,9 @@ aud — wealth, riches, property
 audi — wasteland; empty, desolate
 audoaker — riches-awake (personal name)
 auga — eye
+augadora — window (literal: eye-door)
 auhaim — maternal uncle
-auja — island; marsh, floodplain
+auja — river island, marsh, floodplain. One word for a floodplain, lowland riverine region where water rises and falls
 aura — ear
 aust — east
 austara — Easter, spring equinox festival
@@ -131,9 +133,9 @@ berht — bright, shining
 beri — berry
 bero — bear
 beud — table
+beur — beer
 bī — by, at, near, around
 bīa — bee
-biar — beer
 bīdan — to wait, remain
 biddjan — to ask, request, pray for
 biliþjan — to form, represent
@@ -226,11 +228,13 @@ darnjan — to hide, conceal
 daroþ — javelin, dart
 daud — dead
 daudjan — to kill
+daugard — worthy-protection (personal name)
 dauwjan — to die
 dauþ — death
 della — dell, hollow
 delƀan — to dig, hollow out
 deutonburg — Duisburg (on the Ruhr) (Literal: Fortress of Deuto)
+dīk — earthwork, ditch, dam, levee
 dintjan — to move back and forth
 disk — disk
 diup — deep
@@ -256,6 +260,7 @@ drīƀan — to drive, push, compel to go
 druht — band of retainers, troop
 druhtin — lord, Lord
 dubban — to dub, to strike with honor
+dugan — to be useful, to avail
 dulli — tube, pipe
 duni — sound, noise, din
 dunst — mist, haze
@@ -264,6 +269,7 @@ durran — to dare
 dusin — dun, brownish yellow
 dust — dust
 dūƀa — dove, pigeon
+duƀil — peg, dowel
 dwerg — dwarf
 ebur — wild boar
 edar — enclosure, shelter; ruler, protector (poetic)
@@ -320,7 +326,9 @@ fehtan — to fight
 fehu — livestock, cattle
 fel — skin, hide
 feld — field
+felga — felly, outer rim of wheel
 fellian — to fell, kill
+fenstar — window
 ferah — life
 ferro — far
 fersna — heel
@@ -406,6 +414,7 @@ furh — furrow
 furhist — forest
 furista — first
 furisto — prince, ruler
+furka — fork
 furt — fart
 furtjan — to break wind, fart
 gabaiti — to hunt with falcons
@@ -424,6 +433,7 @@ galga — measuring rod
 galiþ — joint, articulated limb, collection of limbs
 galpōn — to boast, brag, bark
 gamaini — common, shared, communal
+gamainskap — community
 gamund — memory, remembrance
 gān — to go, walk
 gang — pace, step, gait; way, course
@@ -435,15 +445,17 @@ gardō — enclosure, yard, garden
 gareht — just, fair
 garo — ready, prepared
 garƀa — sheaf
+gasakan — to argue; to condemn
 gasāti — seat
 gaspia — buckle, loop
 gast — guest, stranger
 gata — street, passage
 gaumjan — to observe, perceive, notice
 gaunnan — to allow, grant, bestow
+gaƀela — fork, pitchfork
 geld — payment, tribute
 geldan — to pay
-geldapa — Krefeld-Gellep
+geldapa — Krefeld-Gellep (literal: payment-brook)
 geldo — one who pays, debtor
 gelo — yellow
 gerjan — to cause to ferment
@@ -493,6 +505,7 @@ grip — a grasp, grip
 grîpan — to grip
 grîs — grey
 grisilōn — to hail
+grōan — to grow (plant)
 grogatjan — to growl
 grōni — green
 grōtjan — to greet, address
@@ -516,6 +529,7 @@ hagal — hail
 hagano — Hagen (personal name)
 hagja — hedge
 hago — hedge, haw; grove, woods
+haguþorn — hawthorn
 hāhan — to hang
 haid — emotion, joy
 haigro — heron
@@ -599,6 +613,8 @@ haurkōn — to listen carefully, harken
 hauwa — hoe
 hauƀid — head
 haþu — battle, fight (poetic, names)
+haþuwīg — fight-battle (personal name)
+haþuþewa — battle-servant (personal name)
 haƀ — lifting; sea
 haƀan — pot, vessel
 haƀaro — oats
@@ -610,6 +626,7 @@ heliþ — hero
 hellja — the underworld, hell
 helljawīti — eternal punishment, hell-torment
 helm — helmet
+helpa — help, aid, assistance
 helpan — to help
 helt — hilt
 hengist — stallion
@@ -625,6 +642,8 @@ heƀen — to lift, raise
 heƀig — intense, difficult, heavy
 heƀil — lever, lifter
 hild — battle, fight
+hildegard — battle-enclosure (personal name)
+hildiberht — battle-bright (personal name)
 hildibrand — battle-sword (personal name)
 himil — sky, heaven
 hinder — behind, beyond
@@ -677,6 +696,7 @@ hottōn — to shake
 hōƀa — piece of land
 hrama — frame, support
 hramjan — to put in a frame, to enclose
+hramn — raven (personal name)
 hrampōn — to contract, crumple, wrinkle
 hranka — climber (plant), tendril
 hrann — pig stile, pig stall
@@ -702,11 +722,13 @@ hrōpjan — to call, cry
 hrōra — Ruhr
 hrōrjan — to stir
 hros — horse
+hrosauja — Orsoy (literal: horse-marsh)
 hrōt — soot
 hrōþ — praise, fame, glory
 hrōþberht — fame-bright (personal name)
 hrōþgair — fame-spear (personal name)
 hrōþhard — fame-hard (personal name)
+hrōþiland — fame-land (personal-name)
 hrōþwolf — fame-wolf (personal name)
 hruggi — back, spine
 hruggibain — backbone, spine
@@ -724,6 +746,7 @@ hulis — holly
 hulistar — cover, case. sheath, hull, hiding spot
 hulla — sleeve
 hulljan — to cover, veil
+hulpa — help, aid, assistance
 humilo — hop (plant)
 hund — dog
 hund — hundred
@@ -768,6 +791,8 @@ ik — I (1st person singular)
 in — in
 infaran — to go in, enter
 ingang — going in, entrance
+ingo — Ing, Yngvi, god of fertility; male personal name
+ingomār — Ing-fame (personal name)
 inna — within, inside
 īs — ice
 īsangrīm — iron + grim/fierce (personal name)
@@ -775,6 +800,7 @@ inna — within, inside
 it — it (3rd person singular neuter)
 īwa — yew tree
 jā — yes
+jagōn — to hunt
 jân — swath
 jangalōn — to entertain
 jār — year
@@ -810,6 +836,7 @@ kâwa — jackdaw
 kawjan — to call, name
 kegel — stake, pole; peg, pin
 kela — throat
+kelleri — cellar, storeroom
 kēn — torch wood
 kerana — butter churn
 kerƀan — to cut, carve
@@ -955,6 +982,7 @@ lađo — board, shelf
 lēbard — leopard
 leger — bed, lair
 lêha — wild sow, wild (female) boar
+lēj — slate
 lekkon — to lick
 lepil — spoon
 lernōn — to learn
@@ -975,6 +1003,7 @@ līk — dead body, corpse
 līkhamo — body; corpse
 līm — glue, lime, limes (as in limestone)
 līmjan — to glue
+līna — line, yarn
 linda — linden tree, lime tree
 lindi — gentle
 lippa — lip
@@ -1135,6 +1164,7 @@ neuro — kidney, testicle
 neutan — to use, make use of; to enjoy
 neƀel — fog, mist
 ni — no, not
+nifta — granddaughter, niece
 niumagan — Nijmegen
 niun — nine
 niundo — ninth
@@ -1189,6 +1219,7 @@ pund — pund
 purpura — purple, purple cloth
 putōn — to poke; to push
 rād — advice, counsel
+rādagunþi — counsel-battle (personal name)
 rādan — to advise, counsel, help
 raihō — roe deer
 raikjan — to reach
@@ -1256,6 +1287,7 @@ sairjan — to wound, make hurt
 sairlīk — sore, painful; sad, lamentable
 saiwi — sea
 saiwola — soul
+sakan — to charge, dispute
 sal — room, dwelling, hall
 salha — willow
 sālig — happy, blessed
@@ -1271,10 +1303,12 @@ sap — juice, sap
 sāta — place, position
 sattjan — to set, place
 saur — dry
+segel — sail
 sehan — to see
 sehs — six
 sehstehan — sixteen (six ten)
 sehsto — sixth
+selah — seal
 selljan — to hand over; to betray; to sell
 selƀo — self
 senap — mustard
@@ -1288,6 +1322,7 @@ sīan — to filter
 sibbja — relationship, kinship
 sīda — side
 sīgan — to sink, drop
+sīgana — Seine
 sigi — victory
 sigiberht — victory-bright (personal name)
 sigifriþ — victory-peace (personal name)
@@ -1331,16 +1366,20 @@ skarjan — to rob, deprive of
 skarp — sharp, pointed
 skarwahta — guard duty, group of sentinels
 skatt — treasure
+skaut — corner, wedge; corner of garment, lap, fold; lap of a person
 skauta — sailcloth
 skaþo — damage, scathe
 skaþōn — to injure, harm, damage
 skeran — to shear, cut
+skeutan — to shoot
 skild — shield
 skilla — small bell, doorbell
 skimpjan — to mock, scold
 skina — bar, track; shin (of the leg)
 skind — skin (of animal, human, or fruit)
 skip — ship, boat
+skīri — pure, clear
+skīrjan — to make clear; to arrange
 skirm — fur, hide, pelt; covering, shelter, screen
 skirmjan — to protect
 skirnjan — to make fun of, mock
@@ -1371,7 +1410,9 @@ skūra — shelter, shack, barn
 skurbjan — to wipe, scrub
 skurd — a cutting, shearing
 skurt — short; lacking
+skut — shooting, shot
 skutila — small bowl; dish
+skutōn — to shoot, shoot out, throw
 slag — strike; footprint
 slagōn — to hit, knock
 slahan — to slay, strike
@@ -1473,6 +1514,9 @@ stampōn — to stamp, compress
 stān — to stand
 standan — to stand
 standhard — standing place (stand-hard)
+stap — step
+stappōn — to step
+stapul — pillar, post; basis, foundation; marketplace
 starēn — to stare, gaze
 stark — stiff, stark, strong
 starkjan — to strengthen, make stronger
@@ -1515,6 +1559,7 @@ strīd — battle, fight, conflict, uprising
 strîkan — to stroke, rub
 strunk — tree trunk, stalk (plant)
 strunt — dirt, filth; dung, feces
+stump — stump
 stunda — short period of time
 stunōn — to rumble, groan; to thunder, crash, make a loud sound
 sturm — storm
@@ -1623,6 +1668,7 @@ trumba — trumpet (instrument)
 trūwēn — to trust, have faith in
 tulpika — Zülpich
 tûmōn — to rotate, turn around
+tūn — fence, enclosure
 tunft — guild, association; estate
 tunga — tongue, language
 turƀa — turf
@@ -1670,6 +1716,7 @@ waiđanjan — to hunt, graze
 wakēn — to wake, to be awake
 wakkar — awake, watchful
 wal — wall
+wāl — Waal
 wald — forest
 walda — weld (plant), yellow dye
 waldan — to rule, hold power over
@@ -1679,6 +1726,7 @@ walkan — to walk
 walkjan — to press. full, soak, crumple (cloth)
 wallan — to well up, boil
 walm — boiling, rising steam
+waltan — to roll, toss, turn
 walu — stick, rod
 wamba — womb, belly
 wān — hope, expectation
@@ -1721,6 +1769,7 @@ weggjan — to move, shake; to agitate, stir up
 weka — week
 wela — well
 wella — well; shaft; wave
+weltjan — to roll, cause to roll, to wallow
 wendjan — to turn
 wenkjan — to stagger, wave, move aside
 wennjan — to accustom, make used to
@@ -1747,6 +1796,7 @@ widuwa — widow
 wīg — fight, battle
 wīgan — to fight, battle
 wīgand — warrior, fighter, combatant
+wiggi — horse
 wigila — divination, ruse
 wīh — sacred, holy
 wīhjan — to hallow, consecrate
@@ -1782,6 +1832,7 @@ witan — to know (knowledge)
 wīti — punishment
 wītinōn — to punish
 wîto — leader
+wīþa — willow, withy, osier
 wiþer — wether, ram, lamb
 wiþi — cord, rope, withe
 wiþþja — strap (for clothes), shield strap, guige
