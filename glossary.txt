@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 1921 entries
+# Siegfried Lexicon — 1933 entries
 # headword — english
 
 ādera — vein
@@ -20,6 +20,7 @@ ain enti twaintig — twenty-one (one and twenty)
 ainfald — simple, plain. easy
 ainlif — eleven (literal: One left)
 air — bronze
+aira — honour
 airīn — made of copper, bronze, brass
 aisk — question, request, demand
 aiskōn — to demand, ask for
@@ -34,6 +35,7 @@ aj — egg
 akus — axe
 āl — eel
 al — all
+alasna — awl
 alaud — freehold land, property
 alberīk — elf-ruler (personal name)
 ald — old
@@ -674,6 +676,7 @@ hnīgan — to bow
 hnut — nut
 hoddōn — to torment, harass
 hof — estate, yard
+hōf — hoof
 hōk — hook
 hokka — rootstock
 hokkōn — to lever out, extract (a stump or tooth)
@@ -807,6 +810,7 @@ jār — year
 jehhjan — to say, confess
 jū — already; yet; now
 jûk — perch
+juk — yoke
 jung — young
 juwar — your (plural), youse (possessive)
 kâda — Crackling, residue from rendered fat, leftover chunk from cooking
@@ -817,6 +821,7 @@ kalkōn — to whitewash, cover with lime
 kallōn — to call, shout
 kalƀ — calf, baby cow
 kâm — mold on fermented liquids
+kamb — comb
 kamerling — chamberlain
 kampjo — fighter, soldier
 kappa — cloak, coat, cape
@@ -1154,12 +1159,15 @@ namnjan — to name, call, give name to
 namo — name
 nasa — nose
 nastila — headband
+nat — wet
 naud — depression (geological), low place, hollow
 naud — need, necessity; emergency
+naƀa — nave, hub
 nāƀogair — borer, deep bore tool, auger
 nefo — nephew, grandson
 neman — to take
 nest — nest
+netti — net
 neuro — kidney, testicle
 neutan — to use, make use of; to enjoy
 neƀel — fog, mist
@@ -1178,6 +1186,7 @@ nuska — buckle, clasp
 nutti — use, usefulness, benefit
 nuttjōn — to use, make use of
 oba — above
+ofan — oven
 ōfar — riverbank, edge of water, shore
 ofþau — or
 ohso — ox
@@ -1208,6 +1217,7 @@ planta — plant, shoot
 plegan — to pledge, promise
 pliht — duty
 plōg — plow
+plukkōn — to pluck, pull out
 plūma — plum
 pokka — pouch, bag
 pōl — pool
@@ -1374,6 +1384,7 @@ skeran — to shear, cut
 skeutan — to shoot
 skild — shield
 skilla — small bell, doorbell
+skilling — shilling
 skimpjan — to mock, scold
 skina — bar, track; shin (of the leg)
 skind — skin (of animal, human, or fruit)
@@ -1594,6 +1605,7 @@ swellan — to swell
 swerd — sword
 swerjan — to swear (an oath)
 swester — sister
+sweƀal — sulfur, brimstone
 swīga — silence
 swīgēn — to be quiet, silent, still
 swimman — to swim
