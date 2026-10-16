@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 2004 entries
+# Siegfried Lexicon — 2027 entries
 # headword — english
 
 ādera — vein
@@ -162,9 +162,11 @@ biwellan — to stain, dirty
 biƀar — beaver
 blād — field produce
 blad — leaf, blade
+blājan — to blow
 blak — black, charred
 blank — white, shining, bright
 blāo — blue
+blāsan — to blow
 blek — shine, look, metal
 blī — lead
 blind — blind
@@ -267,8 +269,10 @@ draum — dream
 draumjan — to dream
 drenkjan — to wet, drench; to water; to cause to drink
 drepan — to hit, strike
+dreusan — to fall
 drinkan — to drink
 drīƀan — to drive, push, compel to go
+drōr — blood, liquid
 druht — band of retainers, troop
 druhtin — lord, Lord
 dubban — to dub, to strike with honor
@@ -292,6 +296,7 @@ elilendi — exile
 elles — else, otherwise, besides
 elpand — elephant
 elƀa — Elbe River
+ember — bucket
 endi — and
 endi — endpoint, end
 endjōn — to finish, end, bring to an end
@@ -353,6 +358,7 @@ feurþo — fourth
 fīand — fiend
 fīf — five
 fīftehan — fifteen (five ten)
+fīftig — fifty
 fīfto — fifth
 fīla — file (tool)
 fillo — evildoer
@@ -367,6 +373,7 @@ fiuwer — four
 fiuwer hund enti fīf enti twaintig — four hundred and twenty-five
 fiuwerfald — qwadruple, fourfold
 fiuwertehan — fourteen (four ten)
+fiuwertig — forty
 fiþeri — feathers, plumage; wing
 flahs — flax
 flaisk — flesh
@@ -396,6 +403,7 @@ foll — full
 folma — palm (of the hand)
 folo — foal
 fora — before, in front
+ford — ford
 forhna — trout
 forht — fearful, afraid
 forhta — fear
@@ -473,6 +481,7 @@ gast — guest, stranger
 gata — street, passage
 gaumjan — to observe, perceive, notice
 gaunnan — to allow, grant, bestow
+gawald — might, power, violence, force
 gawi — district, shire, region, area
 gaƀela — fork, pitchfork
 geld — payment, tribute
@@ -861,6 +870,7 @@ kalƀ — calf, baby cow
 kâm — mold on fermented liquids
 kamb — comb
 kamerling — chamberlain
+kamp — field, battlefield
 kampjo — fighter, soldier
 kappa — cloak, coat, cape
 kar — vessel, vat, trough
@@ -881,6 +891,7 @@ kawjan — to call, name
 kegel — stake, pole; peg, pin
 kela — throat
 kelleri — cellar, storeroom
+kempjan — to battle, campaign
 kēn — torch wood
 kerana — butter churn
 kerƀan — to cut, carve
@@ -1019,7 +1030,7 @@ laus — loose, free
 lausjan — to release, set free
 lausunga — lying, deceit
 lautja — ladle, spoon for hot metal
-lauþer — lure
+lauþar — nitre, lather, soap
 lauƀ — leaf
 lauƀa — permission
 lauƀjan — to allow, approve of; to praise
@@ -1069,6 +1080,7 @@ loguns — sword
 lok — hole
 lokk — lock (of hair), curl
 lōkon — to look
+lōþer — lure
 loƀōn — to praise, laud
 lubbi — drug, medicine; potion; poison
 luft — air, atmosphere
@@ -1249,6 +1261,7 @@ ottar — otter
 ōþil — homeland, patrimony, inheritance
 oƀ — if, when
 padda — toad
+pakko — bundle, pack, package
 palma — palm tree, palm leaf
 parifrid — horse
 pāwo — peacock
@@ -1284,12 +1297,12 @@ rādan — to advise, counsel, help
 raihō — roe deer
 raikjan — to reach
 rain — balk, ridge
+raip — strip, rope
 raisa — a travel, journey
 rakkjan — to stretch
 ramm — ram
 rand — running, race
 rasta — rest
-rato — rat
 raud — red
 rauk — smoke, vapor
 raumjan — to take the top layer off, to skim off the top layer of milk
@@ -1341,6 +1354,7 @@ saggjan — to say, speak
 sahs — dagger, knife
 saigjan — to cause to sink, to cause to percolate
 saikjan — to make drip
+sail — rope, cord
 saipa — soap
 sair — painful, sore
 sairag — sad, sorry
@@ -1349,7 +1363,9 @@ sairlīk — sore, painful; sad, lamentable
 saiwi — sea
 saiwola — soul
 sājan — to sow (seeds)
+sak — sack, bag, purse
 sakan — to charge, dispute
+sakkil — small sack, purse
 sal — room, dwelling, hall
 salha — willow
 sālig — happy, blessed
@@ -1596,6 +1612,7 @@ staþ — bank, shore
 staƀ — staff, stick; letter of the alphabet
 stekan — to pierce, stab, stick
 stekko — stake
+stelan — to steal
 steora — helm, rudder
 sterno — star
 sterƀan — to die
@@ -1693,6 +1710,7 @@ tas — heap, pile
 taska — bag, purse; pocket
 taƀula — table, tablet, plank
 te — to, toward
+tegela — tile, brick
 tēha — toe
 tehan — ten
 tehando — tenth
@@ -1775,6 +1793,7 @@ uƀar — over, above
 uƀarfaran — to cross, cross over, traverse
 uƀil — evil
 uƀiri — over, above
+wad — ford, crossing
 wād — cloth, garment
 waddi — wager, stake, pledge
 wāfla — honeycomb, waffle
@@ -1789,6 +1808,7 @@ wairda — woad, dye
 waiwo — woe, grief, misery
 waiđa — pasture
 waiđanjan — to hunt, graze
+wājen — to blow (of wind)
 wakēn — to wake, to be awake
 wakkar — awake, watchful
 wal — wall
@@ -1836,7 +1856,6 @@ waso — sod, soggy ground; meadow, field
 wastil — cake
 water — water
 waþ — calf of the leg
-wađ — ford, crossing
 wē — → see ik — we (1pl nom)
 webbi — web, woven thing
 wedar — weather
@@ -1862,7 +1881,9 @@ werpan — to cast, throw
 werpjan — to throw
 werra — confusion; riot
 werwolf — werewolf (man-wolf)
+werþ — worthy, valuable
 werþan — to become
+werþōn — to estimate, value
 wesan — to be
 wester — west
 weƀan — to weave
@@ -1982,6 +2003,7 @@ zibolla — onion
 þorn — thorn, briar
 þorp — village
 þrād — thread, twisted fiber
+þrājen — to twist, turn
 þrastala — thrush (bird)
 þreosk — fallow, fallow land
 þreskan — to thresh; to thrash, tread
@@ -2004,4 +2026,5 @@ zibolla — onion
 þūsund — thousand
 þūta — pipe
 þwahlja — cloth, towel
+þwān — to wash, bathe
 þwerh — transverse, crooked
