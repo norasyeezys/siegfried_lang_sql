@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 2117 entries
+# Siegfried Lexicon — 2171 entries
 # headword — english
 
 ādera — vein
@@ -130,6 +130,7 @@ barda — axe
 barm — lap, bosom
 barn — child
 barug — barrow, castrated boar
+bat — better (adv.)
 baug — ring, bracelet, necklace
 baugjan — to bend, to make bent
 baum — tree
@@ -148,6 +149,9 @@ berg — hill, mountain
 berht — bright, shining
 beri — berry
 bero — bear
+betiro — better
+betist — best (adv.)
+betisto — best
 beud — table
 beur — beer
 bī — by, at, near, around
@@ -178,6 +182,7 @@ blājan — to blow
 blak — black, charred
 blank — white, shining, bright
 blāo — blue
+blas — white, pale (of animals)
 blāsan — to blow
 blek — shine, look, metal
 blī — lead
@@ -244,6 +249,7 @@ butt — cut off, chopped
 buwan — to build, reside
 dag — day
 dagalīk — daily
+dagēn — to dawn, become day
 dagraud — dawn (literal: day-red)
 daig — soft, pliable
 daig — dough
@@ -289,14 +295,16 @@ dreusan — to fall
 drinkan — to drink
 drīƀan — to drive, push, compel to go
 drōr — blood, liquid
+drūgi — dry
 druht — band of retainers, troop
 druhtin — lord, Lord
 dubban — to dub, to strike with honor
 dugan — to be useful, to avail
 dulli — tube, pipe
-dumb — dumb, stupid, foolish
-dumbēn — to act foolishly
+dumb — mute; dumb, stupid, foolish
+dumbēn — to become mute; to act foolishly
 duni — sound, noise, din
+dunkal — dark
 dunst — mist, haze
 duri — door
 durran — to dare
@@ -304,7 +312,10 @@ dusin — dun, brownish yellow
 dust — dust
 dūƀa — dove, pigeon
 duƀil — peg, dowel
+dwalōn — to delay; to go astray, wander
 dwās — foolish, stupid
+dwelan — to go astray
+dwelljan — to perplex; to delay; to stay
 dwerg — dwarf
 ebur — wild boar
 edar — enclosure, shelter; ruler, protector (poetic)
@@ -445,6 +456,7 @@ freusan — to freeze
 frī — free
 frīhaid — freedom
 frīja — Frigg, Freya
+frījadag — Friday (literal: Frigg's day)
 frijōn — to love, to free
 frisk — fresh
 frist — an appointed time, date
@@ -516,6 +528,8 @@ gaumjan — to observe, perceive, notice
 gaunnan — to allow, grant, bestow
 gawald — might, power, violence, force
 gawi — district, shire, region, area
+gaþuld — endurance, patience
+gaþuldig — patient
 gaƀela — fork, pitchfork
 geld — payment, tribute
 geldan — to pay
@@ -688,8 +702,7 @@ hauƀid — head
 haþu — battle, fight (poetic, names)
 haþuwīg — fight-battle (personal name)
 haþuþewa — battle-servant (personal name)
-haƀ — lifting; sea
-haƀan — pot, vessel
+haƀ — lifting; ford
 haƀaro — oats
 haƀuk — hawk
 hē — he (3rd person singular masculine)
@@ -1159,8 +1172,12 @@ main — damage, injustice, sin
 main — mean, hurtful
 mainaiþ — perjury, false oath
 mainjan — to mean, think
+mair — more, to a greater degree
+mairo — greater, more
+mairōn — to increase; to make more, to make increase
 maisinga — tit (bird), titmouse
 maisk — mixture, mash
+maist — greatest, most
 maiđanjan — to mutilate, maim
 makjo — maker, builder, mason
 makōn — to make
@@ -1174,6 +1191,7 @@ manahaid — manhood, manliness
 mandala — almond, almond tree
 mangāri — merchant, dealer, monger
 manigiþō — large quantity, multitude
+mānindag — Monday (literal: Moon's day)
 mankunni — mankind
 māno — moon
 mānōþ — month
@@ -1211,13 +1229,20 @@ metan — to measure
 mettis — Metz
 mid — with
 middi — middle, mid
+middidag — midday, noon
+middinaht — midnight
 mīk — → see ik — me (1sg acc)
 mikil — much, many; large, great
+mikilōn — to make great, become great, magnify
 mīla — mile
 mildi — mild, soft; tame
 milok — milk
 mīn — → see ik — my, of me (1sg gen/poss)
+min — less, to a smaller degree
 minna — remembrance, love
+minniro — lesser, less
+minnisōn — to make less, make smaller
+minnist — least, smallest
 minnōn — to love; to remember
 minta — mint
 mīr — → see ik — to me, for me (1sg dat)
@@ -1299,6 +1324,7 @@ niuntehan — nineteen (nine ten)
 niuwi — new
 nīþ — envy, hate, malice
 niþer — down
+nōna — noon
 norþ — north
 nū — now
 nuska — buckle, clasp
@@ -1441,6 +1467,7 @@ sālig — happy, blessed
 sāliþa — joy, happiness
 salo — murky, dirty; grey, dusky
 salt — salt
+sambat — Sabbath, Saturday
 samfti — soft, gentle
 samfto — softly, gently
 sand — sand
@@ -1448,6 +1475,7 @@ sang — song, singing
 santen — Xanten (ad Sanctos)
 sap — juice, sap
 sāta — place, position
+sātersdag — Saturday (literal: Saturn's day)
 sattjan — to set, place
 saur — dry
 segel — sail
@@ -1575,7 +1603,12 @@ slahta — gender, kind, lineage
 slaitan — to split up, break
 slango — snake
 slank — slim
+slāp — sleep
+slāpal — sleepy
 slāpan — to sleep
+slāpig — sleepy
+slāplaus — sleepless
+slāpōn — to cause to sleep; to become sleepy
 slauta — hail; slush, sleet
 sleht — smooth, even, straight
 sleutan — to close, lock, shut
@@ -1591,6 +1624,10 @@ slītan — to split, tear apart
 slopp — loop, noose
 slot — bolt, lock
 slutil — key
+smak — taste, savour, flavour
+smakēn — to taste
+smakkjan — to taste
+smakkōn — to hit hard, to throw hard, to smack (hit)
 smal — small
 smalōn — to make smaller
 smalt — smalt, oil, fat, metal coating
@@ -1718,7 +1755,7 @@ strīdan — to contend, dispute, quarrel, argue; to fight, battle
 strîkan — to stroke, rub
 strunk — tree trunk, stalk (plant)
 strunt — dirt, filth; dung, feces
-stumm — mute
+stumm — mute, silent
 stump — stump
 stunda — short period of time
 stunōn — to rumble, groan; to thunder, crash, make a loud sound
@@ -1734,7 +1771,9 @@ sump — swamp, marsh, sump
 sund — healthy, sound
 sunda — wrongdoing, sin, shame
 sunna — sun
+sunnadag — Sunday (literal: Sun's day)
 sunni — responsibility, care; concern, worry
+sunnonāƀand — Saturday evening
 sunor — herd of pigs
 sunu — son
 sunþer — south
@@ -1799,7 +1838,9 @@ telljan — to count; to tell
 têrī — row, ordered line
 ters — penis
 tīd — time; moment
+til — circumstance; goal
 tilja — line, row, strip
+tilōn — to hurry, to work towards, to aim; to grow, to cultivate
 timbar — timber, building
 tin — tin
 tind — tooth, prong, point
@@ -1808,6 +1849,7 @@ titta — breast, tit
 tiug — gear, utensil, tool; pulley, lever
 tiuhan — to pull; to lead
 tīw — deity, god; Tyr
+tiwesdag — Tuesday (literal: Tiwas' Day)
 tiþl — beehive
 tiƀer — sacrificial animal
 togōn — to tow, pull
@@ -1855,6 +1897,7 @@ umbi — around
 umbigân — to walk around, circulate
 under — under, beneath
 ungalīk — different, unalike
+ungaþuldig — impatient
 unhaursam — disobedient
 unk — → see wit — us two, to us two (1du dat/acc)
 unkero — → see wit — of us two (1du gen)
@@ -1872,8 +1915,9 @@ urlog — fate, destiny
 ūtgang — going out, exit
 uƀar — over, above
 uƀarfaran — to cross, cross over, traverse
-uƀil — evil
+uƀil — evil; bad (in quality and morality)
 uƀiri — over, above
+wa — Woe!
 wad — ford, crossing
 wād — cloth, garment
 waddi — wager, stake, pledge
@@ -1887,12 +1931,13 @@ wahta — watch, vigil
 waidīn — made of woad
 waigaro — much, a lot
 wainag — lamentable; little, few
+wainōn — to cry, lament, grieve
 wairda — woad, dye
 waiwo — woe, grief, misery
 waiđa — pasture
 waiđanjan — to hunt, graze
 wājen — to blow (of wind)
-wakēn — to wake, to be awake
+wakēn — to wake, to be awake; to watch, to be on guard
 wakkar — awake, watchful
 wal — wall
 wāl — Waal
@@ -1949,7 +1994,7 @@ weggi — wedge
 weggjan — to move, shake; to agitate, stir up
 weka — week
 wekkjan — to wake, awaken, cause to wake up
-wela — well
+wela — well (good)
 wella — well; shaft; wave
 weltjan — to roll, cause to roll, to wallow
 wendjan — to turn
@@ -1965,6 +2010,7 @@ werk — rope or cord
 werpan — to cast, throw
 werpjan — to throw
 werra — confusion; riot
+wersōn — to make worse, to damage
 werwolf — werewolf (man-wolf)
 werþ — worthy, valuable
 werþan — to become
@@ -2006,6 +2052,9 @@ winter — winter; year
 wīpan — to wind, wrap
 wir — → see ik — we (1pl nom)
 wīra — wire
+wirs — more badly, worse
+wirsēn — to become worse, to diminish
+wirsisto — worst
 wīs — wise
 wîsa — manner, way
 wisa — meadow
@@ -2030,6 +2079,7 @@ wiđarlaun — recompense, reward
 wīƀ — woman, wife
 wōd — fury, possession
 wōdan — Wotan, Odin
+wōdansdag — Wednesday (literal: Wotan's day)
 wolf — wolf
 wolfgair — wolf-spear (personal name)
 wōpjan — to weep, cry out, lament
@@ -2089,7 +2139,9 @@ zibolla — onion
 þiudisk — of the people
 þiuhabrōk — trousers, loincloth
 þō — then, at that time
+þolōn — to bear, endure
 þonar — thunder
+þonaresdag — Thursday (literal: Thor's day)
 þorn — thorn, briar
 þorp — village
 þrād — thread, twisted fiber
@@ -2105,8 +2157,10 @@ zibolla — onion
 þrukkjan — to press
 þrum — stump, trunk, stub
 þū — you (2nd person singular)
+þuld — the ability to bear, endurance, patience
 þūmo — thumb
 þunni — thin
+þuris — giant, monster
 þuroh — through
 þurri — dry
 þurst — thirst
