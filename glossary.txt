@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 2057 entries
+# Siegfried Lexicon — 2117 entries
 # headword — english
 
 ādera — vein
@@ -15,6 +15,7 @@ ahtotehan — eighteen (eight ten)
 aid — fire, pyre
 aigan — own
 aik — oak, oak tree
+aikila — acorn
 ain — one
 ain enti twaintig — twenty-one (one and twenty)
 ainfald — simple, plain. easy
@@ -55,6 +56,8 @@ andlitti — form, appearance, face
 ando — spirit, zeal
 andōn — to be zealous; to be jealous
 andrādan — to be afraid, fear
+andwordjan — to answer
+andwurdi — answer, reply
 aned — duck
 angust — fear, anxiety
 anker — anchor
@@ -68,6 +71,9 @@ aranōn — to harvest, reap, labor
 arg — cowardly
 arlausjan — to set free
 arm — arm
+arm — poor, miserable
+armēn — to pity
+armōdi — poverty
 arn — harvest, harvest time
 arnōd — harvest
 aro — eagle
@@ -99,6 +105,7 @@ ađalaro — eagle (kenning: noble-eagle)
 aƀer — after, following, later; but
 badu — battle
 bain — bone, leg
+bainwurt — comfrey, plant for mending bones
 bair — boar
 baitil — chisel
 baiþe — both
@@ -182,6 +189,7 @@ blōma — flower
 blōt — offering, sacrifice
 blōtan — to worship, to sacrifice
 blund — blond
+bodaskap — message, news; command
 bogo — bow
 bōk — book
 bōka — beech
@@ -209,12 +217,14 @@ bresti — break, fracture; impairment, handicap
 breuwan — to brew
 brigdil — strap, rein; bridle
 brimman — to growl, grumble
+bringan — to bring
 brinnan — to burn, to be on fire
 brōd — bread
 brōjan — to warm, boil, brew
 brōk — brook, stream, marsh
 brōk — pants, trousers
 brōþer — brother
+brōþerskap — fraternity, brothership, friendship; brotherliness, (brotherly) kindness or love
 brūd — bride
 bruggja — bridge
 brūkan — to use
@@ -250,6 +260,7 @@ daudjan — to kill
 daugard — worthy-protection (personal name)
 dauwjan — to die
 dauþ — death
+dauƀ — deaf
 della — dell, hollow
 delƀan — to dig, hollow out
 deutonburg — Duisburg (on the Ruhr) (Literal: Fortress of Deuto)
@@ -283,6 +294,8 @@ druhtin — lord, Lord
 dubban — to dub, to strike with honor
 dugan — to be useful, to avail
 dulli — tube, pipe
+dumb — dumb, stupid, foolish
+dumbēn — to act foolishly
 duni — sound, noise, din
 dunst — mist, haze
 duri — door
@@ -291,6 +304,7 @@ dusin — dun, brownish yellow
 dust — dust
 dūƀa — dove, pigeon
 duƀil — peg, dowel
+dwās — foolish, stupid
 dwerg — dwarf
 ebur — wild boar
 edar — enclosure, shelter; ruler, protector (poetic)
@@ -312,6 +326,7 @@ engil — angel
 erp — dark brown, maroon
 erþa — earth
 erþberi — strawberry
+erƀijan — to inherit
 es — → see hē / it — his, its, of him/it (3sg gen)
 esil — donkey
 etan — to eat
@@ -365,6 +380,7 @@ fersna — heel
 fetur — fetter
 feurþo — fourth
 fīand — fiend
+fīandskap — enmity, hostility, fiendship
 fīf — five
 fīftehan — fifteen (five ten)
 fīftig — fifty
@@ -412,6 +428,7 @@ foll — full
 folma — palm (of the hand)
 folo — foal
 fora — before, in front
+forasaggjan — to foresay, predict
 ford — ford
 forhna — trout
 forht — fearful, afraid
@@ -432,11 +449,13 @@ frijōn — to love, to free
 frisk — fresh
 frist — an appointed time, date
 friund — friend
+friundskap — friendship
 friþ — love, peace, protection
 frō — early
 frōi — early
 frosk — frog
 frost — frost
+fruht — fruit
 frumjan — to move forward, produce, complete, execute
 fuhs — fox
 fūht — wet
@@ -468,6 +487,7 @@ gait — goat
 galan — to sing, charm
 galauƀjan — to believe; to allow
 galga — measuring rod
+galīk — alike, similar, equal
 galiþ — joint, articulated limb, collection of limbs
 galpōn — to boast, brag, bark
 gamaini — common, shared, communal
@@ -482,13 +502,16 @@ gard — spike, stick, staff, goad
 gardō — enclosure, yard, garden
 gareht — just, fair
 garo — ready, prepared
+garwa — yarrow
 garƀa — sheaf
 gasakan — to argue; to condemn
 gasāti — seat
 gasinþi — companion. sworn companion, comrade
+gasinþskap — fellowship
 gaspia — buckle, loop
 gast — guest, stranger
 gata — street, passage
+gauk — cuckoo
 gaumjan — to observe, perceive, notice
 gaunnan — to allow, grant, bestow
 gawald — might, power, violence, force
@@ -578,7 +601,6 @@ hago — hedge, haw; grove, woods
 haguþorn — hawthorn
 hāhan — to hang
 haid — emotion, joy; manner, way
-haigro — heron
 hail — whole, complete; healthy
 hail — omen, luck
 hailag — holy, sacred
@@ -604,6 +626,7 @@ hakkōn — to hack, chop
 haldan — to hold
 halftra — harness, halter
 halla — hall
+halm — halm, stem, stalk
 halōn — to bring, fetch, haul
 hals — neck, throat
 halsberg — neck covering armor, hauberc, type of chainmail
@@ -734,6 +757,7 @@ hōk — hook
 hokka — rootstock
 hokkōn — to lever out, extract (a stump or tooth)
 hol — hollow, hole
+hold — devouted, loyal
 holt — woods, forest, wood
 hōn — hen. chicken
 honig — honey
@@ -750,6 +774,7 @@ hotta — basket
 hottisōn — to shake
 hottōn — to shake
 hōƀa — piece of land
+hraigro — heron
 hraini — clean; pure
 hrainikrūd — a symbolic ceremony performed by someone too poor to pay a debt or fine (literal: pure herb)
 hrama — frame, support
@@ -842,6 +867,7 @@ hweþar — which (of two, interrogative)
 hwī — how, by what means, why
 hwihol — wheel
 hwīla — time, period of time, while
+hwilīk — what kind of, what sort of
 hwīt — white
 hwō — how, by what means
 idis — woman; noble or divine woman, virgin, goddess
@@ -974,6 +1000,7 @@ kramp — cramp
 kran — juniper
 krank — bent, crooked; weak
 krankjan — to make weak, worse
+krano — crane
 krappa — hook
 kratto — basket
 krattōn — to scratch, remove by scraping
@@ -1016,6 +1043,7 @@ kweþan — to say, speak, quote
 kwik — alive; quick, lively
 kwiksilƀer — mercury (metal)
 labba — rag, torn cloth
+lafendula — lavender
 lâga — state of lying, ambush
 laggjan — to lay, place
 lahs — salmon
@@ -1034,6 +1062,7 @@ laka — pool, body of water, lake
 lākan — to trail a path
 land — land, area of ground
 landa — pole
+landskap — landscape, region
 lang — long
 langatīn — spring (season)
 lâri — undeveloped area
@@ -1142,6 +1171,7 @@ malt — weak, soft, mild
 malt — malt
 man — man
 manahaid — manhood, manliness
+mandala — almond, almond tree
 mangāri — merchant, dealer, monger
 manigiþō — large quantity, multitude
 mankunni — mankind
@@ -1189,12 +1219,15 @@ milok — milk
 mīn — → see ik — my, of me (1sg gen/poss)
 minna — remembrance, love
 minnōn — to love; to remember
+minta — mint
 mīr — → see ik — to me, for me (1sg dat)
 miskjan — to mix, combine
 misklingu — mixture
 misklōn — to mix
 missjan — to go wrong, miss, fail
 mist — manure. dung
+mistil — mistletoe
+mīþan — to avoid, shun
 mōd — mind, boldness
 mōder — mother
 mōdig — bold, courageous
@@ -1241,11 +1274,13 @@ nasa — nose
 nastila — headband
 nat — wet
 naud — need, necessity; emergency
+naudig — necessary, needed
 naƀa — nave, hub
 naƀalo — navel
 nāƀogair — borer, deep bore tool, auger
 nefo — nephew, grandson
 neman — to take
+nepita — catnip
 nest — nest
 netila — nettle
 netti — net
@@ -1254,6 +1289,9 @@ neutan — to use, make use of; to enjoy
 neƀel — fog, mist
 ni — no, not
 nifta — granddaughter, niece
+niud — desire, eagerness, longing, necessity; delight, joy
+niudōn — to desire; to enjoy; to need
+niudsam — pleasant, agreeable, accomodating, favorable
 niumagan — Nijmegen
 niun — nine
 niundo — ninth
@@ -1267,12 +1305,16 @@ nuska — buckle, clasp
 nutti — use, usefulness, benefit
 nuttjōn — to use, make use of
 oba — above
+obit — fruit
 ofan — oven
 ōfar — riverbank, edge of water, shore
 ofþau — or
 ohso — ox
 ok — but
 olbanda — camel
+olibaum — olive tree
+oliberi — olive
+olig — olive oil
 opan — open
 opanōn — to open
 ord — spear point, sharp point; place
@@ -1305,6 +1347,7 @@ plukkōn — to pluck, pull out
 plūma — plum
 pokka — pouch, bag
 pōl — pool
+porro — leek
 porta — portal, gateway
 pōta — paw
 pratt — boastful talk; trickery
@@ -1374,7 +1417,9 @@ sād — seed
 sad — full, not hungry; had enough, fed up
 sadel — saddle
 saga — saw
+saga — story
 saggjan — to say, speak
+sagōn — to give an account, say, tell
 sahs — dagger, knife
 saigjan — to cause to sink, to cause to percolate
 saikjan — to make drip
@@ -1424,6 +1469,8 @@ sia — → see siu — her (3sg fem acc)
 sīan — to filter
 sibbja — relationship, kinship
 sīda — side
+sidig — well-behaved, modest
+sidu — custom, habit, cultural norm
 sīgan — to sink, drop
 sīgana — Seine
 sigi — victory
@@ -1441,9 +1488,10 @@ siniskalk — steward
 siniwald — civil servant, senator
 sinn — direction; sense, reason
 sinnan — to feel; to consider
-siok — sick
+sinþ — journey, way, path; time, occasion
 sittjan — to sit
 siu — she (3rd person singular feminine)
+siuk — sick
 siƀun — seven
 siƀundo — seventh
 siƀuntehan — seventeen (seven ten)
@@ -1482,6 +1530,7 @@ skilla — small bell, doorbell
 skilling — shilling
 skimpjan — to mock, scold
 skina — bar, track; shin (of the leg)
+skīnan — to shine; to appear
 skind — skin (of animal, human, or fruit)
 skip — ship, boat
 skīri — pure, clear
@@ -1644,6 +1693,7 @@ steur — male cattle, steer, bull
 stīf — stiff
 stift — small nail. pin, shaft
 stikkan — to pierce, sting, stick
+stillēn — to be quiet, still; to become quiet, calm down
 stilli — quiet, still
 stimna — voice
 stirna — forehead
@@ -1668,12 +1718,14 @@ strīdan — to contend, dispute, quarrel, argue; to fight, battle
 strîkan — to stroke, rub
 strunk — tree trunk, stalk (plant)
 strunt — dirt, filth; dung, feces
+stumm — mute
 stump — stump
 stunda — short period of time
 stunōn — to rumble, groan; to thunder, crash, make a loud sound
 sturm — storm
 sūft — sigh, lamentation
 sūftōn — to sigh
+sūgan — to suck
 suht — sickness
 sultja — saltwater, brine
 sum — some
@@ -1690,8 +1742,10 @@ suppa — soup, broth
 sûr — sour, acidic
 swāger — brother-in-law
 swait — sweat; blood
+swalīk — such, that kind of, that sort of
 swalwa — swallow (bird)
 swamm — sponge, mushroom, fungus
+swan — swan
 swang — swinging motion, sweep
 swangar — pregnant; heavy with emotion or intent
 swār — heavy
@@ -1800,6 +1854,7 @@ twiniling — twin
 umbi — around
 umbigân — to walk around, circulate
 under — under, beneath
+ungalīk — different, unalike
 unhaursam — disobedient
 unk — → see wit — us two, to us two (1du dat/acc)
 unkero — → see wit — of us two (1du gen)
@@ -1888,10 +1943,12 @@ wē — → see ik — we (1pl nom)
 webbi — web, woven thing
 wedar — weather
 weg — way, road
+wegabraida — plantain
 wegan — to move, carry; to weigh
 weggi — wedge
 weggjan — to move, shake; to agitate, stir up
 weka — week
+wekkjan — to wake, awaken, cause to wake up
 wela — well
 wella — well; shaft; wave
 weltjan — to roll, cause to roll, to wallow
@@ -1941,6 +1998,7 @@ wind — wind
 windan — to wind, wrap
 wingjan — to wave, nod, shake
 wini — friend
+winiskap — friendship
 winistar — left (direction, position)
 winnan — to strive, struggle, toil for, fight for
 winst — gain, victory
@@ -1962,7 +2020,9 @@ witan — to know (knowledge)
 wīti — punishment
 wītinōn — to punish
 wîto — leader
+wiud — weed, unwanted plant
 wīþa — willow, withy, osier
+wiþar — toward, against
 wiþer — wether, ram, lamb
 wiþi — cord, rope, withe
 wiþþja — strap (for clothes), shield strap, guige
