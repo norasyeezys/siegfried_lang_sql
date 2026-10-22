@@ -6,7 +6,9 @@ Cornelissen, Georg (2014): Augustin Wibbelt und der Dialekt von Mehr. In: Jahrbu
 
 Cornelissen, Georg (2014): Platt und Plattdeutsch. Über nordrhein-westfälische Sprachformen und ihre Bezeichnungen. In: Alltag im Rheinland 2014, S. 45–52.
 
-Köbler, Gerhard, Althochdeutsches Wörterbuch, (6. Auflage) 2014
+Köbler, Gerhard, Althochdeutsches Wörterbuch, (6. Auflage) 2014.
+
+Schweitzer, Peter Paul. Altdeutscher Wortschatz. Hadamar, 2002.
 
 Verwijs, E. and J. Verdam. Middelnederlandsch Woordenboek. 11 vols. 's-Gravenhage: Martinus Nijhoff, 1885–1941.
 
