@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 2425 entries
+# Siegfried Lexicon — 2451 entries
 # headword — english
 
 abbat — abbot
@@ -45,6 +45,7 @@ alaud — freehold land, property
 alberīk — elf-ruler (personal name)
 ald — old
 âlgair — spear for fishing eel
+alh — shelter; temple, sanctuary
 alina — forearm, ell, ulna, elbow
 altāri — altar
 alu — ale
@@ -154,6 +155,7 @@ barfōti — barefoot
 barm — lap, bosom
 barn — child
 baro — man, warrior, freeman; Germanic man who is not Frankish
+bars — perch
 barug — barrow, castrated boar
 bat — better (adv.)
 baug — ring, bracelet, necklace
@@ -176,6 +178,7 @@ beran — to carry, bear
 berg — hill, mountain
 berht — bright, shining
 beri — berry
+bernhard — bear+hard (personal name)
 bero — bear
 besemo — broom, besom
 betiro — better
@@ -210,6 +213,7 @@ blād — field produce
 blad — leaf, blade
 blājan — to blow
 blak — black, charred
+blandan — to blend, mix
 blank — white, shining, bright
 blāo — blue
 blas — white, pale (of animals)
@@ -231,6 +235,7 @@ blund — blond
 bōdal — house, dwelling
 bodam — bottom; floor; ground
 bodaskap — message, news; command
+bodo — messenger
 bogo — bow
 bōk — book
 bōka — beech
@@ -343,6 +348,7 @@ drako — dragon
 drāno — male bee or wasp, drone
 draum — dream
 draumjan — to dream
+draƀ — dregs
 drenkjan — to wet, drench; to water; to cause to drink
 drepan — to hit, strike
 dreusan — to fall
@@ -359,6 +365,7 @@ duhtig — strong, virtuous, hard working
 dulli — tube, pipe
 dumb — mute; dumb, stupid, foolish
 dumbēn — to become mute; to act foolishly
+dūna — dune, hill
 duni — sound, noise, din
 dunkal — dark
 dunst — mist, haze
@@ -394,6 +401,7 @@ engi — narrow, tight
 engil — angel
 ēr — before, ere
 erp — dark brown, maroon
+erwit — pea
 erþa — earth
 erþberi — strawberry
 erƀijan — to inherit
@@ -401,6 +409,7 @@ es — → see hē / it — his, its, of him/it (3sg gen)
 esil — donkey
 etan — to eat
 etig — vinegar
+etisk — farmland, cornfield
 eþili — noble
 eþiling — prince, nobleman, noble vassal
 eþþo — or, otherwise
@@ -1105,11 +1114,13 @@ klagōn — to complain
 klaim — clay, mortar
 klaini — fine; small; clean
 klaiþ — cloth
+klē — clover
 kletto — burdock
 kleuƀan — to cleave, to split
 klimban — to climb
 klinka — latch, door handle
 kliƀ — cliff, rock
+klīƀan — to stick, cling to
 klōk — strong, quick, smart
 kloƀo — cleft block, split
 kloƀulauk — garlic (clove-leek)
@@ -1137,6 +1148,7 @@ kōnrād — bold-counsel (personal name)
 kopar — copper
 kopp — head; cup, vessel; top, summit
 korn — corn, grain
+korōn — to choose, make a decision
 kostōn — to try, taste
 kostunga — temptation
 kot — cot, cottage
@@ -1184,11 +1196,13 @@ kuninginna — queen
 kunnan — to know, recognize; can, to be able to
 kunni — family, kin
 kunta — vagina, vulva
+kuri — choice, decision
 kūskhaid — chastity
 kūski — chaste
 kust — trial, choice
 kwella — spring (of water)
 kweman — to come
+kwena — woman, wife, queen
 kwërn — millstone, handmill, quern
 kweþan — to say, speak, quote
 kwik — alive; quick, lively
@@ -1210,14 +1224,17 @@ lairjan — to teach
 laisa — track, trail
 laist — track, trace, footprint
 laistjan — to carry out, perform, accomplish
+laiwerka — lark
 laiþ — repulsive, loathsome, ugly
 laiþōn — to loathe, detest, revile
 laiƀijan — to leave behind
 laka — pool, body of water, lake
 lākan — to trail a path
 lakan — linen, cloth, sheet
+lamprēþa — lamprey
 land — land, area of ground
 landa — pole
+landberht — land+bright (personal name)
 landskap — landscape, region
 lang — long
 langatīn — spring (season)
@@ -1562,6 +1579,7 @@ raud — red
 rauk — smoke, vapor
 raukjan — to smoke
 raumjan — to take the top layer off, to skim off the top layer of milk
+raur — reed, pipe, tube
 raust — fire, glow, pyre
 raustjan — to roast
 rauƀa — plunder, robbery; robe, garment
@@ -1577,10 +1595,12 @@ reht — upright, just
 rēmo — oar
 reppōn — to rip, tear off
 reukan — to smoke, to give off a vapour
+reumo — strap, belt
 ribbi — rib
 rīdan — to ride
 rihtjan — to align, set straight, straighten
 rīk — king, ruler
+rīkahard — king+hard (personal name)
 rîki — mighty, powerful; rich
 rīki — kingdom, realm
 rīkisōn — to rule, reign
@@ -1630,12 +1650,14 @@ saiwi — sea
 saiwola — soul
 sājan — to sow (seeds)
 sak — sack, bag, purse
+saka — accusation, case
 sakan — to charge, dispute
 sakkil — small sack, purse
 sal — room, dwelling, hall
 salha — willow
 sālig — happy, blessed
 sāliþa — joy, happiness
+salmo — salmon
 salo — murky, dirty; grey, dusky
 salt — salt
 saltan — to salt
@@ -1686,6 +1708,7 @@ sigiberht — victory-bright (personal name)
 sigifriþ — victory-peace (personal name)
 sigihard — victory-brave (personal name)
 sigilind — victory-shield (personal name)
+sigimār — victory+famous (personal name)
 sigimund — victory-protection (personal name)
 sikila — sickle
 sikur — secure, safe; sure, certain
@@ -1703,7 +1726,7 @@ sinnan — to feel; to consider
 sinþ — journey, way, path; time, occasion
 sittjan — to sit
 siu — she (3rd person singular feminine)
-siu — they (3pl neut nom), them (3pl neut acc)
+siu — they (3pl neut nom), them (3pl neut acc); they (3pl fem nom), them (3pl fem acc)
 siuk — sick
 siuwjan — to sew
 siƀ — sieve
@@ -1965,6 +1988,7 @@ stumm — mute, silent
 stump — stump
 stunda — short period of time
 stunōn — to rumble, groan; to thunder, crash, make a loud sound
+sturjo — sturgeon
 sturm — storm
 sūft — sigh, lamentation
 sūftōn — to sigh
@@ -2075,6 +2099,7 @@ tiƀer — sacrificial animal
 togōn — to tow, pull, tug
 top — top, peak; tuft of hair
 tord — dung, excretement
+torht — light, bright, clear
 torn — anger, fury, wrath
 tornōn — to tear off; to be angry, to rage
 trada — way, track
@@ -2374,6 +2399,7 @@ zibolla — onion
 þese — this
 þeu — servant, slave
 þeuh — thigh
+þeuƀ — thief
 þewanōn — to serve
 þīhan — to grow, thrive, prosper
 þīhti — tight
