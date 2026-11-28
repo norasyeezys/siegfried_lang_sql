@@ -1,4 +1,4 @@
-# Siegfried Lexicon — 2451 entries
+# Siegfried Lexicon — 2455 entries
 # headword — english
 
 abbat — abbot
@@ -78,7 +78,6 @@ angust — fear, anxiety
 anker — anchor
 ankja — joint, limb (particularly leg or shin)
 ano — grandfather, ancestor
-āno — without
 ans — deity, god
 antrūsti — king-sworn man, trusted warrior
 apa — creek, river
@@ -300,8 +299,7 @@ burþin — burden
 but — end, piece
 butera — butter
 butt — cut off, chopped
-buwan — to build, reside
-būwan — to dwell, reside; to build
+būwan — to build, reside
 dag — day
 dagalīk — daily
 dagēn — to dawn, become day
@@ -604,6 +602,7 @@ gaist — ghost
 gait — goat
 galan — to sing, charm
 galauƀjan — to believe; to allow
+galdar — singing, song; spell, incantation, charm
 galga — measuring rod
 galīk — alike, similar, equal
 galīkēn — to please
@@ -619,6 +618,8 @@ gang — pace, step, gait; way, course
 gangan — to go, walk
 ganōg — enough
 gans — goose
+ganugan — to suffice
+ganuht — abundance
 gard — spike, stick, staff, goad
 gardō — enclosure, yard, garden
 gareht — just, fair
@@ -645,6 +646,7 @@ geldan — to pay
 geldapa — Krefeld-Gellep (literal: payment-brook)
 geldo — one who pays, debtor
 gelo — yellow
+gelp — boast
 gerjan — to cause to ferment
 germja — young ewe, lamb
 gern — eager, willing
@@ -679,6 +681,7 @@ godafriþ — god-peace (personal name)
 godawebbi — precious garment
 gold — gold
 goldmessing — orichalcum (literal: gold-bronze)
+gōljan — to greet
 gor — dirt, dung, disgusting thing
 grāfio — count (servant of the king)
 graft — digging, carving
@@ -1193,6 +1196,7 @@ kund — kind, race
 kundjan — to make known, announce
 kuning — king
 kuninginna — queen
+kuninglīk — kingly
 kunnan — to know, recognize; can, to be able to
 kunni — family, kin
 kunta — vagina, vulva
@@ -2439,9 +2443,9 @@ zibolla — onion
 þuld — the ability to bear, endurance, patience
 þūmo — thumb
 þunni — thin
+þurfan — to need
 þurhil — perforated
 þuris — giant, monster
-þuroh — through
 þurri — dry
 þurst — thirst
 þurstjan — to thirst
